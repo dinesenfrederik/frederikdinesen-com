@@ -171,9 +171,20 @@ function showFormSuccessState(form, payload, lang) {
 
     // Analytics Conversion Event Dispatch (Google Analytics 4 & Vercel)
     try {
-        if (typeof window.gtag === 'function') {
-            window.gtag('event', 'generate_lead', {
-                event_category: 'Contact',
+        const sendGtag = window.gtag || (typeof gtag === 'function' ? gtag : null);
+        if (sendGtag) {
+            sendGtag('event', 'generate_lead', {
+                event_category: 'Contact Form',
+                event_label: payload.service || 'Mixing',
+                service: payload.service || 'Mixing',
+                value: 1
+            });
+        }
+        if (window.dataLayer && Array.isArray(window.dataLayer)) {
+            window.dataLayer.push({
+                event: 'generate_lead',
+                event_category: 'Contact Form',
+                event_label: payload.service || 'Mixing',
                 service: payload.service || 'Mixing'
             });
         }

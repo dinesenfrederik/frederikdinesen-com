@@ -146,11 +146,13 @@
 
 ## 🚀 Live Deployment & Domænekonfiguration (2026-09-29)
 
-### 1. Vercel Production Release
-- **Projekt:** `frederikdinesen-com` (Team: `dinesenfrederik-6846`)
+### 1. Vercel Production Release & GitHub Source Repository
+- **GitHub Repository:** [https://github.com/dinesenfrederik/frederikdinesen-com](https://github.com/dinesenfrederik/frederikdinesen-com) (Offentligt kildekoderepository)
+- **Vercel Projekt:** `frederikdinesen-com` (Team: `dinesenfrederik-6846`)
 - **Produktions-URL:** [https://frederikdinesen-com.vercel.app](https://frederikdinesen-com.vercel.app)
 - **Status:** 🟢 HTTP/2 200 OK verificeret live.
-- **Git Branch:** `main` (commit `feat: production release ready for live domain`).
+- **Git Branch:** `main` (synkroniseret med `origin/main`).
+
 
 ### 2. Custom Domains på Vercel
 - **Primary Domain:** `frederikdinesen.com`

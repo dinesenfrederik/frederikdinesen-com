@@ -196,7 +196,7 @@ Disse regler er **ikke til forhandling** og gælder for alle moduler:
 
 ### 6.2 Active Configuration
 - **Target Platform:** Vercel (Production)
-- **Repository:** GitHub (`frederikdinesen.com` or active project repo)
+- **Repository:** GitHub (`dinesenfrederik/frederikdinesen-com` — [https://github.com/dinesenfrederik/frederikdinesen-com](https://github.com/dinesenfrederik/frederikdinesen-com))
 - **Primary Domain:** `frederikdinesen.com`
 - **Redirect Domain:** `www.frederikdinesen.com` (redirects to apex root)
 - **DNS Provider:** Squarespace Domains

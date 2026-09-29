@@ -39,6 +39,8 @@ Disse regler er **ikke til forhandling** og gælder for alle moduler:
 | Kontaktformular (Web3Forms) | Direkte henvendelse til dinesenfrederik@gmail.com | WEB3FORMS_ACCESS_KEY | 🟢 Configured |
 | Vercel Web Analytics | Besøgsstatistik & analytics-tracking | N/A (/_vercel/insights) | 🟢 Configured |
 | Vercel Speed Insights | Core Web Vitals & performance-tracking | N/A (/_vercel/speed-insights) | 🟢 Configured |
+| Google Analytics 4 (GA4) | Trafikanalyse, adfærd & lead tracking | G-3X6GTKVN5Y | 🟢 Configured |
+
 
 
 
@@ -267,6 +269,8 @@ FDSL - website v2.0/
 | 2026-09-29 | System Pilot | Live Production Deployment to Vercel & Custom Domain Configuration (`frederikdinesen.com`) | User Directive / Production Release |
 | 2026-09-29 | System Pilot | Integrated Vercel Web Analytics (@vercel/analytics & /_vercel/insights) | User Directive / Analytics Setup |
 | 2026-09-29 | System Pilot | Integrated Vercel Speed Insights (@vercel/speed-insights & /_vercel/speed-insights) | User Directive / Performance Setup |
+| 2026-09-29 | System Pilot | Integrated Google Analytics 4 (GA4 ID: G-3X6GTKVN5Y) with automatic lead conversion tracking | User Directive / GA4 Setup |
+
 
 
 

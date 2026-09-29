@@ -169,6 +169,24 @@ function showFormSuccessState(form, payload, lang) {
         form.dataset.originalHtml = form.innerHTML;
     }
 
+    // Analytics Conversion Event Dispatch (Google Analytics 4 & Vercel)
+    try {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'generate_lead', {
+                event_category: 'Contact',
+                service: payload.service || 'Mixing'
+            });
+        }
+        if (typeof window.va === 'function') {
+            window.va('event', {
+                name: 'lead_inquiry',
+                data: { service: payload.service || 'Mixing' }
+            });
+        }
+    } catch (e) {
+        console.warn('[Analytics Dispatch]', e);
+    }
+
     form.innerHTML = `
         <div class="text-center py-8 px-4 fade-in">
             <div class="w-20 h-20 rounded-full bg-amber/10 border-2 border-amber/50 text-amber flex items-center justify-center mx-auto mb-6 shadow-[0_0_25px_rgba(255,159,10,0.3)]">

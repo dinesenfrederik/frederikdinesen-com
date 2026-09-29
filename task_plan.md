@@ -349,6 +349,15 @@
 - [x] Konfiguration: Registreret Vercel Speed Insights i `gemini.md` Integration Registry.
 - [x] Versionsstyring: Committet og pushet til GitHub `main` med live Vercel udrulning.
 
+---
+
+## 🚀 Phase 38 — Google Analytics 4 (GA4) Integration
+- [x] Frontend Tag: Indsat globalt Google tag (`gtag.js`) med Measurement ID `G-3X6GTKVN5Y` i `<head>` af `index.html`.
+- [x] Konverterings-Tracking: Udvidet `tools/form.js` til automatisk at afsende `generate_lead` hændelse til Google Analytics ved modtagelse af henvendelser.
+- [x] Konfiguration: Registreret GA4 i `gemini.md` Integration Registry og Maintenance Log.
+- [x] Versionsstyring: Committet og pushet til GitHub `main` med automatisk Vercel deployment.
+
+
 
 
 

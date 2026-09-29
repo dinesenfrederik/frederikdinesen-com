@@ -55,8 +55,6 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body class="font-sans antialiased selection:bg-amber selection:text-obsidian">
-    <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none" style="z-index: -1;"></canvas>
-
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
@@ -103,11 +101,12 @@
     <main>
         <!-- Hero Section -->
         <section class="pt-48 pb-32 px-6 relative overflow-hidden flex items-center justify-center min-h-[90vh]">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber/5 rounded-full blur-[100px] pointer-events-none"></div>
+            <canvas id="particle-canvas" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 1;"></canvas>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber/5 rounded-full blur-[100px] pointer-events-none" style="z-index: 1;"></div>
             
             <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-tight text-white" data-da="Produktion med power til moderne rock & metal." data-en="Album-Ready Punch for Modern Rock & Metal.">Produktion med power til moderne rock & metal.</h1>
-                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed" data-da="High-impact remote mixing og studieindspilning i Aarhus, skabt til at skære igennem støjen." data-en="High-impact remote mixing and studio tracking in Aarhus, crafted to cut through the noise.">High-impact remote mixing og studieindspilning i Aarhus, skabt til at skære igennem støjen.</p>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-tight text-white" data-da="Produktion med power til moderne rock & metal" data-en="Album-Ready Punch for Modern Rock & Metal">Produktion med power til moderne rock & metal</h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed" data-da="High-impact remote mixing og studieindspilning i Aarhus, skabt til at skære igennem højtalerne." data-en="High-impact remote mixing and studio tracking in Aarhus, crafted to cut through the speakers.">High-impact remote mixing og studieindspilning i Aarhus, skabt til at skære igennem højtalerne.</p>
                 
                 <a href="#contact" class="inline-block bg-amber text-obsidian px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,159,10,0.4)] mb-16 uppercase tracking-wider" data-da="Få et gratis test-mix" data-en="Claim Your Free Sample Mix">Få et gratis test-mix</a>
                 
@@ -118,7 +117,7 @@
                     </div>
                     <div class="flex items-center gap-2 font-mono">
                         <span class="material-symbols-outlined text-amber" style="vertical-align: bottom; font-size: 20px;">sync</span>
-                        <span data-da="5 revisioner (inkluderet ved betalt arbejde)" data-en="5 revisions (included in paid work)">5 revisioner (inkluderet ved betalt arbejde)</span>
+                        <span data-da="3 revisioner (inkluderet ved betalt arbejde)" data-en="3 revisions (included in paid work)">3 revisioner (inkluderet ved betalt arbejde)</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -133,9 +132,10 @@
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-20 flex flex-col items-center">
                     <div class="border border-border rounded-full px-4 py-1 text-sm font-medium font-mono text-[#C4C4CC] uppercase tracking-wider font-semibold mb-6" data-da="Portefølje &bull; A/B Sammenligning" data-en="Portfolio &bull; A/B Comparison">Portefølje &bull; A/B Sammenligning</div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-da="Lyden taler for sig selv." data-en="The sound speaks for itself.">Lyden taler for sig selv.</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-da="Musik skal høres - ikke forklares" data-en="Music should be heard - not explained">Musik skal høres - ikke forklares</h2>
                     <p class="text-zinc-300 max-w-2xl text-[17px] font-medium leading-relaxed" data-da="Ingen polerede salgstaler. Hør præcis hvordan dit nummer kan lyde med den rette balance, punch og klarhed." data-en="No polished sales pitches. Hear exactly how your track can sound with the right balance, punch, and clarity.">Ingen polerede salgstaler. Hør præcis hvordan dit nummer kan lyde med den rette balance, punch og klarhed.</p>
                 </div>
+
                 
                 <div class="grid md:grid-cols-2 gap-8" id="portfolio-grid">
                     <!-- Track: Lost Track -->
@@ -443,9 +443,9 @@
         <section id="pricing" class="py-32 px-6 border-t border-border bg-obsidian">
             <div class="max-w-5xl mx-auto">
                 <div class="text-center mb-20 flex flex-col items-center">
-                    <div class="border border-border rounded-full px-4 py-1 text-sm font-medium font-mono text-[#C4C4CC] uppercase tracking-wider font-semibold mb-6" data-da="Gennemskuelige Priser &bull; Ingen skjulte gebyrer" data-en="Transparent Pricing &bull; No hidden fees">Gennemskuelige Priser &bull; Ingen skjulte gebyrer</div>
+                    <div class="border border-border rounded-full px-4 py-1 text-sm font-medium font-mono text-[#C4C4CC] uppercase tracking-wider font-semibold mb-6" data-da="Gennemskuelige Priser" data-en="Transparent Pricing">Gennemskuelige Priser</div>
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-da="Faste projektpriser. Ingen overraskelser." data-en="Fixed project prices. No surprises.">Faste projektpriser. Ingen overraskelser.</h2>
-                    <p class="text-zinc-300 max-w-2xl text-[17px] font-medium leading-relaxed" data-da="Slut med uoverskuelige timepriser og studiestress. Faste aftalte priser, professionel redigering og 5 revisionsrunder inkluderet." data-en="No more confusing hourly rates and studio stress. Fixed agreed prices, professional editing and 5 revision rounds included.">Slut med uoverskuelige timepriser og studiestress. Faste aftalte priser, professionel redigering og 5 revisionsrunder inkluderet.</p>
+                    <p class="text-zinc-300 max-w-2xl text-[17px] font-medium leading-relaxed" data-da="Faste aftalte priser, professionel lyd og 3 revisionsrunder inkluderet." data-en="Fixed agreed prices, professional sound and 3 revision rounds included.">Faste aftalte priser, professionel lyd og 3 revisionsrunder inkluderet.</p>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-8 mb-12">
@@ -469,7 +469,7 @@
                         <ul class="space-y-5 text-sm text-gray-300 mb-12 flex-grow">
                             <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Streaming-ready mix til alle platforme og formater" data-en="Streaming-ready mix for all platforms and formats">Streaming-ready mix til alle platforme og formater</span></li>
                             <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Professionel redigering af vokaler, trommer & andre instrumenter" data-en="Professional editing of vocals, drums & other instruments">Professionel redigering af vokaler, trommer & andre instrumenter</span></li>
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="5 konsoliderede revisionsrunder inkluderet" data-en="5 consolidated revision rounds included">5 konsoliderede revisionsrunder inkluderet</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="3 revisionsrunder inkluderet" data-en="3 revision rounds included">3 revisionsrunder inkluderet</span></li>
                             <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="100% tilfredshedsgaranti" data-en="100% satisfaction guarantee">100% tilfredshedsgaranti</span></li>
                         </ul>
                         
@@ -491,10 +491,10 @@
                         </div>
                         
                         <ul class="space-y-5 text-sm text-gray-300 mb-12 flex-grow">
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Professionel indspilning af vokaler, guitar, bas og synths" data-en="Professional recording of vocals, guitar, bass and synths">Professionel indspilning af vokaler, guitar, bas og synths</span></li>
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Optimeret akustik og professionel monitorering" data-en="Optimized acoustics and professional monitoring">Optimeret akustik og professionel monitorering</span></li>
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Rå multitracks eksporteret og klargjort direkte til videre mixing" data-en="Raw multitracks exported and prepped directly for further mixing">Rå multitracks eksporteret og klargjort direkte til videre mixing</span></li>
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Behagelige, kreative rammer uden tidspres" data-en="Comfortable, creative setting without time pressure">Behagelige, kreative rammer uden tidspres</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Professionel tracking af vokal, guitar, bas og synths" data-en="Professional tracking of vocals, guitar, bass and synths">Professionel tracking af vokal, guitar, bas og synths</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Professionel recording-chains, mikrofoner og præcis monitorering" data-en="Professional recording chains, microphones and precision monitoring">Professionel recording-chains, mikrofoner og præcis monitorering</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Fokus på stram performance, coaching og kreativ ro" data-en="Focus on tight performance, coaching and creative calm">Fokus på stram performance, coaching og kreativ ro</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Højkvalitets multitracks eksporteret direkte - klar til mix" data-en="High-quality multitracks exported directly - ready to mix">Højkvalitets multitracks eksporteret direkte - klar til mix</span></li>
                         </ul>
                         
                         <a href="#contact" class="w-full block text-center border border-border hover:border-amber text-white hover:text-amber rounded-full py-4 text-sm font-bold uppercase tracking-widest transition-colors" data-da="Book Studietid &rarr;" data-en="Book Studio Time &rarr;">Book Studietid &rarr;</a>
@@ -503,8 +503,9 @@
                 
                 <div class="bg-zinc-900 border border-border p-8 rounded-2xl text-center max-w-3xl mx-auto shadow-lg">
                     <h4 class="font-bold text-amber mb-3 text-lg" data-da="100% Tilfredshedsgaranti" data-en="100% Satisfaction Guarantee">100% Tilfredshedsgaranti</h4>
-                    <p class="text-[15px] font-medium text-zinc-300 mb-4 leading-relaxed" data-da="Hvis vi mod forventning ikke rammer den ønskede retning efter de inkluderede 5 revisionsrunder, refunderes depositummet fuldt ud." data-en="If we completely miss the desired direction after the included 5 revision rounds, your deposit is fully refunded.">Hvis vi mod forventning ikke rammer den ønskede retning efter de inkluderede 5 revisionsrunder, refunderes depositummet fuldt ud.</p>
+                    <p class="text-[15px] font-medium text-zinc-300 mb-4 leading-relaxed" data-da="Vi arbejder ud fra en klar lydmæssig vision. Hvis vi mod forventning ikke rammer den ønskede retning inden for de 3 inkluderede revisionsrunder, refunderes dit depositum fuldt ud." data-en="We work from a clear sonic vision. If we unexpectedly do not hit the desired direction within the 3 included revision rounds, your deposit is fully refunded.">Vi arbejder ud fra en klar lydmæssig vision. Hvis vi mod forventning ikke rammer den ønskede retning inden for de 3 inkluderede revisionsrunder, refunderes dit depositum fuldt ud.</p>
                 </div>
+
             </div>
         </section>
 
@@ -519,7 +520,7 @@
                         <span data-da="Start dit projekt &bull; Risk-Free" data-en="Start your project &bull; Risk-Free">Start dit projekt &bull; Risk-Free</span>
                     </div>
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-da="Klar til at løfte dit lydbillede?" data-en="Ready to elevate your sound?">Klar til at løfte dit lydbillede?</h2>
-                    <p class="text-gray-400 text-lg" data-da="Udfyld formularen herunder, eller send dine rå multitracks direkte. Jeg vender tilbage inden for 24 timer." data-en="Fill out the form below, or send your raw multitracks directly. I will get back to you within 24 hours.">Udfyld formularen herunder, eller send dine rå multitracks direkte. Jeg vender tilbage inden for 24 timer.</p>
+                    <p class="text-gray-400 text-lg" data-da="Udfyld formularen herunder. Jeg vender tilbage inden for 24 timer." data-en="Fill out the form below. I will get back to you within 24 hours.">Udfyld formularen herunder. Jeg vender tilbage inden for 24 timer.</p>
                 </div>
                 
                 <form id="contact-form" class="space-y-8 bg-obsidian p-8 md:p-12 rounded-3xl border border-border placeholder-zinc-400 shadow-2xl">
@@ -571,16 +572,12 @@
 
         <!-- Footer -->
         <footer class="py-12 border-t border-border bg-obsidian text-sm text-zinc-400 font-mono">
-            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
                 <div class="text-amber font-bold text-base font-sans tracking-widest">FD SOUND LABS</div>
-                <div data-da="&copy; 2026 FD SOUND LABS. Aarhus, Danmark. Engineered for impact." data-en="&copy; 2026 FD SOUND LABS. Aarhus, Denmark. Engineered for impact.">&copy; 2026 FD SOUND LABS. Aarhus, Danmark. Engineered for impact.</div>
-                <div class="flex gap-8">
-                    <a href="#" class="hover:text-amber transition-colors">Instagram</a>
-                    <a href="#" class="hover:text-amber transition-colors">YouTube</a>
-                    <a href="#" class="hover:text-amber transition-colors" data-da="Privatlivspolitik" data-en="Privacy Policy">Privatlivspolitik</a>
-                </div>
+                <div data-da="&copy; 2026 FD SOUND LABS. Aarhus, Danmark." data-en="&copy; 2026 FD SOUND LABS. Aarhus, Denmark.">&copy; 2026 FD SOUND LABS. Aarhus, Danmark.</div>
             </div>
         </footer>
+
     </main>
 
     <script type="module" src="main.js"></script>

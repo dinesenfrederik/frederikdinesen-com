@@ -31,11 +31,18 @@ function initMobileMenu() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
     initI18n();
     initRealAudioPlayers();
     initForm();
     initParticles();
     initMobileMenu();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
+
 

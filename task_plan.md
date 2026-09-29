@@ -357,6 +357,26 @@
 - [x] Konfiguration: Registreret GA4 i `gemini.md` Integration Registry og Maintenance Log.
 - [x] Versionsstyring: Committet og pushet til GitHub `main` med automatisk Vercel deployment.
 
+---
+
+## 🚀 Phase 39 — Tekst- & Layoutjusteringer samt Hero Partikelanimation
+- [x] Hero Canvas Fix: Flyttet `particle-canvas` direkte ind i hero-sektionen med `absolute inset-0 w-full h-full`, optimeret partikelloop og tilføjet `document.readyState` check i `main.js` så animationen garanteret kører i produktion.
+- [x] Hero Copy:
+  - Fjernet afsluttende punktum i `"Produktion med power til moderne rock & metal"`.
+  - Opdateret hero-undertitel til `"High-impact remote mixing og studieindspilning i Aarhus, skabt til at skære igennem højtalerne."`.
+  - Opdateret trust-badge til `"3 revisioner (inkluderet ved betalt arbejde)"`.
+- [x] Portefølje Copy: Opdateret sektionstitel til `"Musik skal høres - ikke forklares"`.
+- [x] Priser & Ydelser:
+  - Justeret overskrift-badge til `"Gennemskuelige Priser"`.
+  - Opdateret undertitel til `"Faste aftalte priser, professionel lyd og 3 revisionsrunder inkluderet."`.
+  - Ændret alle referencer fra 5 runder til 3 runder (både mix-kort og garanti).
+  - Opdateret de 4 tracking-punkter til professionel tracking af vokal/guitar/bas/synths, recording-chains & mikrofoner, stram performance & coaching, samt eksport af multitracks.
+  - Opdateret 100% Tilfredshedsgaranti-tekst til den specificerede ordlyd med 3 runder.
+- [x] Kontaktformular: Opdateret introtekst til `"Udfyld formularen herunder. Jeg vender tilbage inden for 24 timer."`.
+- [x] Footer Oprydning: Fjernet Instagram, YouTube, Privatlivspolitik samt `"Engineered for impact"`.
+- [x] Browser Verifikation: Gennemført fuld visuel verifikation med screenshots af alle sektioner.
+
+
 
 
 

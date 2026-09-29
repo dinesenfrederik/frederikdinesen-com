@@ -315,6 +315,25 @@
   - Web3Forms API og formvaliditet verificeret.
 - [x] Dokumentation: Komplet statusrapport tilføjet til `findings.md`.
 
+---
+
+## 🚀 Phase 35 — Live Deployment til Vercel og Tilknytning af Custom Domæne (frederikdinesen.com)
+- [x] `gemini.md`: Opdateret Sektion 6 med `deploymentConfiguration` schema og aktiv konfiguration (Vercel Production, `frederikdinesen.com`, Squarespace Domains).
+- [x] Pre-Flight Checks:
+  - Verificeret Vercel CLI autentificering (`dinesenfrederik-6846`).
+  - Etableret `.gitignore` for at udelukke `.DS_Store`, `.tmp/`, `node_modules/`, `.env*` og `.vercel/`.
+  - Initialiseret Git repository, sat default branch til `main`, og committet ren udgivelse (`feat: production release ready for live domain`).
+- [x] Vercel Production Deploy:
+  - Udrullet projekt til produktion via `vercel --prod --yes --name frederikdinesen-com`.
+  - Verificeret deployment URL `https://frederikdinesen-com.vercel.app` med HTTP/2 200 OK.
+- [x] Custom Domænetilknytning:
+  - Apex domæne `frederikdinesen.com` tilknyttet projektet.
+  - Subdomæne `www.frederikdinesen.com` tilknyttet projektet (viderestiller til apex).
+- [x] DNS Konfiguration:
+  - Udviklet præcis DNS-oversigt for Squarespace Domains (A-record `@` -> `76.76.21.21` og CNAME `www` -> `cname.vercel-dns.com`).
+  - Dokumenteret i `findings.md` og brugervejledning.
+
+
 
 
 

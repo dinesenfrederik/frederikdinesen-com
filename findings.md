@@ -142,4 +142,30 @@
 - **Audit Resultat:** ✅ **100% BESTÅET** (0 fejl i automatiserede checks, 17/17 audio-spor valide, fuld i18n paritet).
 - **Status:** 🟢 **KLAR TIL DRIFT (Production Ready)**. Sitet lever fuldt ud op til B.L.A.S.T.- og A.N.T.-standarderne.
 
+---
+
+## 🚀 Live Deployment & Domænekonfiguration (2026-09-29)
+
+### 1. Vercel Production Release
+- **Projekt:** `frederikdinesen-com` (Team: `dinesenfrederik-6846`)
+- **Produktions-URL:** [https://frederikdinesen-com.vercel.app](https://frederikdinesen-com.vercel.app)
+- **Status:** 🟢 HTTP/2 200 OK verificeret live.
+- **Git Branch:** `main` (commit `feat: production release ready for live domain`).
+
+### 2. Custom Domains på Vercel
+- **Primary Domain:** `frederikdinesen.com`
+- **Redirect Domain:** `www.frederikdinesen.com` (peger på og viderestiller til apex `frederikdinesen.com`).
+- **Registrar:** Squarespace Domains.
+
+### 3. Nøjagtige DNS-Records til Squarespace Domains
+For at færdiggøre tilknytningen skal følgende to DNS-records oprettes/opdateres i Squarespace Domains DNS indstillinger:
+
+| Type | Vært / Navn / Host | Værdi / Data / Points To | Prioritet / TTL | Formål |
+|------|--------------------|--------------------------|-----------------|--------|
+| **A** | `@` (eller tomt) | `76.76.21.21` | 3600 / Standard | Dirigerer `frederikdinesen.com` direkte til Vercels globale Anycast Edge IP |
+| **CNAME** | `www` | `cname.vercel-dns.com.` | 3600 / Standard | Dirigerer `www.frederikdinesen.com` til Vercels DNS router |
+
+*Bemærk: Eventuelle eksisterende A- eller CNAME-records for `@` eller `www` i Squarespace skal fjernes eller overskrives med ovenstående værdier. SSL-certifikat udstedes automatisk af Vercel via Let's Encrypt så snart DNS peger korrekt.*
+
+
 

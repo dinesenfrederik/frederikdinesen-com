@@ -341,6 +341,15 @@
 - [x] Konfiguration: Registreret Vercel Web Analytics i `gemini.md` Integration Registry.
 - [x] Versionsstyring: Committet og pushet ændringer til GitHub `main` med automatisk Vercel deployment.
 
+---
+
+## 🚀 Phase 37 — Vercel Speed Insights Integration
+- [x] NPM Pakkeinstallation: Installeret `@vercel/speed-insights` (`^2.0.0`) via npm.
+- [x] Frontend Tracking: Integreret officiel Vercel Speed Insights tracking snippet (`/_vercel/speed-insights/script.js` + queue) i `<head>` af `index.html`.
+- [x] Konfiguration: Registreret Vercel Speed Insights i `gemini.md` Integration Registry.
+- [x] Versionsstyring: Committet og pushet til GitHub `main` med live Vercel udrulning.
+
+
 
 
 

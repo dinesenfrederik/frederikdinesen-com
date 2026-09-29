@@ -37,7 +37,9 @@ Disse regler er **ikke til forhandling** og gælder for alle moduler:
 | Web Audio API | Lydgengivelse & bølgeform A/B | N/A (Native HTML5) | 🟢 Approved |
 | GitHub Raw CDN | Hosting af MP3-filer til portefølje | N/A (Public URLs) | 🟢 Approved |
 | Kontaktformular (Web3Forms) | Direkte henvendelse til dinesenfrederik@gmail.com | WEB3FORMS_ACCESS_KEY | 🟢 Configured |
-| Vercel Web Analytics | Besøgsstatistik & performance-tracking | N/A (/_vercel/insights) | 🟢 Configured |
+| Vercel Web Analytics | Besøgsstatistik & analytics-tracking | N/A (/_vercel/insights) | 🟢 Configured |
+| Vercel Speed Insights | Core Web Vitals & performance-tracking | N/A (/_vercel/speed-insights) | 🟢 Configured |
+
 
 
 ---
@@ -264,5 +266,7 @@ FDSL - website v2.0/
 | 2026-09-29 | System Pilot | Installed Skill `handling-errors` in `.agent/skills/handling-errors/` | User Directive / Passive Resilient Knowledge Base |
 | 2026-09-29 | System Pilot | Live Production Deployment to Vercel & Custom Domain Configuration (`frederikdinesen.com`) | User Directive / Production Release |
 | 2026-09-29 | System Pilot | Integrated Vercel Web Analytics (@vercel/analytics & /_vercel/insights) | User Directive / Analytics Setup |
+| 2026-09-29 | System Pilot | Integrated Vercel Speed Insights (@vercel/speed-insights & /_vercel/speed-insights) | User Directive / Performance Setup |
+
 
 

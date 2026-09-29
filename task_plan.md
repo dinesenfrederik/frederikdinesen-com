@@ -333,6 +333,15 @@
   - Udviklet præcis DNS-oversigt for Squarespace Domains (A-record `@` -> `76.76.21.21` og CNAME `www` -> `cname.vercel-dns.com`).
   - Dokumenteret i `findings.md` og brugervejledning.
 
+---
+
+## 🚀 Phase 36 — Vercel Web Analytics Integration
+- [x] NPM Pakkeinstallation: Initialiseret `package.json` og installeret `@vercel/analytics` (`^2.0.1`).
+- [x] Frontend Tracking: Integreret officiel Vercel Analytics tracking snippet (`/_vercel/insights/script.js` + queue) i `<head>` af `index.html`.
+- [x] Konfiguration: Registreret Vercel Web Analytics i `gemini.md` Integration Registry.
+- [x] Versionsstyring: Committet og pushet ændringer til GitHub `main` med automatisk Vercel deployment.
+
+
 
 
 

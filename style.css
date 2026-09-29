@@ -1,0 +1,25 @@
+html, body { 
+    background-color: #000000; 
+    color: #e5e7eb; 
+    overflow-x: hidden;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+.glass-nav { background: rgba(13, 13, 17, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid #222228; }
+.card { background-color: #0D0D11; border: 1px solid #222228; transition: border-color 0.3s ease; }
+.card:hover { border-color: #FF9F0A; }
+.input-field { background-color: #16161A; border: 1px solid #222228; color: white; transition: all 0.3s ease; }
+.input-field:focus { border-color: #FF9F0A; outline: none; box-shadow: 0 0 0 1px #FF9F0A; }
+
+/* Audio Waveform Mockup */
+.waveform { display: flex; align-items: flex-end; gap: 2px; height: 64px; }
+.wave-bar { width: 4px; border-radius: 2px; background-color: #222228; transition: height 0.2s, background-color 0.3s; }
+.wave-bar.active { background-color: #FF9F0A; }
+
+/* GUI Mockup */
+.gui-window { background-color: #0D0D11; border: 1px solid #222228; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+.gui-header { background-color: #16161A; border-bottom: 1px solid #222228; padding: 0.75rem 1rem; display: flex; gap: 6px; }
+.gui-dot { width: 12px; height: 12px; border-radius: 50%; }
+.gui-dot.red { background-color: #FF5F56; }
+.gui-dot.yellow { background-color: #FFBD2E; }
+.gui-dot.green { background-color: #27C93F; }

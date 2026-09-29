@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD Sound Labs | Album-Ready Punch for Modern Rock & Metal</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF9F0A'><path d='M12 3v18M8 6v12M4 9v6M16 6v12M20 9v6' stroke='%23FF9F0A' stroke-width='2.5' stroke-linecap='round'/></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#000000',
+                        zinc: {
+                            800: '#1F1F1F',
+                            900: '#16161A',
+                            950: '#0D0D11'
+                        },
+                        border: '#222228',
+                        amber: {
+                            DEFAULT: '#FF9F0A',
+                            hover: '#E58E09'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased selection:bg-amber selection:text-obsidian">
+    <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none" style="z-index: -1;"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-bold tracking-widest text-white hover:text-amber transition-colors text-base sm:text-lg">FD SOUND LABS</a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="#portfolio" class="hover:text-amber transition-colors text-gray-300" data-da="Portefølje" data-en="Portfolio">Portefølje</a>
+                <a href="#pricing" class="hover:text-amber transition-colors text-gray-300" data-da="Priser" data-en="Pricing">Priser</a>
+                <a href="#contact" class="hover:text-amber transition-colors text-gray-300" data-da="Kontakt" data-en="Contact">Kontakt</a>
+            </div>
+            <div class="flex items-center gap-3 sm:gap-6">
+                <div class="flex items-center gap-1 sm:gap-2 font-mono text-xs sm:text-sm font-medium bg-zinc-900 border border-border rounded-full px-2.5 sm:px-3 py-1">
+                    <button class="lang-btn font-bold transition-colors" data-lang="da">DA</button>
+                    <span class="text-border">|</span>
+                    <button class="lang-btn transition-colors text-zinc-400" data-lang="en">EN</button>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-2 font-mono text-xs sm:text-sm font-medium bg-zinc-900 border border-border rounded-full px-2.5 sm:px-3 py-1">
+                    <button class="curr-btn font-bold transition-colors" data-curr="dkk">DKK</button>
+                    <span class="text-border">|</span>
+                    <button class="curr-btn transition-colors text-zinc-400" data-curr="eur">EUR</button>
+                </div>
+                <a href="#contact" class="hidden md:inline-block bg-amber text-obsidian px-6 py-2.5 rounded-full font-bold text-sm hover:bg-amber-hover transition-colors shadow-[0_0_15px_rgba(255,159,10,0.3)]" data-da="Få dit gratis test-mix" data-en="Get Free Sample Mix">Få dit gratis test-mix</a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-zinc-300 hover:text-amber p-1.5 focus:outline-none" aria-label="Menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon-bars" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                        <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-obsidian/95 backdrop-blur-xl border-b border-border px-6 py-6 space-y-4 text-center">
+            <a href="#portfolio" class="mobile-nav-link block text-base font-semibold text-gray-200 hover:text-amber py-2" data-da="Portefølje" data-en="Portfolio">Portefølje</a>
+            <a href="#pricing" class="mobile-nav-link block text-base font-semibold text-gray-200 hover:text-amber py-2" data-da="Priser" data-en="Pricing">Priser</a>
+            <a href="#contact" class="mobile-nav-link block text-base font-semibold text-gray-200 hover:text-amber py-2" data-da="Kontakt" data-en="Contact">Kontakt</a>
+            <div class="pt-2">
+                <a href="#contact" class="mobile-nav-link inline-block w-full bg-amber text-obsidian py-3 rounded-full font-bold text-sm hover:bg-amber-hover transition-colors shadow-[0_0_15px_rgba(255,159,10,0.3)]" data-da="Få dit gratis test-mix" data-en="Get Free Sample Mix">Få dit gratis test-mix</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-48 pb-32 px-6 relative overflow-hidden flex items-center justify-center min-h-[90vh]">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber/5 rounded-full blur-[100px] pointer-events-none"></div>
+            
+            <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-tight text-white" data-da="Produktion med power til moderne rock & metal." data-en="Album-Ready Punch for Modern Rock & Metal.">Produktion med power til moderne rock & metal.</h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed" data-da="High-impact remote mixing og studieindspilning i Aarhus, skabt til at skære igennem støjen." data-en="High-impact remote mixing and studio tracking in Aarhus, crafted to cut through the noise.">High-impact remote mixing og studieindspilning i Aarhus, skabt til at skære igennem støjen.</p>
+                
+                <a href="#contact" class="inline-block bg-amber text-obsidian px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,159,10,0.4)] mb-16 uppercase tracking-wider" data-da="Få et gratis test-mix" data-en="Claim Your Free Sample Mix">Få et gratis test-mix</a>
+                
+                <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-400 font-mono">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <span data-da="3-4 dages levering" data-en="3-4 day turnaround">3-4 dages levering</span>
+                    </div>
+                    <div class="flex items-center gap-2 font-mono">
+                        <span class="material-symbols-outlined text-amber" style="vertical-align: bottom; font-size: 20px;">sync</span>
+                        <span data-da="5 revisioner (inkluderet ved betalt arbejde)" data-en="5 revisions (included in paid work)">5 revisioner (inkluderet ved betalt arbejde)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-da="100% tilfredshedsgaranti" data-en="100% satisfaction guarantee">100% tilfredshedsgaranti</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Showcase -->
+        <section id="portfolio" class="py-32 px-6 border-t border-border bg-obsidian">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20 flex flex-col items-center">
+                    <div class="border border-border rounded-full px-4 py-1 text-sm font-medium font-mono text-[#C4C4CC] uppercase tracking-wider font-semibold mb-6" data-da="Portefølje &bull; A/B Sammenligning" data-en="Portfolio &bull; A/B Comparison">Portefølje &bull; A/B Sammenligning</div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-da="Lyden taler for sig selv." data-en="The sound speaks for itself.">Lyden taler for sig selv.</h2>
+                    <p class="text-zinc-300 max-w-2xl text-[17px] font-medium leading-relaxed" data-da="Ingen polerede salgstaler. Hør præcis hvordan dit nummer kan lyde med den rette balance, punch og klarhed." data-en="No polished sales pitches. Hear exactly how your track can sound with the right balance, punch, and clarity.">Ingen polerede salgstaler. Hør præcis hvordan dit nummer kan lyde med den rette balance, punch og klarhed.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8" id="portfolio-grid">
+                    <!-- Track: Lost Track -->
+                    <div class="card p-8 rounded-3xl real-audio-player shadow-lg" data-audio-src-pre="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Lost%20Track%20-%20f%C3%B8r%20mix.mp3" data-audio-src-final="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Lost%20Track.mp3">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="font-bold text-2xl text-white mb-1">Rise Upon &ndash; Lost Track</h3>
+                                <p class="text-[13px] font-medium text-amber/70 font-mono mt-2 uppercase tracking-widest" data-da="TRACKING & MIXING" data-en="TRACKING & MIXING">TRACKING & MIXING</p>
+                            </div>
+                            <button class="play-btn w-14 h-14 rounded-full bg-amber text-obsidian flex items-center justify-center hover:scale-105 transition-transform shrink-0 shadow-[0_0_15px_rgba(255,159,10,0.3)] focus:outline-none cursor-pointer">
+                                <svg class="play-icon w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="relative mb-6">
+                            <div class="waveform items-center justify-center relative cursor-pointer h-16 w-full flex gap-1 bg-obsidian border border-border placeholder-zinc-400 p-2 rounded-xl group hover:border-amber/50 transition-colors">
+                                <div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 94%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 44%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 89%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 65%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 79%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 26%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 84%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 47%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 97%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 48%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 56%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 82%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 47%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 62%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 76%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 29%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 52%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 44%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 40%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 31%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 76%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 88%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 66%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 44%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 61%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 71%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 74%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 46%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 28%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 75%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 79%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 58%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 47%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 34%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 99%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 62%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 54%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 70%;"></div>
+                                
+                                <!-- Progress Overlay / Playhead -->
+                                <div class="progress-overlay absolute left-0 top-0 bottom-0 bg-amber/20 w-0 pointer-events-none transition-all duration-75 ease-linear rounded-l-xl"></div>
+                                <div class="playhead absolute left-0 top-0 bottom-0 w-[2px] bg-amber z-10 shadow-[0_0_8px_rgba(255,159,10,0.8)] pointer-events-none transition-all duration-75 ease-linear"></div>
+                            </div>
+                            <div class="flex justify-between text-[13px] font-medium font-mono text-zinc-200 mt-2 font-medium px-1">
+                                <span class="time-current">0:00</span>
+                                <span class="time-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2 mb-2 bg-zinc-900 border border-border rounded-full p-1 w-max mx-auto">
+                            <button class="pre-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold text-zinc-400 hover:text-white transition-colors" data-da="[ Før-mix ]" data-en="[ Pre-mix ]">[ Før-mix ]</button>
+                            <button class="final-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold transition-colors bg-zinc-800 text-white" data-da="[ Færdigt mix ]" data-en="[ Final mix ]">[ Færdigt mix ]</button>
+                        </div>
+                    </div>
+                    <!-- Track: I'm So Cold -->
+                    <div class="card p-8 rounded-3xl real-audio-player shadow-lg" data-audio-src-final="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/I'm%20So%20Cold.mp3">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="font-bold text-2xl text-white mb-1">Rise Upon &ndash; I'm So Cold</h3>
+                                <p class="text-[13px] font-medium text-amber/70 font-mono mt-2 uppercase tracking-widest" data-da="TRACKING & MIXING" data-en="TRACKING & MIXING">TRACKING & MIXING</p>
+                            </div>
+                            <button class="play-btn w-14 h-14 rounded-full bg-amber text-obsidian flex items-center justify-center hover:scale-105 transition-transform shrink-0 shadow-[0_0_15px_rgba(255,159,10,0.3)] focus:outline-none cursor-pointer">
+                                <svg class="play-icon w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="relative mb-6">
+                            <div class="waveform items-center justify-center relative cursor-pointer h-16 w-full flex gap-1 bg-obsidian border border-border placeholder-zinc-400 p-2 rounded-xl group hover:border-amber/50 transition-colors">
+                                <div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 40%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 70%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 30%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 90%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 70%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 30%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 40%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 40%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 30%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 70%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 40%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 70%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 70%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 30%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 70%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 30%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 90%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 70%;"></div>
+                                
+                                <!-- Progress Overlay / Playhead -->
+                                <div class="progress-overlay absolute left-0 top-0 bottom-0 bg-amber/20 w-0 pointer-events-none transition-all duration-75 ease-linear rounded-l-xl"></div>
+                                <div class="playhead absolute left-0 top-0 bottom-0 w-[2px] bg-amber z-10 shadow-[0_0_8px_rgba(255,159,10,0.8)] pointer-events-none transition-all duration-75 ease-linear"></div>
+                            </div>
+                            <div class="flex justify-between text-[13px] font-medium font-mono text-zinc-200 mt-2 font-medium px-1">
+                                <span class="time-current">0:00</span>
+                                <span class="time-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2 mb-2 bg-zinc-900 border border-border rounded-full p-1 w-max mx-auto">
+                            <button class="final-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold transition-colors bg-zinc-800 text-white" data-da="[ Færdigt mix ]" data-en="[ Final mix ]">[ Færdigt mix ]</button>
+                        </div>
+                    </div>
+                    <!-- Track: Everything Happens -->
+                    <div class="card p-8 rounded-3xl real-audio-player shadow-lg" data-audio-src-pre="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Illuminate%20The%20Sky%20-%20f%C3%B8r%20mix.mp3" data-audio-src-final="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Illuminate%20The%20Sky(2).mp3">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="font-bold text-2xl text-white mb-1">Illuminate The Sky &ndash; Everything Happens</h3>
+                                <p class="text-[13px] font-medium text-amber/70 font-mono mt-2 uppercase tracking-widest" data-da="MIXING" data-en="MIXING">MIXING</p>
+                            </div>
+                            <button class="play-btn w-14 h-14 rounded-full bg-amber text-obsidian flex items-center justify-center hover:scale-105 transition-transform shrink-0 shadow-[0_0_15px_rgba(255,159,10,0.3)] focus:outline-none cursor-pointer">
+                                <svg class="play-icon w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="relative mb-6">
+                            <div class="waveform items-center justify-center relative cursor-pointer h-16 w-full flex gap-1 bg-obsidian border border-border placeholder-zinc-400 p-2 rounded-xl group hover:border-amber/50 transition-colors">
+                                <div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 68%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 49%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 74%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 29%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 71%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 73%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 20%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 79%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 47%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 88%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 32%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 64%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 22%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 67%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 66%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 21%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 53%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 92%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 39%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 24%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 75%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 43%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 55%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 28%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 39%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 71%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 66%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 92%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 41%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 83%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 85%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 59%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 43%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 87%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 20%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 30%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 28%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 24%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 93%;"></div>
+                                
+                                <!-- Progress Overlay / Playhead -->
+                                <div class="progress-overlay absolute left-0 top-0 bottom-0 bg-amber/20 w-0 pointer-events-none transition-all duration-75 ease-linear rounded-l-xl"></div>
+                                <div class="playhead absolute left-0 top-0 bottom-0 w-[2px] bg-amber z-10 shadow-[0_0_8px_rgba(255,159,10,0.8)] pointer-events-none transition-all duration-75 ease-linear"></div>
+                            </div>
+                            <div class="flex justify-between text-[13px] font-medium font-mono text-zinc-200 mt-2 font-medium px-1">
+                                <span class="time-current">0:00</span>
+                                <span class="time-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2 mb-2 bg-zinc-900 border border-border rounded-full p-1 w-max mx-auto">
+                            <button class="pre-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold text-zinc-400 hover:text-white transition-colors" data-da="[ Før-mix ]" data-en="[ Pre-mix ]">[ Før-mix ]</button>
+                            <button class="final-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold transition-colors bg-zinc-800 text-white" data-da="[ Færdigt mix ]" data-en="[ Final mix ]">[ Færdigt mix ]</button>
+                        </div>
+                    </div>
+                    <!-- Track: Split The Sky -->
+                    <div class="card p-8 rounded-3xl real-audio-player shadow-lg" data-audio-src-pre="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Kingdoms%20-%20f%C3%B8r%20mix.mp3" data-audio-src-final="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Kingdoms(2).mp3">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="font-bold text-2xl text-white mb-1">Kingdoms &ndash; Split The Sky</h3>
+                                <p class="text-[13px] font-medium text-amber/70 font-mono mt-2 uppercase tracking-widest" data-da="MIXING" data-en="MIXING">MIXING</p>
+                            </div>
+                            <button class="play-btn w-14 h-14 rounded-full bg-amber text-obsidian flex items-center justify-center hover:scale-105 transition-transform shrink-0 shadow-[0_0_15px_rgba(255,159,10,0.3)] focus:outline-none cursor-pointer">
+                                <svg class="play-icon w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="relative mb-6">
+                            <div class="waveform items-center justify-center relative cursor-pointer h-16 w-full flex gap-1 bg-obsidian border border-border placeholder-zinc-400 p-2 rounded-xl group hover:border-amber/50 transition-colors">
+                                <div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 64%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 88%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 76%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 35%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 98%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 97%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 78%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 37%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 42%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 45%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 90%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 77%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 37%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 30%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 39%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 59%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 63%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 68%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 28%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 27%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 90%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 90%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 64%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 79%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 27%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 44%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 55%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 61%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 31%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 55%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 39%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 52%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 79%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 46%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 74%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 34%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 87%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 51%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 32%;"></div>
+                                
+                                <!-- Progress Overlay / Playhead -->
+                                <div class="progress-overlay absolute left-0 top-0 bottom-0 bg-amber/20 w-0 pointer-events-none transition-all duration-75 ease-linear rounded-l-xl"></div>
+                                <div class="playhead absolute left-0 top-0 bottom-0 w-[2px] bg-amber z-10 shadow-[0_0_8px_rgba(255,159,10,0.8)] pointer-events-none transition-all duration-75 ease-linear"></div>
+                            </div>
+                            <div class="flex justify-between text-[13px] font-medium font-mono text-zinc-200 mt-2 font-medium px-1">
+                                <span class="time-current">0:00</span>
+                                <span class="time-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2 mb-2 bg-zinc-900 border border-border rounded-full p-1 w-max mx-auto">
+                            <button class="pre-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold text-zinc-400 hover:text-white transition-colors" data-da="[ Før-mix ]" data-en="[ Pre-mix ]">[ Før-mix ]</button>
+                            <button class="final-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold transition-colors bg-zinc-800 text-white" data-da="[ Færdigt mix ]" data-en="[ Final mix ]">[ Færdigt mix ]</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="extra-tracks" class="grid md:grid-cols-2 gap-8 mt-8 hidden">
+                    <!-- Track: Stand Tall -->
+                    <div class="card p-8 rounded-3xl real-audio-player shadow-lg" data-audio-src-pre="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Prophers%20-%20Stand%20Tall%20-%20f%C3%B8r%20mix.mp3" data-audio-src-final="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Prophers%20-%20Stand%20Tall(2).mp3">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="font-bold text-2xl text-white mb-1">Prophers &ndash; Stand Tall</h3>
+                                <p class="text-[13px] font-medium text-amber/70 font-mono mt-2 uppercase tracking-widest" data-da="MIXING" data-en="MIXING">MIXING</p>
+                            </div>
+                            <button class="play-btn w-14 h-14 rounded-full bg-amber text-obsidian flex items-center justify-center hover:scale-105 transition-transform shrink-0 shadow-[0_0_15px_rgba(255,159,10,0.3)] focus:outline-none cursor-pointer">
+                                <svg class="play-icon w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="relative mb-6">
+                            <div class="waveform items-center justify-center relative cursor-pointer h-16 w-full flex gap-1 bg-obsidian border border-border placeholder-zinc-400 p-2 rounded-xl group hover:border-amber/50 transition-colors">
+                                <div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 55%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 42%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 21%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 21%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 70%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 98%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 78%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 92%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 25%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 63%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 54%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 45%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 90%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 95%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 88%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 62%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 22%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 37%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 56%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 64%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 66%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 71%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 71%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 26%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 48%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 86%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 28%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 47%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 38%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 35%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 38%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 63%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 35%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 67%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 23%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 77%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 45%;"></div>
+                                
+                                <!-- Progress Overlay / Playhead -->
+                                <div class="progress-overlay absolute left-0 top-0 bottom-0 bg-amber/20 w-0 pointer-events-none transition-all duration-75 ease-linear rounded-l-xl"></div>
+                                <div class="playhead absolute left-0 top-0 bottom-0 w-[2px] bg-amber z-10 shadow-[0_0_8px_rgba(255,159,10,0.8)] pointer-events-none transition-all duration-75 ease-linear"></div>
+                            </div>
+                            <div class="flex justify-between text-[13px] font-medium font-mono text-zinc-200 mt-2 font-medium px-1">
+                                <span class="time-current">0:00</span>
+                                <span class="time-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2 mb-2 bg-zinc-900 border border-border rounded-full p-1 w-max mx-auto">
+                            <button class="pre-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold text-zinc-400 hover:text-white transition-colors" data-da="[ Før-mix ]" data-en="[ Pre-mix ]">[ Før-mix ]</button>
+                            <button class="final-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold transition-colors bg-zinc-800 text-white" data-da="[ Færdigt mix ]" data-en="[ Final mix ]">[ Færdigt mix ]</button>
+                        </div>
+                    </div>
+                    <!-- Track: Bastion -->
+                    <div class="card p-8 rounded-3xl real-audio-player shadow-lg" data-audio-src-pre="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Bastion%20-%20f%C3%B8r%20mix.mp3" data-audio-src-final="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Bastion.mp3">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="font-bold text-2xl text-white mb-1">The Year &ndash; Bastion</h3>
+                                <p class="text-[13px] font-medium text-amber/70 font-mono mt-2 uppercase tracking-widest" data-da="MIXING" data-en="MIXING">MIXING</p>
+                            </div>
+                            <button class="play-btn w-14 h-14 rounded-full bg-amber text-obsidian flex items-center justify-center hover:scale-105 transition-transform shrink-0 shadow-[0_0_15px_rgba(255,159,10,0.3)] focus:outline-none cursor-pointer">
+                                <svg class="play-icon w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="relative mb-6">
+                            <div class="waveform items-center justify-center relative cursor-pointer h-16 w-full flex gap-1 bg-obsidian border border-border placeholder-zinc-400 p-2 rounded-xl group hover:border-amber/50 transition-colors">
+                                <div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 66%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 85%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 100%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 90%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 46%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 36%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 78%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 89%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 91%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 60%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 58%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 58%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 52%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 75%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 46%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 78%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 58%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 25%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 51%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 26%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 94%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 63%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 76%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 76%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 26%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 54%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 90%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 46%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 24%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 79%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 99%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 27%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 21%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 72%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 77%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 55%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 98%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 38%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 82%;"></div>
+                                
+                                <!-- Progress Overlay / Playhead -->
+                                <div class="progress-overlay absolute left-0 top-0 bottom-0 bg-amber/20 w-0 pointer-events-none transition-all duration-75 ease-linear rounded-l-xl"></div>
+                                <div class="playhead absolute left-0 top-0 bottom-0 w-[2px] bg-amber z-10 shadow-[0_0_8px_rgba(255,159,10,0.8)] pointer-events-none transition-all duration-75 ease-linear"></div>
+                            </div>
+                            <div class="flex justify-between text-[13px] font-medium font-mono text-zinc-200 mt-2 font-medium px-1">
+                                <span class="time-current">0:00</span>
+                                <span class="time-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2 mb-2 bg-zinc-900 border border-border rounded-full p-1 w-max mx-auto">
+                            <button class="pre-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold text-zinc-400 hover:text-white transition-colors" data-da="[ Før-mix ]" data-en="[ Pre-mix ]">[ Før-mix ]</button>
+                            <button class="final-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold transition-colors bg-zinc-800 text-white" data-da="[ Færdigt mix ]" data-en="[ Final mix ]">[ Færdigt mix ]</button>
+                        </div>
+                    </div>
+                    <!-- Track: Sweaty Palms -->
+                    <div class="card p-8 rounded-3xl real-audio-player shadow-lg" data-audio-src-pre="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Sweaty%20Palms%20v3%20-%20f%C3%B8r%20mix.mp3" data-audio-src-final="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Sweaty%20Palms%20v3.mp3">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="font-bold text-2xl text-white mb-1">The Year &ndash; Sweaty Palms</h3>
+                                <p class="text-[13px] font-medium text-amber/70 font-mono mt-2 uppercase tracking-widest" data-da="MIXING" data-en="MIXING">MIXING</p>
+                            </div>
+                            <button class="play-btn w-14 h-14 rounded-full bg-amber text-obsidian flex items-center justify-center hover:scale-105 transition-transform shrink-0 shadow-[0_0_15px_rgba(255,159,10,0.3)] focus:outline-none cursor-pointer">
+                                <svg class="play-icon w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="relative mb-6">
+                            <div class="waveform items-center justify-center relative cursor-pointer h-16 w-full flex gap-1 bg-obsidian border border-border placeholder-zinc-400 p-2 rounded-xl group hover:border-amber/50 transition-colors">
+                                <div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 27%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 24%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 54%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 97%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 35%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 31%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 99%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 77%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 63%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 86%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 29%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 38%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 73%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 33%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 53%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 20%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 65%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 47%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 88%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 32%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 49%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 44%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 40%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 42%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 95%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 44%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 77%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 37%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 24%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 44%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 86%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 85%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 49%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 33%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 95%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 87%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 21%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 62%;"></div>
+                                
+                                <!-- Progress Overlay / Playhead -->
+                                <div class="progress-overlay absolute left-0 top-0 bottom-0 bg-amber/20 w-0 pointer-events-none transition-all duration-75 ease-linear rounded-l-xl"></div>
+                                <div class="playhead absolute left-0 top-0 bottom-0 w-[2px] bg-amber z-10 shadow-[0_0_8px_rgba(255,159,10,0.8)] pointer-events-none transition-all duration-75 ease-linear"></div>
+                            </div>
+                            <div class="flex justify-between text-[13px] font-medium font-mono text-zinc-200 mt-2 font-medium px-1">
+                                <span class="time-current">0:00</span>
+                                <span class="time-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2 mb-2 bg-zinc-900 border border-border rounded-full p-1 w-max mx-auto">
+                            <button class="pre-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold text-zinc-400 hover:text-white transition-colors" data-da="[ Før-mix ]" data-en="[ Pre-mix ]">[ Før-mix ]</button>
+                            <button class="final-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold transition-colors bg-zinc-800 text-white" data-da="[ Færdigt mix ]" data-en="[ Final mix ]">[ Færdigt mix ]</button>
+                        </div>
+                    </div>
+                    <!-- Track: Curse -->
+                    <div class="card p-8 rounded-3xl real-audio-player shadow-lg" data-audio-src-pre="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Acrid%20-%20Curse%20-%20f%C3%B8r%20mix.mp3" data-audio-src-final="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Acrid%20-%20Curse(2).mp3">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="font-bold text-2xl text-white mb-1">Acrid &ndash; Curse</h3>
+                                <p class="text-[13px] font-medium text-amber/70 font-mono mt-2 uppercase tracking-widest" data-da="MIXING" data-en="MIXING">MIXING</p>
+                            </div>
+                            <button class="play-btn w-14 h-14 rounded-full bg-amber text-obsidian flex items-center justify-center hover:scale-105 transition-transform shrink-0 shadow-[0_0_15px_rgba(255,159,10,0.3)] focus:outline-none cursor-pointer">
+                                <svg class="play-icon w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="relative mb-6">
+                            <div class="waveform items-center justify-center relative cursor-pointer h-16 w-full flex gap-1 bg-obsidian border border-border placeholder-zinc-400 p-2 rounded-xl group hover:border-amber/50 transition-colors">
+                                <div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 85%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 36%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 93%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 81%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 36%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 34%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 34%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 25%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 77%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 98%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 93%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 98%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 97%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 31%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 55%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 71%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 37%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 27%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 34%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 56%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 87%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 27%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 32%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 58%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 56%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 41%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 69%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 91%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 68%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 39%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 62%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 24%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 59%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 69%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 50%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 80%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 51%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 45%;"></div>
+                                
+                                <!-- Progress Overlay / Playhead -->
+                                <div class="progress-overlay absolute left-0 top-0 bottom-0 bg-amber/20 w-0 pointer-events-none transition-all duration-75 ease-linear rounded-l-xl"></div>
+                                <div class="playhead absolute left-0 top-0 bottom-0 w-[2px] bg-amber z-10 shadow-[0_0_8px_rgba(255,159,10,0.8)] pointer-events-none transition-all duration-75 ease-linear"></div>
+                            </div>
+                            <div class="flex justify-between text-[13px] font-medium font-mono text-zinc-200 mt-2 font-medium px-1">
+                                <span class="time-current">0:00</span>
+                                <span class="time-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2 mb-2 bg-zinc-900 border border-border rounded-full p-1 w-max mx-auto">
+                            <button class="pre-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold text-zinc-400 hover:text-white transition-colors" data-da="[ Før-mix ]" data-en="[ Pre-mix ]">[ Før-mix ]</button>
+                            <button class="final-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold transition-colors bg-zinc-800 text-white" data-da="[ Færdigt mix ]" data-en="[ Final mix ]">[ Færdigt mix ]</button>
+                        </div>
+                    </div>
+                    <!-- Track: In Numbers -->
+                    <div class="card p-8 rounded-3xl real-audio-player shadow-lg" data-audio-src-pre="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Raised%20With%20Wolves%20-%20f%C3%B8r%20mix.mp3" data-audio-src-final="https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Raised%20With%20Wolves(2).mp3">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="font-bold text-2xl text-white mb-1">Raised With Wolves &ndash; In Numbers</h3>
+                                <p class="text-[13px] font-medium text-amber/70 font-mono mt-2 uppercase tracking-widest" data-da="MIXING" data-en="MIXING">MIXING</p>
+                            </div>
+                            <button class="play-btn w-14 h-14 rounded-full bg-amber text-obsidian flex items-center justify-center hover:scale-105 transition-transform shrink-0 shadow-[0_0_15px_rgba(255,159,10,0.3)] focus:outline-none cursor-pointer">
+                                <svg class="play-icon w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="relative mb-6">
+                            <div class="waveform items-center justify-center relative cursor-pointer h-16 w-full flex gap-1 bg-obsidian border border-border placeholder-zinc-400 p-2 rounded-xl group hover:border-amber/50 transition-colors">
+                                <div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 72%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 39%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 96%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 41%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 83%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 76%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 82%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 44%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 55%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 23%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 44%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 62%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 24%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 48%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 59%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 87%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 53%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 24%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 68%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 36%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 52%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 95%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 98%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 67%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 78%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 98%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 53%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 27%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 78%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 58%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 31%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 42%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 22%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 67%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 81%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 25%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 69%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 25%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 65%;"></div><div class="bg-zinc-700 rounded-full flex-1 transition-all duration-300" style="height: 27%;"></div>
+                                
+                                <!-- Progress Overlay / Playhead -->
+                                <div class="progress-overlay absolute left-0 top-0 bottom-0 bg-amber/20 w-0 pointer-events-none transition-all duration-75 ease-linear rounded-l-xl"></div>
+                                <div class="playhead absolute left-0 top-0 bottom-0 w-[2px] bg-amber z-10 shadow-[0_0_8px_rgba(255,159,10,0.8)] pointer-events-none transition-all duration-75 ease-linear"></div>
+                            </div>
+                            <div class="flex justify-between text-[13px] font-medium font-mono text-zinc-200 mt-2 font-medium px-1">
+                                <span class="time-current">0:00</span>
+                                <span class="time-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2 mb-2 bg-zinc-900 border border-border rounded-full p-1 w-max mx-auto">
+                            <button class="pre-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold text-zinc-400 hover:text-white transition-colors" data-da="[ Før-mix ]" data-en="[ Pre-mix ]">[ Før-mix ]</button>
+                            <button class="final-mix-btn px-6 py-2 rounded-full text-sm font-medium font-mono font-semibold transition-colors bg-zinc-800 text-white" data-da="[ Færdigt mix ]" data-en="[ Final mix ]">[ Færdigt mix ]</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-16">
+                    <button id="show-more-btn" class="bg-zinc-900 border border-border text-gray-400 hover:text-amber hover:border-amber px-8 py-3 rounded-full text-sm font-bold font-mono tracking-widest uppercase transition-all" data-da="Vis flere numre (5) &darr;" data-en="Show more tracks (5) &darr;" onclick="toggleMoreTracks()">Vis flere numre (5) &darr;</button>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Pricing Section -->
+
+        <section id="pricing" class="py-32 px-6 border-t border-border bg-obsidian">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20 flex flex-col items-center">
+                    <div class="border border-border rounded-full px-4 py-1 text-sm font-medium font-mono text-[#C4C4CC] uppercase tracking-wider font-semibold mb-6" data-da="Gennemskuelige Priser &bull; Ingen skjulte gebyrer" data-en="Transparent Pricing &bull; No hidden fees">Gennemskuelige Priser &bull; Ingen skjulte gebyrer</div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-da="Faste projektpriser. Ingen overraskelser." data-en="Fixed project prices. No surprises.">Faste projektpriser. Ingen overraskelser.</h2>
+                    <p class="text-zinc-300 max-w-2xl text-[17px] font-medium leading-relaxed" data-da="Slut med uoverskuelige timepriser og studiestress. Faste aftalte priser, professionel redigering og 5 revisionsrunder inkluderet." data-en="No more confusing hourly rates and studio stress. Fixed agreed prices, professional editing and 5 revision rounds included.">Slut med uoverskuelige timepriser og studiestress. Faste aftalte priser, professionel redigering og 5 revisionsrunder inkluderet.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    
+                    <!-- Card 1: Mix -->
+                    <div class="card p-10 rounded-3xl flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Full Production Mix</h3>
+                        <p class="text-zinc-300 text-[15px] font-medium mb-10" data-da="Komplet mixing skræddersyet til rock og metal." data-en="Complete mixing tailored for rock and metal.">Komplet mixing skræddersyet til rock og metal.</p>
+                        
+                        <div class="mb-10 pb-10 border-b border-border">
+                            <div class="flex items-end gap-2 mb-2">
+                                <span class="text-5xl font-bold text-amber tracking-tight" data-dkk="2.500" data-eur="€337.50">2.500</span>
+                                <span class="text-xl font-bold text-amber pb-1" data-dkk="DKK" data-eur="">DKK</span>
+                            </div>
+                            <span class="text-zinc-400 text-sm font-medium font-mono uppercase tracking-widest" data-da="/ sang (inkl. moms)" data-en="/ song (incl. VAT)">/ sang (inkl. moms)</span>
+                            <div class="mt-4 inline-block bg-amber/10 border border-amber/20 rounded-full px-3 py-1">
+                                <p class="text-sm font-medium text-amber font-mono"><span data-da="Rabat ved 3+ sange:" data-en="Discount on 3+ songs:">Rabat ved 3+ sange:</span> <span data-dkk="2.187,50 DKK" data-eur="€295,00">2.187,50 DKK</span> <span data-da="/ sang" data-en="/ song">/ sang</span></p>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-5 text-sm text-gray-300 mb-12 flex-grow">
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Streaming-ready mix til alle platforme og formater" data-en="Streaming-ready mix for all platforms and formats">Streaming-ready mix til alle platforme og formater</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Professionel redigering af vokaler, trommer & andre instrumenter" data-en="Professional editing of vocals, drums & other instruments">Professionel redigering af vokaler, trommer & andre instrumenter</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="5 konsoliderede revisionsrunder inkluderet" data-en="5 consolidated revision rounds included">5 konsoliderede revisionsrunder inkluderet</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="100% tilfredshedsgaranti" data-en="100% satisfaction guarantee">100% tilfredshedsgaranti</span></li>
+                        </ul>
+                        
+                        <a href="#contact" class="w-full block text-center border border-border hover:border-amber text-white hover:text-amber rounded-full py-4 text-sm font-bold uppercase tracking-widest transition-colors" data-da="Book Mix &rarr;" data-en="Book Mix &rarr;">Book Mix &rarr;</a>
+                    </div>
+                    
+                    <!-- Card 2: Tracking -->
+                    <div class="card p-10 rounded-3xl flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Studio Tracking</h3>
+                        <p class="text-zinc-300 text-[15px] font-medium mb-10" data-da="Indspilning i optimeret lydstudie i Aarhus." data-en="Recording in optimized studio in Aarhus.">Indspilning i optimeret lydstudie i Aarhus.</p>
+                        
+                        <div class="mb-10 pb-10 border-b border-border">
+                            <div class="flex items-end gap-2 mb-2">
+                                <span class="text-5xl font-bold text-amber tracking-tight" data-dkk="3.125" data-eur="€418.75">3.125</span>
+                                <span class="text-xl font-bold text-amber pb-1" data-dkk="DKK" data-eur="">DKK</span>
+                            </div>
+                            <span class="text-zinc-400 text-sm font-medium font-mono uppercase tracking-widest" data-da="/ dag (inkl. moms)" data-en="/ day (incl. VAT)">/ dag (inkl. moms)</span>
+                            <div class="mt-4 opacity-0 hidden md:block px-3 py-1"><p class="text-xs">&nbsp;</p></div> <!-- Spacer -->
+                        </div>
+                        
+                        <ul class="space-y-5 text-sm text-gray-300 mb-12 flex-grow">
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Professionel indspilning af vokaler, guitar, bas og synths" data-en="Professional recording of vocals, guitar, bass and synths">Professionel indspilning af vokaler, guitar, bas og synths</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Optimeret akustik og professionel monitorering" data-en="Optimized acoustics and professional monitoring">Optimeret akustik og professionel monitorering</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Rå multitracks eksporteret og klargjort direkte til videre mixing" data-en="Raw multitracks exported and prepped directly for further mixing">Rå multitracks eksporteret og klargjort direkte til videre mixing</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-da="Behagelige, kreative rammer uden tidspres" data-en="Comfortable, creative setting without time pressure">Behagelige, kreative rammer uden tidspres</span></li>
+                        </ul>
+                        
+                        <a href="#contact" class="w-full block text-center border border-border hover:border-amber text-white hover:text-amber rounded-full py-4 text-sm font-bold uppercase tracking-widest transition-colors" data-da="Book Studietid &rarr;" data-en="Book Studio Time &rarr;">Book Studietid &rarr;</a>
+                    </div>
+                </div>
+                
+                <div class="bg-zinc-900 border border-border p-8 rounded-2xl text-center max-w-3xl mx-auto shadow-lg">
+                    <h4 class="font-bold text-amber mb-3 text-lg" data-da="100% Tilfredshedsgaranti" data-en="100% Satisfaction Guarantee">100% Tilfredshedsgaranti</h4>
+                    <p class="text-[15px] font-medium text-zinc-300 mb-4 leading-relaxed" data-da="Hvis vi mod forventning ikke rammer den ønskede retning efter de inkluderede 5 revisionsrunder, refunderes depositummet fuldt ud." data-en="If we completely miss the desired direction after the included 5 revision rounds, your deposit is fully refunded.">Hvis vi mod forventning ikke rammer den ønskede retning efter de inkluderede 5 revisionsrunder, refunderes depositummet fuldt ud.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 px-6 border-t border-border bg-zinc-950 relative overflow-hidden">
+            <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-amber/5 rounded-full blur-[120px] pointer-events-none"></div>
+            
+            <div class="max-w-3xl mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 border border-border rounded-full px-4 py-1 text-sm font-medium font-mono text-[#C4C4CC] uppercase tracking-wider font-semibold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber"></span>
+                        <span data-da="Start dit projekt &bull; Risk-Free" data-en="Start your project &bull; Risk-Free">Start dit projekt &bull; Risk-Free</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-da="Klar til at løfte dit lydbillede?" data-en="Ready to elevate your sound?">Klar til at løfte dit lydbillede?</h2>
+                    <p class="text-gray-400 text-lg" data-da="Udfyld formularen herunder, eller send dine rå multitracks direkte. Jeg vender tilbage inden for 24 timer." data-en="Fill out the form below, or send your raw multitracks directly. I will get back to you within 24 hours.">Udfyld formularen herunder, eller send dine rå multitracks direkte. Jeg vender tilbage inden for 24 timer.</p>
+                </div>
+                
+                <form id="contact-form" class="space-y-8 bg-obsidian p-8 md:p-12 rounded-3xl border border-border placeholder-zinc-400 shadow-2xl">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-sm font-medium font-mono text-zinc-200 font-medium mb-3 uppercase tracking-widest" data-da="Navn / Kontaktperson" data-en="Name / Contact">Navn / Kontaktperson</label>
+                            <input type="text" id="cf-name" class="input-field w-full rounded-xl p-4 text-sm" data-da="Dit navn" data-en="Your name" placeholder="Dit navn" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium font-mono text-zinc-200 font-medium mb-3 uppercase tracking-widest" data-da="Band- / Artistnavn" data-en="Band / Artist Name">Band- / Artistnavn</label>
+                            <input type="text" id="cf-band" class="input-field w-full rounded-xl p-4 text-sm" data-da="Bandnavn" data-en="Band name" placeholder="Bandnavn" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium font-mono text-zinc-200 font-medium mb-3 uppercase tracking-widest" data-da="Email" data-en="Email">Email</label>
+                        <input type="email" id="cf-email" class="input-field w-full rounded-xl p-4 text-sm" placeholder="hello@band.com" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium font-mono text-zinc-200 font-medium mb-4 uppercase tracking-widest" data-da="Hvad har I brug for?" data-en="What do you need?">Hvad har I brug for?</label>
+                        <div class="flex flex-wrap gap-3">
+                            <button type="button" class="service-btn bg-amber text-obsidian border border-amber px-5 py-2.5 rounded-full text-sm font-medium font-mono font-bold transition-colors" data-da="Gratis Test-Mix" data-en="Free Sample Mix">Gratis Test-Mix</button>
+                            <button type="button" class="service-btn border border-border text-gray-400 hover:border-gray-500 hover:text-white px-5 py-2.5 rounded-full text-sm font-medium font-mono font-bold transition-colors" data-da="Full Mix" data-en="Full Mix">Full Mix</button>
+                            <button type="button" class="service-btn border border-border text-gray-400 hover:border-gray-500 hover:text-white px-5 py-2.5 rounded-full text-sm font-medium font-mono font-bold transition-colors" data-da="Studio Tracking" data-en="Studio Tracking">Studio Tracking</button>
+                            <button type="button" class="service-btn border border-border text-gray-400 hover:border-gray-500 hover:text-white px-5 py-2.5 rounded-full text-sm font-medium font-mono font-bold transition-colors" data-da="Tracking & Full Mix" data-en="Tracking & Full Mix">Tracking & Full Mix</button>
+
+                            <button type="button" class="service-btn border border-border text-gray-400 hover:border-gray-500 hover:text-white px-5 py-2.5 rounded-full text-sm font-medium font-mono font-bold transition-colors" data-da="Andet / Spørgsmål" data-en="Other / Questions">Andet / Spørgsmål</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium font-mono text-zinc-200 font-medium mb-3 uppercase tracking-widest" data-da="LINK TIL DEMO ELLER TIDLIGERE MUSIK" data-en="LINK TO DEMO OR PREVIOUS MUSIC">LINK TIL DEMO ELLER TIDLIGERE MUSIK</label>
+                        <input type="text" id="cf-music-ref" class="input-field w-full rounded-xl p-4 text-sm mb-2" data-da="fx Spotify, YouTube, SoundCloud eller Dropbox link..." data-en="e.g. Spotify, YouTube, SoundCloud, or Dropbox link..." placeholder="fx Spotify, YouTube, SoundCloud eller Dropbox link...">
+                        <p class="text-[13px] font-medium text-zinc-400 font-mono" data-da="Indsæt link til Spotify, SoundCloud, YouTube, Dropbox, Google Drive eller lign." data-en="Insert link to Spotify, SoundCloud, YouTube, Dropbox, Google Drive, or similar.">Indsæt link til Spotify, SoundCloud, YouTube, Dropbox, Google Drive eller lign.</p>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium font-mono text-zinc-200 font-medium mb-3 uppercase tracking-widest" data-da="Fortæl kort om projektet / Noter" data-en="Tell me briefly about the project / Notes">Fortæl kort om projektet / Noter</label>
+                        <textarea id="cf-notes" class="input-field w-full rounded-xl p-4 h-32 text-sm" data-da="Beskriv jeres vision..." data-en="Describe your vision..." placeholder="Beskriv jeres vision..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-amber text-obsidian font-bold rounded-full py-5 text-sm uppercase tracking-widest hover:bg-amber-hover hover:scale-[1.02] transition-all" data-da="Send henvendelse &rarr;" data-en="Send inquiry &rarr;">Send henvendelse &rarr;</button>
+                    
+                    <p class="text-center text-[13px] font-medium text-gray-600 font-mono mt-6" data-da="Vi behandler dit materiale 100% fortroligt. Ingen spam, kun direkte dialog." data-en="We treat your material 100% confidentially. No spam, only direct dialogue.">Vi behandler dit materiale 100% fortroligt. Ingen spam, kun direkte dialog.</p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-border bg-obsidian text-sm text-zinc-400 font-mono">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-amber font-bold text-base font-sans tracking-widest">FD SOUND LABS</div>
+                <div data-da="&copy; 2026 FD SOUND LABS. Aarhus, Danmark. Engineered for impact." data-en="&copy; 2026 FD SOUND LABS. Aarhus, Denmark. Engineered for impact.">&copy; 2026 FD SOUND LABS. Aarhus, Danmark. Engineered for impact.</div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-amber transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-amber transition-colors">YouTube</a>
+                    <a href="#" class="hover:text-amber transition-colors" data-da="Privatlivspolitik" data-en="Privacy Policy">Privatlivspolitik</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

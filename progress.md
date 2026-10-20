@@ -76,6 +76,11 @@
 | 23:02 | B.L.A.S.T. Phase 40: Overskrift, Trust-punkter & Prisopdatering (Lydproduktion med power til moderne rock & heavy-metal, øget hvid/grå opacitet og skaleret font på trust-punkter, 2.499 DKK / €335 og 2.195 DKK / €295 rabat) | ✅ Complete |
 | 23:06 | B.L.A.S.T. Phase 41: Overskrift justeret til Musikproduktion & Produktions-deployment på Vercel | ✅ Complete |
 | 23:17 | B.L.A.S.T. Phase 42: Hero overskrift opdateret til "Musikproduktion med power til moderne rock & metal" og publiceret live til Vercel | ✅ Complete |
+| 18:01 | B.L.A.S.T. Phase 43: Hero overskrift opdateret til "Musikproduktion til moderne rock & metal" | ✅ Complete |
+| 18:03 | B.L.A.S.T. Phase 44: Hero undertitel opdateret til "Mixing og studieindspilning i Aarhus - Skabt til at skære igennem højtalerne." | ✅ Complete |
+| 18:05 | B.L.A.S.T. Phase 45: Portefølje introtekst opdateret til "Hør præcis hvordan dit nummer kan lyde efter mixing." | ✅ Complete |
+| 18:08 | B.L.A.S.T. Phase 46: Prisoverskrift opdateret til "Faste projektpriser" | ✅ Complete |
+| 18:11 | B.L.A.S.T. Phase 47: Kontaktoverskrift opdateret til "Skal vi arbejde med din musik?" | ✅ Complete |
 ---
 
 

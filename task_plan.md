@@ -376,6 +376,43 @@
 - [x] Footer Oprydning: Fjernet Instagram, YouTube, Privatlivspolitik samt `"Engineered for impact"`.
 - [x] Browser Verifikation: Gennemført fuld visuel verifikation med screenshots af alle sektioner.
 
+---
+
+## 🚀 Phase 40 — Fjernelse af Tilfredshedsgaranti & Automatisk Geo-Defaulting (EN/EUR for ikke-DK)
+- [x] Lokal server test: Verificeret på http://localhost:8000 via browser test subagent.
+- [x] Fjernet alle referencer til tilfredshedsgaranti:
+  - Hero trust badge: Fjernet `100% tilfredshedsgaranti`.
+  - Full Mix pris-kort: Fjernet `100% tilfredshedsgaranti` punktopstilling.
+  - Pris-sektion infoboks: Slettet hele `100% Tilfredshedsgaranti` infoboksen under priskortene.
+  - Kontakt-sektion badge: Justeret fra `"Start dit projekt • Risk-Free"` til `"Start dit projekt • Uforpligtende"` (`"Start your project • No Obligation"`).
+- [x] Automatisk Geo-Defaulting & Præference-Persistence:
+  - Opdateret `architecture/SOP-003-i18n-currency.md` med geo-specifikationer og persistence-flow.
+  - Opdateret `tools/i18n-currency.js`:
+    - Synkron heuristik (timezone og browser-sprog) forhindrer layout shifts for udenlandske besøgende.
+    - Asynkron Geo-IP lookup (`api.country.is`) med session-caching og fallback.
+    - Besøgende uden for Danmark (non-DK) defaulter automatisk til engelsk (`en`) og Euro (`eur`).
+    - Besøgende i Danmark defaulter til dansk (`da`) og DKK (`dkk`).
+    - Manuelle valg via knapperne DA/EN og DKK/EUR gemmes i `localStorage` og overskriver auto-detection permanent.
+- [x] Browser & Regression Verification:
+  - Verificeret standard dansk visning på `http://localhost:8000`.
+  - Verificeret automatisk skift til EN/EUR på `http://localhost:8000/?country=US`.
+  - Verificeret manuel omskiftning mellem DA/EN og DKK/EUR uden fejl.
+
+---
+
+## 🚀 Phase 41 — Oprettelse af Handelsbetingelser (terms.html) & Footer-Link
+- [x] Oprettet `terms.html`:
+  - 10 komplette juridiske sektioner + Bilag 1 (Lovpligtig standardfortrydelsesformular).
+  - Fuldt tosproget (både `data-da` og `data-en`) for samtlige paragraffer, tabeller og vilkår.
+  - Prisoversigtstabel (Single Mix 2.499 DKK / €335, EP/Album 2.195 DKK / €295, Studio Tracking 3.125 DKK / €420).
+  - Fast glasnavigation med logo, *"← Tilbage til forsiden"* link og DA/EN sprogvælger.
+- [x] Oprettet `terms.js`: Letvægts, modulært script der aktiverer i18n og mobilmenu.
+- [x] Opdateret `index.html`: Indsat diskret footer-link til `Handelsbetingelser` / `Terms of Service`.
+- [x] Opdateret samtykke- og privatlivstekst under kontaktformularen med direkte link til `terms.html` (*"Læs vores Handels- og Privatlivsbetingelser"* / *"Read our Terms and Privacy Policy"*).
+- [x] Browser-test i localhost: Gennemført fuld navigationstest og verifikation med screenshots af alle sektioner.
+
+
+
 
 
 

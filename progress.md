@@ -82,6 +82,9 @@
 | 18:08 | B.L.A.S.T. Phase 46: Prisoverskrift opdateret til "Faste projektpriser" | ✅ Complete |
 | 18:11 | B.L.A.S.T. Phase 47: Kontaktoverskrift opdateret til "Skal vi arbejde med din musik?" | ✅ Complete |
 | 18:19 | B.L.A.S.T. Phase 48: Git push til GitHub & Auto-deploy til Vercel produktion (frederikdinesen.com HTTP 200 OK) | ✅ Complete |
+| 16:42 | B.L.A.S.T. Phase 49: Fjernelse af tilfredshedsgaranti & automatisk geo-defaulting til EN/EUR for udenlandske besøgende (testet i localhost) | ✅ Complete |
+| 17:12 | B.L.A.S.T. Phase 50: Oprettelse af Handelsbetingelser (terms.html), terms.js og diskret footer-link i index.html (testet i localhost) | ✅ Complete |
+| 17:20 | B.L.A.S.T. Phase 51: Opdateret kontaktformular disclaimer med direkte link til Handels- og Privatlivsbetingelser (DA/EN paritet) | ✅ Complete |
 ---
 
 

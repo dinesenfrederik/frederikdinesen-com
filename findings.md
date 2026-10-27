@@ -169,5 +169,31 @@ For at færdiggøre tilknytningen skal følgende to DNS-records oprettes/opdater
 
 *Bemærk: Eventuelle eksisterende A- eller CNAME-records for `@` eller `www` i Squarespace skal fjernes eller overskrives med ovenstående værdier. SSL-certifikat udstedes automatisk af Vercel via Let's Encrypt så snart DNS peger korrekt.*
 
+---
+
+## 🧪 Localhost Verifikation & Geo-Default Audit (2026-10-27)
+
+### 1. Tilfredshedsgaranti Sanering
+- **Hero Trust Badges:** `100% tilfredshedsgaranti` er fuldstændigt fjernet. De to tilbageværende badges (`3-4 dages levering` og `3 revisioner (inkluderet ved betalt arbejde)`) centrerer stilrent og balanceret.
+- **Full Mix Pris-Kort:** Punktet `100% tilfredshedsgaranti` er fjernet.
+- **Pris-Sektion:** Den dedikerede infoboks under priskortene (`100% Tilfredshedsgaranti` og depositumsrefusion) er fjernet fra DOM'en.
+- **Kontaktformular Badge:** Teksten `"Start dit projekt • Risk-Free"` er omdøbt til `"Start dit projekt • Uforpligtende"` (`"Start your project • No Obligation"`).
+- **DOM & Kodebase Kontrol:** 0 forekomster af ordene `tilfredshedsgaranti`, `satisfaction guarantee` eller `garanti` i sitets aktive filer.
+
+### 2. Automatisk Geo-Defaulting & Persistence
+- **Besøgende uden for Danmark (non-DK):**
+  - Defaulter automatisk til engelsk (`en`) og Euro (`eur`).
+  - Priser konverterer automatisk til `€335` og `€418.75`.
+  - Overskrifter, knapper og placeholders skifter automatisk til engelsk.
+  - Knap-indikatorer `EN` og `EUR` i topnavigationen aktiveres (`text-amber`).
+- **Besøgende i Danmark (DK):**
+  - Defaulter til dansk (`da`) og Danske Kroner (`dkk`) med `2.499 DKK` og `3.125 DKK`.
+- **Heuristik & Robusthed:**
+  - Synkron timezone & locale tjek forhindrer flash of unstyled content / sprogspring for internationale gæster.
+  - Asynkron Edge Geo-IP via `https://api.country.is` med fallback og session-caching.
+  - Manuelle brugerklik på `DA`/`EN` eller `DKK`/`EUR` persisteres i `localStorage` og respekteres altid permanent fremadrettet.
+  - Browser subagent test på `http://localhost:8000` (både standard DK og simuleret US via `?country=US`) bestod 100% uden fejl.
+
+
 
 

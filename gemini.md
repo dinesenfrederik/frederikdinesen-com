@@ -234,8 +234,10 @@ FDSL - website v2.0/
 │       ├── SKILL.md
 │       └── resources/
 ├── index.html           # Main presentation & conversion landing page
+├── terms.html           # Service terms & conditions (Handelsbetingelser)
 ├── style.css            # Base stylesheet & animations
 ├── main.js              # Application entry point
+├── terms.js             # Terms page entry point & i18n
 ├── gemini.md            # ← Project Constitution (this file)
 ├── task_plan.md         # Phase plan & checklists
 ├── progress.md          # Execution log & history
@@ -270,6 +272,10 @@ FDSL - website v2.0/
 | 2026-09-29 | System Pilot | Integrated Vercel Web Analytics (@vercel/analytics & /_vercel/insights) | User Directive / Analytics Setup |
 | 2026-09-29 | System Pilot | Integrated Vercel Speed Insights (@vercel/speed-insights & /_vercel/speed-insights) | User Directive / Performance Setup |
 | 2026-09-29 | System Pilot | Integrated Google Analytics 4 (GA4 ID: G-3X6GTKVN5Y) with automatic lead conversion tracking | User Directive / GA4 Setup |
+| 2026-10-27 | System Pilot | Saneret tilfredshedsgaranti (hero badges, pricing card & callout boks) samt tilføjet automatisk geo-defaulting til EN/EUR for udenlandske besøgende med localStorage persistence | Brugerdirektiv / Geo-default & garanti sanering |
+| 2026-10-27 | System Pilot | Oprettet terms.html (Handels- og Samarbejdsbetingelser, Factofly ApS, DA/EN paritet, Bilag 1) med diskret footer-link i index.html | Brugerdirektiv / Handelsbetingelser |
+
+
 
 
 

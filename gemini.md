@@ -279,6 +279,7 @@ FDSL - website v2.0/
 | 2026-11-04 | System Pilot | Oprettet dedikeret international engelsk side i en/index.html med direkte hyperlinks i navbar, hardcoded EUR-priser og fuld engelsk typografi | Brugerdirektiv / Dedikeret engelsk version |
 | 2026-11-04 | System Pilot | Opdateret tekster på engelsk version (Hero H1, Hero subtekst, Prissektion H2 og FAQ subtekst) | Brugerdirektiv / Tekstoptimering |
 | 2026-11-04 | System Pilot | Opdateret <head> SEO i index.html: hreflang (da, x-default til /en/), optimeret title/description og fuldt udvidet JSON-LD Schema med MusicStudio geo, audio og services | Brugerdirektiv / SEO- og Schema-forbedringer |
+| 2026-11-04 | System Pilot | Opdateret <head> SEO & dedikeret engelsk JSON-LD schema (EUR valuta, audio og FAQ) i en/index.html | Brugerdirektiv / Engelsk SEO & Schema |
 
 
 

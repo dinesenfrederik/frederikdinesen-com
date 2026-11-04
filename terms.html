@@ -15,7 +15,6 @@
         gtag('js', new Date());
         gtag('config', 'G-3X6GTKVN5Y');
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Vercel Web Analytics -->
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -27,33 +26,7 @@
     </script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        obsidian: '#000000',
-                        zinc: {
-                            800: '#1F1F1F',
-                            900: '#16161A',
-                            950: '#0D0D11'
-                        },
-                        border: '#222228',
-                        amber: {
-                            DEFAULT: '#FF9F0A',
-                            hover: '#E58E09'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
 </head>
 <body class="font-sans antialiased bg-obsidian text-zinc-300 selection:bg-amber selection:text-obsidian min-h-screen flex flex-col">
 

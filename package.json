@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./style.css --minify",
+    "build": "npm run build:css",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./style.css --watch",
     "start": "./start-server.sh 8000",
     "dev": "./start-server.sh 8000",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +17,8 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
   }
 }

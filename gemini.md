@@ -32,7 +32,7 @@ Disse regler er **ikke til forhandling** og gælder for alle moduler:
 
 | Service | Purpose | Env Var | Status |
 |---------|---------|---------|--------|
-| Tailwind CSS | Styling framework | N/A (CDN/Local) | 🟢 Approved |
+| Tailwind CSS | Styling framework (statisk kompilering via CLI) | N/A (Local Build / Minified) | 🟢 Configured (Static compiled) |
 | Google Fonts | Typografi (Inter, JetBrains Mono) | N/A | 🟢 Approved |
 | Web Audio API | Lydgengivelse & bølgeform A/B | N/A (Native HTML5) | 🟢 Approved |
 | GitHub Raw CDN | Hosting af MP3-filer til portefølje | N/A (Public URLs) | 🟢 Approved |
@@ -237,7 +237,10 @@ FDSL - website v2.0/
 │   └── index.html       # Dedicated English presentation & conversion page
 ├── index.html           # Main presentation & conversion landing page (DA)
 ├── terms.html           # Service terms & conditions (Handelsbetingelser)
-├── style.css            # Base stylesheet & animations
+├── src/
+│   └── input.css        # Tailwind CSS source input
+├── style.css            # Compiled & minified static CSS (~23 KB)
+├── tailwind.config.js   # Tailwind build configuration
 ├── main.js              # Application entry point
 ├── terms.js             # Terms page entry point & i18n
 ├── gemini.md            # ← Project Constitution (this file)
@@ -280,6 +283,7 @@ FDSL - website v2.0/
 | 2026-11-04 | System Pilot | Opdateret tekster på engelsk version (Hero H1, Hero subtekst, Prissektion H2 og FAQ subtekst) | Brugerdirektiv / Tekstoptimering |
 | 2026-11-04 | System Pilot | Opdateret <head> SEO i index.html: hreflang (da, x-default til /en/), optimeret title/description og fuldt udvidet JSON-LD Schema med MusicStudio geo, audio og services | Brugerdirektiv / SEO- og Schema-forbedringer |
 | 2026-11-04 | System Pilot | Opdateret <head> SEO & dedikeret engelsk JSON-LD schema (EUR valuta, audio og FAQ) i en/index.html | Brugerdirektiv / Engelsk SEO & Schema |
+| 2026-11-04 | System Pilot | Migreret fra Tailwind Play CDN til statisk kompilering via Tailwind CLI (minimeret style.css, fjernet 350KB render-blocking JS for Core Web Vitals) | Brugerdirektiv / Performance & Core Web Vitals |
 
 
 

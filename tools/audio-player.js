@@ -120,11 +120,11 @@ export function initRealAudioPlayers() {
             // Update UI buttons
             if (clickedBtn) {
                 clickedBtn.classList.add('bg-zinc-800', 'text-white');
-                clickedBtn.classList.remove('text-zinc-400');
+                clickedBtn.classList.remove('text-zinc-300', 'text-zinc-400');
             }
             if (otherBtn) {
                 otherBtn.classList.remove('bg-zinc-800', 'text-white');
-                otherBtn.classList.add('text-zinc-400');
+                otherBtn.classList.add('text-zinc-300');
             }
             
             // Seamless Swap
@@ -160,6 +160,6 @@ export function toggleMoreTracks() {
         btn.innerHTML = currentLang === 'en' ? 'Show fewer &uarr;' : 'Vis færre &uarr;';
     } else {
         extraContainer.classList.add('hidden');
-        btn.innerHTML = btn.getAttribute(`data-${currentLang}`);
+        btn.innerHTML = currentLang === 'en' ? 'Show more tracks (5) &darr;' : (btn.getAttribute('data-da') || 'Vis flere numre (5) &darr;');
     }
 }

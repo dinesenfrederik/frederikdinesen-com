@@ -8,6 +8,14 @@ let currentCurr = 'dkk';
 
 function computeInitialPreferences() {
     try {
+        const isEnPage = (window.location.pathname && (window.location.pathname.startsWith('/en') || window.location.pathname.includes('/en/'))) || document.documentElement.lang === 'en';
+        
+        if (isEnPage) {
+            currentLang = 'en';
+            currentCurr = 'eur';
+            return;
+        }
+
         const savedLang = localStorage.getItem(STORAGE_KEY_LANG);
         const savedCurr = localStorage.getItem(STORAGE_KEY_CURR);
         
@@ -52,6 +60,13 @@ function computeInitialPreferences() {
 computeInitialPreferences();
 
 export function initI18n() {
+    const isEnPage = (window.location.pathname && (window.location.pathname.startsWith('/en') || window.location.pathname.includes('/en/'))) || document.documentElement.lang === 'en';
+    if (isEnPage) {
+        currentLang = 'en';
+        currentCurr = 'eur';
+        return;
+    }
+
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const btnEl = e.target.closest('.lang-btn');
@@ -81,6 +96,11 @@ export function initI18n() {
 }
 
 async function resolveVisitorGeo() {
+    const isEnPage = (window.location.pathname && (window.location.pathname.startsWith('/en') || window.location.pathname.includes('/en/'))) || document.documentElement.lang === 'en';
+    if (isEnPage) {
+        return;
+    }
+
     let hasManualLang = false;
     let hasManualCurr = false;
     try {

@@ -12,10 +12,10 @@ export function initForm() {
             // Reset all
             serviceBtns.forEach(b => {
                 b.classList.remove('bg-amber', 'text-obsidian', 'border-amber');
-                b.classList.add('border-border', 'text-gray-400');
+                b.classList.add('border-border', 'text-zinc-300');
             });
             // Set active
-            btn.classList.remove('border-border', 'text-gray-400');
+            btn.classList.remove('border-border', 'text-zinc-300', 'text-gray-400');
             btn.classList.add('bg-amber', 'text-obsidian', 'border-amber');
         });
     });

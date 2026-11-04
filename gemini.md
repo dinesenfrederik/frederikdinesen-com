@@ -233,7 +233,9 @@ FDSL - website v2.0/
 │   └── handling-errors/
 │       ├── SKILL.md
 │       └── resources/
-├── index.html           # Main presentation & conversion landing page
+├── en/
+│   └── index.html       # Dedicated English presentation & conversion page
+├── index.html           # Main presentation & conversion landing page (DA)
 ├── terms.html           # Service terms & conditions (Handelsbetingelser)
 ├── style.css            # Base stylesheet & animations
 ├── main.js              # Application entry point
@@ -274,6 +276,8 @@ FDSL - website v2.0/
 | 2026-09-29 | System Pilot | Integrated Google Analytics 4 (GA4 ID: G-3X6GTKVN5Y) with automatic lead conversion tracking | User Directive / GA4 Setup |
 | 2026-10-27 | System Pilot | Saneret tilfredshedsgaranti (hero badges, pricing card & callout boks) samt tilføjet automatisk geo-defaulting til EN/EUR for udenlandske besøgende med localStorage persistence | Brugerdirektiv / Geo-default & garanti sanering |
 | 2026-10-27 | System Pilot | Oprettet terms.html (Handels- og Samarbejdsbetingelser, Factofly ApS, DA/EN paritet, Bilag 1) med diskret footer-link i index.html | Brugerdirektiv / Handelsbetingelser |
+| 2026-11-04 | System Pilot | Oprettet dedikeret international engelsk side i en/index.html med direkte hyperlinks i navbar, hardcoded EUR-priser og fuld engelsk typografi | Brugerdirektiv / Dedikeret engelsk version |
+| 2026-11-04 | System Pilot | Opdateret tekster på engelsk version (Hero H1, Hero subtekst, Prissektion H2 og FAQ subtekst) | Brugerdirektiv / Tekstoptimering |
 
 
 

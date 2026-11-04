@@ -278,6 +278,7 @@ FDSL - website v2.0/
 | 2026-10-27 | System Pilot | Oprettet terms.html (Handels- og Samarbejdsbetingelser, Factofly ApS, DA/EN paritet, Bilag 1) med diskret footer-link i index.html | Brugerdirektiv / Handelsbetingelser |
 | 2026-11-04 | System Pilot | Oprettet dedikeret international engelsk side i en/index.html med direkte hyperlinks i navbar, hardcoded EUR-priser og fuld engelsk typografi | Brugerdirektiv / Dedikeret engelsk version |
 | 2026-11-04 | System Pilot | Opdateret tekster på engelsk version (Hero H1, Hero subtekst, Prissektion H2 og FAQ subtekst) | Brugerdirektiv / Tekstoptimering |
+| 2026-11-04 | System Pilot | Opdateret <head> SEO i index.html: hreflang (da, x-default til /en/), optimeret title/description og fuldt udvidet JSON-LD Schema med MusicStudio geo, audio og services | Brugerdirektiv / SEO- og Schema-forbedringer |
 
 
 

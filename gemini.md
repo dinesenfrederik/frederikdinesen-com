@@ -40,6 +40,7 @@ Disse regler er **ikke til forhandling** og gælder for alle moduler:
 | Vercel Web Analytics | Besøgsstatistik & analytics-tracking | N/A (/_vercel/insights) | 🟢 Configured |
 | Vercel Speed Insights | Core Web Vitals & performance-tracking | N/A (/_vercel/speed-insights) | 🟢 Configured |
 | Google Analytics 4 (GA4) | Trafikanalyse, adfærd & lead tracking | G-3X6GTKVN5Y | 🟢 Configured |
+| Ahrefs Analytics | SEO, webmaster & analytics-tracking | hDrMwZG4/TXGCW9D8oYL/A | 🟢 Configured |
 
 
 
@@ -287,6 +288,7 @@ FDSL - website v2.0/
 | 2026-11-04 | System Pilot | Opdateret <head> SEO & dedikeret engelsk JSON-LD schema (EUR valuta, audio og FAQ) i en/index.html | Brugerdirektiv / Engelsk SEO & Schema |
 | 2026-11-04 | System Pilot | Migreret fra Tailwind Play CDN til statisk kompilering via Tailwind CLI (minimeret style.css, fjernet 350KB render-blocking JS for Core Web Vitals) | Brugerdirektiv / Performance & Core Web Vitals |
 | 2026-11-09 | System Pilot | Tilføjet sitemap.xml (med xhtml:link hreflang til DA, EN og x-default) og robots.txt for Google Search Console & søgemaskineindeksering | Brugerdirektiv / SEO & Search Console |
+| 2026-11-09 | System Pilot | Integreret Ahrefs Web Analytics snippet i <head> på index.html, en/index.html og terms.html | Brugerdirektiv / Ahrefs Tracking |
 
 
 

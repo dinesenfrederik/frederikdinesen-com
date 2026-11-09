@@ -237,6 +237,8 @@ FDSL - website v2.0/
 │   └── index.html       # Dedicated English presentation & conversion page
 ├── index.html           # Main presentation & conversion landing page (DA)
 ├── terms.html           # Service terms & conditions (Handelsbetingelser)
+├── robots.txt           # Crawler instructions & sitemap pointer
+├── sitemap.xml          # XML sitemap with multi-language hreflang annotations
 ├── src/
 │   └── input.css        # Tailwind CSS source input
 ├── style.css            # Compiled & minified static CSS (~23 KB)
@@ -284,6 +286,7 @@ FDSL - website v2.0/
 | 2026-11-04 | System Pilot | Opdateret <head> SEO i index.html: hreflang (da, x-default til /en/), optimeret title/description og fuldt udvidet JSON-LD Schema med MusicStudio geo, audio og services | Brugerdirektiv / SEO- og Schema-forbedringer |
 | 2026-11-04 | System Pilot | Opdateret <head> SEO & dedikeret engelsk JSON-LD schema (EUR valuta, audio og FAQ) i en/index.html | Brugerdirektiv / Engelsk SEO & Schema |
 | 2026-11-04 | System Pilot | Migreret fra Tailwind Play CDN til statisk kompilering via Tailwind CLI (minimeret style.css, fjernet 350KB render-blocking JS for Core Web Vitals) | Brugerdirektiv / Performance & Core Web Vitals |
+| 2026-11-09 | System Pilot | Tilføjet sitemap.xml (med xhtml:link hreflang til DA, EN og x-default) og robots.txt for Google Search Console & søgemaskineindeksering | Brugerdirektiv / SEO & Search Console |
 
 
 

@@ -322,6 +322,7 @@ FDSL - website v2.0/
 | 2026-11-10 | System Pilot | Integreret tosproget Markdown/MDX blog-motor (Next.js 16 SSG, gray-matter, remark, TechArticle/FAQPage JSON-LD Schema, TestMixCTA og fuld rock/metal-æstetik) | Brugerdirektiv / Tosproget Blog-motor |
 | 2026-11-10 | System Pilot | Saneret emojis fra TestMixCTA (sleek SVGs), forbedret læsbarhed (.blog-prose, max-w-3xl, TableOfContents, ReadingProgressBar) samt tilføjet levende partikel-ambience & audio visualizer | Brugerdirektiv / Blog UX & Læsbarhed |
 | 2026-11-10 | System Pilot | Konverteret 'Få gratis test-mix' til in-page pop-up modal (identisk med kontaktformular på forsiden), opdateret CTA-subtekst og af-AI-ficeret overskrift | Brugerdirektiv / Test-Mix Modal & Copy |
+| 2026-11-10 | System Pilot | Opdateret Vercel Framework Preset til Next.js, erstattet public symlinks med sync-public automatik og deployet til produktion | Fejlretning & Vercel Produktion |
 
 
 

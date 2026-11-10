@@ -1,0 +1,239 @@
+import React from 'react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { getAllBlogSlugs, getBlogPostBySlug } from '@/lib/blog';
+import BlogNavbar from '@/components/blog/BlogNavbar';
+import BlogFooter from '@/components/blog/BlogFooter';
+import TestMixCTA from '@/components/blog/TestMixCTA';
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const slugs = getAllBlogSlugs('da');
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug, 'da');
+
+  if (!post) {
+    return {
+      title: 'Artikel ikke fundet',
+    };
+  }
+
+  const enSlug = post.alternateSlug || slug;
+
+  return {
+    title: post.title,
+    description: post.description,
+    authors: [{ name: post.author }],
+    alternates: {
+      canonical: `https://frederikdinesen.com/blog/${slug}`,
+      languages: {
+        da: `https://frederikdinesen.com/blog/${slug}`,
+        en: `https://frederikdinesen.com/en/blog/${enSlug}`,
+        'x-default': `https://frederikdinesen.com/en/blog/${enSlug}`,
+      },
+    },
+    openGraph: {
+      title: `${post.title} | FD Sound Labs`,
+      description: post.description,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+      url: `https://frederikdinesen.com/blog/${slug}`,
+      images: [
+        {
+          url: 'https://frederikdinesen.com/assets/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+  };
+}
+
+export default async function BlogPostPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug, 'da');
+
+  if (!post) {
+    notFound();
+  }
+
+  // Schema.org Article structured data
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: post.title,
+    description: post.description,
+    image: 'https://frederikdinesen.com/assets/og-image.jpg',
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+      url: 'https://frederikdinesen.com/',
+    },
+    publisher: {
+      '@type': 'MusicStudio',
+      name: 'FD Sound Labs',
+      url: 'https://frederikdinesen.com/',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://frederikdinesen.com/assets/og-image.jpg',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://frederikdinesen.com/blog/${slug}`,
+    },
+    articleSection: post.pillar,
+  };
+
+  // Schema.org FAQPage structured data
+  const faqSchema =
+    post.faq.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: post.faq.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
+
+  return (
+    <>
+      {/* Structured Data injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
+      <BlogNavbar
+        lang="da"
+        currentSlug={post.slug}
+        alternateSlug={post.alternateSlug}
+      />
+
+      <main className="flex-1 pt-32 pb-24 px-4 sm:px-6">
+        <article className="max-w-4xl mx-auto">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center gap-2 text-xs font-mono text-zinc-500 mb-8 overflow-x-auto">
+            <Link href="/" className="hover:text-amber transition-colors">
+              Forside
+            </Link>
+            <span>/</span>
+            <Link href="/blog" className="hover:text-amber transition-colors">
+              Blog
+            </Link>
+            <span>/</span>
+            <span className="text-zinc-400 truncate">{post.pillar}</span>
+          </nav>
+
+          {/* Article Header */}
+          <header className="mb-12 border-b border-[#222228] pb-10">
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-400 mb-6">
+              <span className="bg-amber/10 border border-amber/20 text-amber font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                {post.pillar}
+              </span>
+              <span>&bull;</span>
+              <span>{post.date}</span>
+              <span>&bull;</span>
+              <span>{post.readingTime}</span>
+              <span>&bull;</span>
+              <span className="text-zinc-300">Af {post.author}</span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight font-sans">
+              {post.title}
+            </h1>
+
+            <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed font-sans">
+              {post.description}
+            </p>
+          </header>
+
+          {/* Back to overview link */}
+          <div className="mb-8">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-amber transition-colors"
+            >
+              <span>&larr;</span> Tilbage til alle artikler
+            </Link>
+          </div>
+
+          {/* Markdown Body */}
+          <div
+            className="prose prose-invert prose-zinc max-w-none text-zinc-300 font-sans leading-relaxed
+              prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-white
+              prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-[#222228] prose-h2:pb-3
+              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-zinc-100
+              prose-p:mb-6 prose-p:leading-relaxed
+              prose-strong:text-white
+              prose-a:text-amber prose-a:underline hover:prose-a:text-amber-hover transition-colors
+              prose-blockquote:border-l-4 prose-blockquote:border-amber prose-blockquote:bg-[#0D0D11] prose-blockquote:py-2 prose-blockquote:px-5 prose-blockquote:rounded-r-lg prose-blockquote:text-zinc-300 prose-blockquote:italic
+              prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6 prose-li:my-2 prose-li:marker:text-amber
+              prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6 prose-li:marker:text-amber
+              prose-code:text-amber prose-code:bg-zinc-900 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono
+              prose-pre:bg-[#0D0D11] prose-pre:border prose-pre:border-[#222228] prose-pre:rounded-xl prose-pre:p-4"
+            dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+          />
+
+          {/* FAQ Accordion / Section */}
+          {post.faq.length > 0 && (
+            <section className="mt-16 pt-12 border-t border-[#222228]">
+              <div className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-amber mb-3">
+                <span>FAQ &bull; OFTE STILLEDE SPØRGSMÅL</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 font-sans">
+                Spørgsmål &amp; Svar om artiklen
+              </h2>
+
+              <div className="space-y-4">
+                {post.faq.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-[#0D0D11] border border-[#222228] rounded-xl p-6 transition-colors hover:border-zinc-700"
+                  >
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-2 flex items-start gap-3">
+                      <span className="text-amber font-mono font-bold">Q:</span>
+                      <span>{item.question}</span>
+                    </h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed pl-7">
+                      {item.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Test Mix CTA Component */}
+          <TestMixCTA lang="da" />
+        </article>
+      </main>
+
+      <BlogFooter lang="da" />
+    </>
+  );
+}

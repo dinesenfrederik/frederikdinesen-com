@@ -6,7 +6,10 @@ module.exports = {
     "./en/**/*.html",
     "./tools/**/*.js",
     "./main.js",
-    "./terms.js"
+    "./terms.js",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   darkMode: 'class',
   theme: {
@@ -27,7 +30,45 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
-      }
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': '#d4d4d8',
+            '--tw-prose-headings': '#f4f4f5',
+            '--tw-prose-lead': '#a1a1aa',
+            '--tw-prose-links': '#FF9F0A',
+            '--tw-prose-bold': '#ffffff',
+            '--tw-prose-counters': '#71717a',
+            '--tw-prose-bullets': '#FF9F0A',
+            '--tw-prose-hr': '#222228',
+            '--tw-prose-quotes': '#e4e4e7',
+            '--tw-prose-quote-borders': '#FF9F0A',
+            '--tw-prose-captions': '#71717a',
+            '--tw-prose-code': '#FF9F0A',
+            '--tw-prose-pre-code': '#f4f4f5',
+            '--tw-prose-pre-bg': '#0D0D11',
+            '--tw-prose-th-borders': '#222228',
+            '--tw-prose-td-borders': '#222228',
+            '--tw-prose-invert-body': '#d4d4d8',
+            '--tw-prose-invert-headings': '#f4f4f5',
+            '--tw-prose-invert-lead': '#a1a1aa',
+            '--tw-prose-invert-links': '#FF9F0A',
+            '--tw-prose-invert-bold': '#ffffff',
+            '--tw-prose-invert-counters': '#71717a',
+            '--tw-prose-invert-bullets': '#FF9F0A',
+            '--tw-prose-invert-hr': '#222228',
+            '--tw-prose-invert-quotes': '#e4e4e7',
+            '--tw-prose-invert-quote-borders': '#FF9F0A',
+            '--tw-prose-invert-captions': '#71717a',
+            '--tw-prose-invert-code': '#FF9F0A',
+            '--tw-prose-invert-pre-code': '#f4f4f5',
+            '--tw-prose-invert-pre-bg': '#0D0D11',
+            '--tw-prose-invert-th-borders': '#222228',
+            '--tw-prose-invert-td-borders': '#222228',
+          },
+        },
+      },
     }
   },
   safelist: [
@@ -41,5 +82,7 @@ module.exports = {
     'bg-zinc-800',
     'text-white'
   ],
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

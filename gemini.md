@@ -234,6 +234,30 @@ FDSL - website v2.0/
 │   └── handling-errors/
 │       ├── SKILL.md
 │       └── resources/
+├── app/                 # Next.js App Router (Bilingual Blog Engine)
+│   ├── layout.tsx       # Root layout & Google Fonts
+│   ├── blog/
+│   │   ├── page.tsx     # Danish blog overview
+│   │   └── [slug]/
+│   │       └── page.tsx # Danish blog post (SSG, SEO, Schema)
+│   └── en/
+│       └── blog/
+│           ├── page.tsx # English blog overview
+│           └── [slug]/
+│               └── page.tsx # English blog post (SSG, SEO, Schema)
+├── components/          # Reusable React components
+│   └── blog/
+│       ├── BlogFooter.tsx
+│       ├── BlogNavbar.tsx
+│       └── TestMixCTA.tsx
+├── content/             # Markdown content store
+│   └── blog/
+│       ├── da/          # Danish articles
+│       │   └── vokalindspilning-hjemmestudie.md
+│       └── en/          # English articles
+│           └── home-studio-vocal-tracking.md
+├── lib/
+│   └── blog.ts          # Markdown reader, parser & frontmatter extractor
 ├── en/
 │   └── index.html       # Dedicated English presentation & conversion page
 ├── index.html           # Main presentation & conversion landing page (DA)
@@ -289,6 +313,7 @@ FDSL - website v2.0/
 | 2026-11-04 | System Pilot | Migreret fra Tailwind Play CDN til statisk kompilering via Tailwind CLI (minimeret style.css, fjernet 350KB render-blocking JS for Core Web Vitals) | Brugerdirektiv / Performance & Core Web Vitals |
 | 2026-11-09 | System Pilot | Tilføjet sitemap.xml (med xhtml:link hreflang til DA, EN og x-default) og robots.txt for Google Search Console & søgemaskineindeksering | Brugerdirektiv / SEO & Search Console |
 | 2026-11-09 | System Pilot | Integreret Ahrefs Web Analytics snippet i <head> på index.html, en/index.html og terms.html | Brugerdirektiv / Ahrefs Tracking |
+| 2026-11-10 | System Pilot | Integreret tosproget Markdown/MDX blog-motor (Next.js 16 SSG, gray-matter, remark, TechArticle/FAQPage JSON-LD Schema, TestMixCTA og fuld rock/metal-æstetik) | Brugerdirektiv / Tosproget Blog-motor |
 
 
 

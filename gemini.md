@@ -247,9 +247,13 @@ FDSL - website v2.0/
 │               └── page.tsx # English blog post (SSG, SEO, Schema)
 ├── components/          # Reusable React components
 │   └── blog/
+│       ├── ArticleAmbience.tsx       # Floating amber canvas particles & studio grid
+│       ├── AudioSpectrumIndicator.tsx # Animated studio spectrum equalizer bars
 │       ├── BlogFooter.tsx
 │       ├── BlogNavbar.tsx
-│       └── TestMixCTA.tsx
+│       ├── ReadingProgressBar.tsx    # Smooth reading progress indicator
+│       ├── TableOfContents.tsx       # Interactive guide navigation
+│       └── TestMixCTA.tsx            # Clean studio conversion card (no emojis)
 ├── content/             # Markdown content store
 │   └── blog/
 │       ├── da/          # Danish articles
@@ -314,6 +318,7 @@ FDSL - website v2.0/
 | 2026-11-09 | System Pilot | Tilføjet sitemap.xml (med xhtml:link hreflang til DA, EN og x-default) og robots.txt for Google Search Console & søgemaskineindeksering | Brugerdirektiv / SEO & Search Console |
 | 2026-11-09 | System Pilot | Integreret Ahrefs Web Analytics snippet i <head> på index.html, en/index.html og terms.html | Brugerdirektiv / Ahrefs Tracking |
 | 2026-11-10 | System Pilot | Integreret tosproget Markdown/MDX blog-motor (Next.js 16 SSG, gray-matter, remark, TechArticle/FAQPage JSON-LD Schema, TestMixCTA og fuld rock/metal-æstetik) | Brugerdirektiv / Tosproget Blog-motor |
+| 2026-11-10 | System Pilot | Saneret emojis fra TestMixCTA (sleek SVGs), forbedret læsbarhed (.blog-prose, max-w-3xl, TableOfContents, ReadingProgressBar) samt tilføjet levende partikel-ambience & audio visualizer | Brugerdirektiv / Blog UX & Læsbarhed |
 
 
 

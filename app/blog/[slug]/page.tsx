@@ -6,6 +6,10 @@ import { getAllBlogSlugs, getBlogPostBySlug } from '@/lib/blog';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogFooter from '@/components/blog/BlogFooter';
 import TestMixCTA from '@/components/blog/TestMixCTA';
+import ReadingProgressBar from '@/components/blog/ReadingProgressBar';
+import ArticleAmbience from '@/components/blog/ArticleAmbience';
+import AudioSpectrumIndicator from '@/components/blog/AudioSpectrumIndicator';
+import TableOfContents from '@/components/blog/TableOfContents';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -116,6 +120,9 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
+      {/* Scroll Reading Progress Bar */}
+      <ReadingProgressBar />
+
       {/* Structured Data injection */}
       <script
         type="application/ld+json"
@@ -134,9 +141,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         alternateSlug={post.alternateSlug}
       />
 
-      <main className="flex-1 pt-32 pb-24 px-4 sm:px-6">
-        <article className="max-w-4xl mx-auto">
-          {/* Breadcrumbs */}
+      <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 relative overflow-hidden">
+        {/* Ambient Canvas Particles & Lighting Glow */}
+        <ArticleAmbience />
+
+        <article className="max-w-4xl mx-auto relative z-10">
+          {/* Breadcrumbs Navigation */}
           <nav className="flex items-center gap-2 text-xs font-mono text-zinc-500 mb-8 overflow-x-auto">
             <Link href="/" className="hover:text-amber transition-colors">
               Forside
@@ -150,24 +160,28 @@ export default async function BlogPostPage({ params }: PageProps) {
           </nav>
 
           {/* Article Header */}
-          <header className="mb-12 border-b border-[#222228] pb-10">
+          <header className="mb-10 border-b border-[#222228] pb-10">
+            {/* Meta Tags Row */}
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-400 mb-6">
-              <span className="bg-amber/10 border border-amber/20 text-amber font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+              <span className="bg-amber/10 border border-amber/20 text-amber font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
                 {post.pillar}
               </span>
               <span>&bull;</span>
-              <span>{post.date}</span>
+              <span className="text-zinc-400">{post.date}</span>
               <span>&bull;</span>
-              <span>{post.readingTime}</span>
+              <span className="text-zinc-400">{post.readingTime}</span>
               <span>&bull;</span>
               <span className="text-zinc-300">Af {post.author}</span>
+              <span className="ml-auto hidden sm:inline-flex">
+                <AudioSpectrumIndicator />
+              </span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight font-sans">
               {post.title}
             </h1>
 
-            <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed font-sans">
+            <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed font-sans max-w-3xl">
               {post.description}
             </p>
           </header>
@@ -182,20 +196,14 @@ export default async function BlogPostPage({ params }: PageProps) {
             </Link>
           </div>
 
-          {/* Markdown Body */}
+          {/* Table of Contents / Quick Jump */}
+          {post.toc && post.toc.length > 0 && (
+            <TableOfContents toc={post.toc} lang="da" />
+          )}
+
+          {/* High-Readability Editorial Markdown Body */}
           <div
-            className="prose prose-invert prose-zinc max-w-none text-zinc-300 font-sans leading-relaxed
-              prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-white
-              prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-[#222228] prose-h2:pb-3
-              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-zinc-100
-              prose-p:mb-6 prose-p:leading-relaxed
-              prose-strong:text-white
-              prose-a:text-amber prose-a:underline hover:prose-a:text-amber-hover transition-colors
-              prose-blockquote:border-l-4 prose-blockquote:border-amber prose-blockquote:bg-[#0D0D11] prose-blockquote:py-2 prose-blockquote:px-5 prose-blockquote:rounded-r-lg prose-blockquote:text-zinc-300 prose-blockquote:italic
-              prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6 prose-li:my-2 prose-li:marker:text-amber
-              prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6 prose-li:marker:text-amber
-              prose-code:text-amber prose-code:bg-zinc-900 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono
-              prose-pre:bg-[#0D0D11] prose-pre:border prose-pre:border-[#222228] prose-pre:rounded-xl prose-pre:p-4"
+            className="blog-prose"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
 
@@ -203,6 +211,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           {post.faq.length > 0 && (
             <section className="mt-16 pt-12 border-t border-[#222228]">
               <div className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-amber mb-3">
+                <span className="w-2 h-2 rounded-full bg-amber" />
                 <span>FAQ &bull; OFTE STILLEDE SPØRGSMÅL</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 font-sans">
@@ -213,13 +222,13 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {post.faq.map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-[#0D0D11] border border-[#222228] rounded-xl p-6 transition-colors hover:border-zinc-700"
+                    className="bg-[#0D0D11] border border-[#222228] hover:border-[#2f2f38] transition-colors rounded-xl p-6"
                   >
                     <h3 className="text-base sm:text-lg font-bold text-white mb-2 flex items-start gap-3">
                       <span className="text-amber font-mono font-bold">Q:</span>
                       <span>{item.question}</span>
                     </h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed pl-7">
+                    <p className="text-zinc-300 text-sm sm:text-base leading-relaxed pl-7">
                       {item.answer}
                     </p>
                   </div>

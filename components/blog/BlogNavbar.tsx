@@ -144,3 +144,4 @@ export default function BlogNavbar({ lang, currentSlug, alternateSlug }: BlogNav
     </nav>
   );
 }
+

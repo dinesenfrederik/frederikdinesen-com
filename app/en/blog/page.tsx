@@ -5,6 +5,7 @@ import { getBlogPosts } from '@/lib/blog';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogFooter from '@/components/blog/BlogFooter';
 import TestMixCTA from '@/components/blog/TestMixCTA';
+import ArticleAmbience from '@/components/blog/ArticleAmbience';
 
 export const metadata: Metadata = {
   title: 'Blog & Audio Guides | Rock & Metal Production',
@@ -34,8 +35,11 @@ export default function EnglishBlogIndexPage() {
     <>
       <BlogNavbar lang="en" />
 
-      <main className="flex-1 pt-32 pb-24 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
+      <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 relative overflow-hidden">
+        {/* Ambient Canvas Particles & Lighting Glow */}
+        <ArticleAmbience />
+
+        <div className="max-w-6xl mx-auto relative z-10">
           {/* Header Hero */}
           <header className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-amber bg-amber/10 border border-amber/20 px-3.5 py-1.5 rounded-full mb-6">

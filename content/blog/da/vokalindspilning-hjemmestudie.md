@@ -117,3 +117,4 @@ Når sangen skal mixes hos en professionel mix engineer som FD Sound Labs, er he
 Har I allerede indspillet jeres tracks og vil høre, hvordan jeres rå optagelser lyder, når de behandles med professionelle analoge saturation-kæder, dynamisk EQ og kirurgisk mix-teknik?
 
 Hos **FD Sound Labs** tilbyder vi altid et gratis og 100% uforpligtende test-mix af jeres vigtigste sang. I uploader jeres rå spor, og inden for 3–4 hverdage modtager I et mixet udkast klar til sammenligning.
+

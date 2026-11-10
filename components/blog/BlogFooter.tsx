@@ -45,3 +45,4 @@ export default function BlogFooter({ lang }: BlogFooterProps) {
     </footer>
   );
 }
+

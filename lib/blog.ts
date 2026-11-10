@@ -9,6 +9,11 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface TOCItem {
+  id: string;
+  text: string;
+}
+
 export interface BlogPostMeta {
   title: string;
   description: string;
@@ -26,6 +31,7 @@ export interface BlogPostMeta {
 export interface BlogPost extends BlogPostMeta {
   contentHtml: string;
   rawContent: string;
+  toc: TOCItem[];
 }
 
 const contentRoot = path.join(process.cwd(), 'content/blog');
@@ -45,6 +51,20 @@ function formatDateString(dateVal: unknown): string {
     return dateVal;
   }
   return '';
+}
+
+function addHeadingIds(htmlContent: string): { html: string; toc: TOCItem[] } {
+  const toc: TOCItem[] = [];
+  let index = 1;
+
+  const updatedHtml = htmlContent.replace(/<h2([^>]*)>(.*?)<\/h2>/gi, (match, attrs, content) => {
+    const cleanText = content.replace(/<[^>]+>/g, '').trim();
+    const slugId = `trin-${index++}`;
+    toc.push({ id: slugId, text: cleanText });
+    return `<h2 id="${slugId}"${attrs}>${content}</h2>`;
+  });
+
+  return { html: updatedHtml, toc };
 }
 
 export function getAllBlogSlugs(lang: 'da' | 'en'): string[] {
@@ -107,7 +127,8 @@ export async function getBlogPostBySlug(slug: string, lang: 'da' | 'en'): Promis
     .use(html, { sanitize: false })
     .process(content);
 
-  const contentHtml = processedContent.toString();
+  const rawHtml = processedContent.toString();
+  const { html: contentHtml, toc } = addHeadingIds(rawHtml);
   const readingTime = calculateReadingTime(content, lang);
   const formattedDate = formatDateString(data.date);
 
@@ -125,5 +146,6 @@ export async function getBlogPostBySlug(slug: string, lang: 'da' | 'en'): Promis
     coverImage: data.coverImage,
     contentHtml,
     rawContent: content,
+    toc,
   };
 }

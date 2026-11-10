@@ -253,7 +253,9 @@ FDSL - website v2.0/
 │       ├── BlogNavbar.tsx
 │       ├── ReadingProgressBar.tsx    # Smooth reading progress indicator
 │       ├── TableOfContents.tsx       # Interactive guide navigation
-│       └── TestMixCTA.tsx            # Clean studio conversion card (no emojis)
+│       ├── TestMixCTA.tsx            # Clean studio conversion card (no emojis)
+│       ├── TestMixModal.tsx          # In-page pop-up modal with identical contact form
+│       └── TestMixModalContext.tsx   # React modal context & triggers
 ├── content/             # Markdown content store
 │   └── blog/
 │       ├── da/          # Danish articles
@@ -319,6 +321,7 @@ FDSL - website v2.0/
 | 2026-11-09 | System Pilot | Integreret Ahrefs Web Analytics snippet i <head> på index.html, en/index.html og terms.html | Brugerdirektiv / Ahrefs Tracking |
 | 2026-11-10 | System Pilot | Integreret tosproget Markdown/MDX blog-motor (Next.js 16 SSG, gray-matter, remark, TechArticle/FAQPage JSON-LD Schema, TestMixCTA og fuld rock/metal-æstetik) | Brugerdirektiv / Tosproget Blog-motor |
 | 2026-11-10 | System Pilot | Saneret emojis fra TestMixCTA (sleek SVGs), forbedret læsbarhed (.blog-prose, max-w-3xl, TableOfContents, ReadingProgressBar) samt tilføjet levende partikel-ambience & audio visualizer | Brugerdirektiv / Blog UX & Læsbarhed |
+| 2026-11-10 | System Pilot | Konverteret 'Få gratis test-mix' til in-page pop-up modal (identisk med kontaktformular på forsiden), opdateret CTA-subtekst og af-AI-ficeret overskrift | Brugerdirektiv / Test-Mix Modal & Copy |
 
 
 

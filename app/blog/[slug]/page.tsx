@@ -10,6 +10,7 @@ import ReadingProgressBar from '@/components/blog/ReadingProgressBar';
 import ArticleAmbience from '@/components/blog/ArticleAmbience';
 import AudioSpectrumIndicator from '@/components/blog/AudioSpectrumIndicator';
 import TableOfContents from '@/components/blog/TableOfContents';
+import { TestMixModalProvider } from '@/components/blog/TestMixModalContext';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -119,7 +120,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       : null;
 
   return (
-    <>
+    <TestMixModalProvider lang="da">
       {/* Scroll Reading Progress Bar */}
       <ReadingProgressBar />
 
@@ -243,6 +244,6 @@ export default async function BlogPostPage({ params }: PageProps) {
       </main>
 
       <BlogFooter lang="da" />
-    </>
+    </TestMixModalProvider>
   );
 }

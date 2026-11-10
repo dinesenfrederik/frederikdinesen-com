@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { useTestMixModal } from './TestMixModalContext';
 
 interface TestMixCTAProps {
   lang?: 'da' | 'en';
@@ -6,14 +9,15 @@ interface TestMixCTAProps {
 
 export default function TestMixCTA({ lang = 'da' }: TestMixCTAProps) {
   const isDa = lang === 'da';
+  const { openModal } = useTestMixModal();
 
   const title = isDa
-    ? 'Klar til at høre dit track med kompromisløs rock- og metal-power?'
-    : 'Ready to hear your track with uncompromising rock and metal power?';
+    ? 'Vil du høre din sang mixet professionelt?'
+    : 'Want to hear your track mixed professionally?';
 
   const subtitle = isDa
-    ? 'Oplev hvad professionel hybrid-mixing gør ved dine rå spor. Få et gratis og uforpligtende test-mix af jeres vigtigste sang – før I beslutter jer.'
-    : 'Hear what professional hybrid mixing does to your raw multitracks. Claim a free, zero-obligation test mix of your main track before committing.';
+    ? 'Oplev hvad professionel mixing gør ved dine rå spor. Få et gratis og uforpligtende test-mix af din vigtigste sang – før du beslutter dig.'
+    : 'Hear what professional mixing does to your raw multitracks. Claim a free, zero-obligation test mix of your main track before you decide.';
 
   const perks = isDa
     ? [
@@ -82,10 +86,13 @@ export default function TestMixCTA({ lang = 'da' }: TestMixCTAProps) {
       ];
 
   const ctaText = isDa ? 'Få dit gratis test-mix' : 'Claim Your Free Sample Mix';
-  const ctaLink = isDa ? '/#contact' : '/en/#contact';
   const microcopy = isDa
-    ? 'Ingen betalingsoplysninger påkrævet. Send blot dine rå multitracks eller et demolink.'
+    ? 'Ingen betalingsoplysninger påkrævet. Send blot dine rå spor eller et demolink.'
     : 'No payment details required. Simply send your raw multitracks or a demo link.';
+
+  const handleOpen = () => {
+    openModal(isDa ? 'Gratis Test-Mix' : 'Free Sample Mix');
+  };
 
   return (
     <section className="my-16 relative">
@@ -107,7 +114,7 @@ export default function TestMixCTA({ lang = 'da' }: TestMixCTAProps) {
           {subtitle}
         </p>
 
-        {/* Perks Grid - Clean Minimalist Studio Badges without Emojis */}
+        {/* Perks Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 max-w-3xl mx-auto text-left">
           {perks.map((perk) => (
             <div
@@ -125,15 +132,16 @@ export default function TestMixCTA({ lang = 'da' }: TestMixCTAProps) {
           ))}
         </div>
 
-        {/* Action Button */}
+        {/* Action Button - Triggers In-Page Pop-up Modal */}
         <div className="flex flex-col items-center">
-          <a
-            href={ctaLink}
-            className="inline-flex items-center gap-2 bg-amber text-obsidian px-8 sm:px-10 py-4 rounded-full font-bold text-base hover:bg-amber-hover hover:scale-105 transition-all shadow-[0_0_25px_rgba(255,159,10,0.4)] uppercase tracking-wider font-sans"
+          <button
+            type="button"
+            onClick={handleOpen}
+            className="inline-flex items-center gap-2 bg-amber text-obsidian px-8 sm:px-10 py-4 rounded-full font-bold text-base hover:bg-amber-hover hover:scale-105 transition-all shadow-[0_0_25px_rgba(255,159,10,0.4)] uppercase tracking-wider font-sans cursor-pointer"
           >
             {ctaText}
             <span>&rarr;</span>
-          </a>
+          </button>
           <p className="text-xs text-zinc-500 font-mono mt-4">{microcopy}</p>
         </div>
       </div>

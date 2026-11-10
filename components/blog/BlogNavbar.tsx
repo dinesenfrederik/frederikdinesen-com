@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTestMixModal } from './TestMixModalContext';
 
 interface BlogNavbarProps {
   lang: 'da' | 'en';
@@ -11,6 +12,7 @@ interface BlogNavbarProps {
 export default function BlogNavbar({ lang, currentSlug, alternateSlug }: BlogNavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isDa = lang === 'da';
+  const { openModal } = useTestMixModal();
 
   // Compute language switch URLs
   const daUrl = currentSlug
@@ -25,6 +27,11 @@ export default function BlogNavbar({ lang, currentSlug, alternateSlug }: BlogNav
   const pricingUrl = isDa ? '/#pricing' : '/en/#pricing';
   const contactUrl = isDa ? '/#contact' : '/en/#contact';
   const blogUrl = isDa ? '/blog' : '/en/blog';
+
+  const handleOpenModal = () => {
+    openModal(isDa ? 'Gratis Test-Mix' : 'Free Sample Mix');
+    setMobileMenuOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0D0D11]/90 backdrop-blur-xl border-b border-[#222228] transition-all">
@@ -72,13 +79,14 @@ export default function BlogNavbar({ lang, currentSlug, alternateSlug }: BlogNav
             </a>
           </div>
 
-          {/* Test Mix Button */}
-          <a
-            href={contactUrl}
-            className="hidden md:inline-block bg-amber text-obsidian px-6 py-2.5 rounded-full font-bold text-sm hover:bg-amber-hover transition-colors shadow-[0_0_15px_rgba(255,159,10,0.3)]"
+          {/* Test Mix Button - Triggers Pop-up Modal */}
+          <button
+            type="button"
+            onClick={handleOpenModal}
+            className="hidden md:inline-block bg-amber text-obsidian px-6 py-2.5 rounded-full font-bold text-sm hover:bg-amber-hover transition-colors shadow-[0_0_15px_rgba(255,159,10,0.3)] cursor-pointer"
           >
             {isDa ? 'Få dit gratis test-mix' : 'Get Free Sample Mix'}
-          </a>
+          </button>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -132,16 +140,16 @@ export default function BlogNavbar({ lang, currentSlug, alternateSlug }: BlogNav
             {isDa ? 'Kontakt' : 'Contact'}
           </a>
           <div className="pt-2">
-            <a
-              href={contactUrl}
-              className="inline-block w-full bg-amber text-obsidian py-3 rounded-full font-bold text-sm hover:bg-amber-hover transition-colors shadow-[0_0_15px_rgba(255,159,10,0.3)]"
+            <button
+              type="button"
+              onClick={handleOpenModal}
+              className="inline-block w-full bg-amber text-obsidian py-3 rounded-full font-bold text-sm hover:bg-amber-hover transition-colors shadow-[0_0_15px_rgba(255,159,10,0.3)] cursor-pointer"
             >
               {isDa ? 'Få dit gratis test-mix' : 'Get Free Sample Mix'}
-            </a>
+            </button>
           </div>
         </div>
       )}
     </nav>
   );
 }
-

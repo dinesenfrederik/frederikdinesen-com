@@ -6,6 +6,7 @@ import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogFooter from '@/components/blog/BlogFooter';
 import TestMixCTA from '@/components/blog/TestMixCTA';
 import ArticleAmbience from '@/components/blog/ArticleAmbience';
+import { TestMixModalProvider } from '@/components/blog/TestMixModalContext';
 
 export const metadata: Metadata = {
   title: 'Blog & Audio Guides | Rock & Metal Production',
@@ -32,7 +33,7 @@ export default function EnglishBlogIndexPage() {
   const posts = getBlogPosts('en');
 
   return (
-    <>
+    <TestMixModalProvider lang="en">
       <BlogNavbar lang="en" />
 
       <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 relative overflow-hidden">
@@ -118,6 +119,6 @@ export default function EnglishBlogIndexPage() {
       </main>
 
       <BlogFooter lang="en" />
-    </>
+    </TestMixModalProvider>
   );
 }

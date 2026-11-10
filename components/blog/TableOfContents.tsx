@@ -47,3 +47,4 @@ export default function TableOfContents({ toc, lang }: TableOfContentsProps) {
     </nav>
   );
 }
+

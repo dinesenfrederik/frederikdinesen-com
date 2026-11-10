@@ -1,1 +1,64 @@
-../sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://frederikdinesen.com/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://frederikdinesen.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://frederikdinesen.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://frederikdinesen.com/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://frederikdinesen.com/blog/vokalindspilning-hjemmestudie</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/vokalindspilning-hjemmestudie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/home-studio-vocal-tracking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/home-studio-vocal-tracking"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://frederikdinesen.com/en/blog/home-studio-vocal-tracking</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/vokalindspilning-hjemmestudie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/home-studio-vocal-tracking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/home-studio-vocal-tracking"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://frederikdinesen.com/terms.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

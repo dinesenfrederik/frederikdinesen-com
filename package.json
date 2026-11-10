@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "npm run build:css && next build",
+    "dev": "node scripts/sync-public.js && next dev",
+    "build": "npm run build:css && node scripts/sync-public.js && next build",
     "start": "next start",
     "build:css": "tailwindcss -i ./src/input.css -o ./style.css --minify",
     "watch:css": "tailwindcss -i ./src/input.css -o ./style.css --watch"

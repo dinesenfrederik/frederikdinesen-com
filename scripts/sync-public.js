@@ -46,3 +46,4 @@ if (fs.existsSync(toolsSrc)) {
 }
 
 console.log('✓ Public assets synced cleanly (real files, no symlinks).');
+

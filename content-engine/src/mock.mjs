@@ -83,3 +83,22 @@ export async function writeArticle({ config, lang, topic, date, pillarName, alte
   const markdown = matter.stringify(content, fm);
   return { markdown, ...validateArticle(markdown, { lang, date, pillar: pillarName, alternateSlug, minWords: config.run.minWordsPerArticle }) };
 }
+
+export async function factCheck({ markdown }) {
+  // One "medium" finding on a real sentence so the PR section is exercised.
+  const quote = markdown.match(/^[A-ZÆØÅ][^\n]{40,200}?\./m)?.[0] ?? '';
+  return { sources: [], findings: quote ? [{ quote, verdict: 'unsupported', confidence: 'medium', explanation: '(mock finding)', suggestion: 'remove' }] : [] };
+}
+
+export async function reviseArticle({ markdown, expected }) {
+  return { markdown, ...validateArticle(markdown, expected) };
+}
+
+/** Proposes a link from the first plain paragraph sentence of each candidate. */
+export async function proposeBacklinks({ newArticle, candidates }) {
+  return candidates.flatMap((c) => {
+    const sentence = c.body.split('\n').find((l) => /^[A-ZÆØÅ]/.test(l) && !l.includes(']('))?.match(/^.{30,300}?\./)?.[0];
+    if (!sentence) return [];
+    return [{ slug: c.slug, find: sentence, replace: `${sentence.slice(0, -1)} ([læs mere](${newArticle.path})).`, reason: 'mock' }];
+  });
+}

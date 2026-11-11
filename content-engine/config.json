@@ -18,7 +18,9 @@
     "articlesPerRun": 1,
     "candidatesPerScan": 10,
     "maxYoutubeVideosPerArticle": 3,
-    "minWordsPerArticle": 900
+    "minWordsPerArticle": 900,
+    "factCheck": true,
+    "backlinksPerArticle": 2
   },
 
   "pillars": [

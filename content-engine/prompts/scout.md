@@ -24,6 +24,11 @@ These are autocomplete suggestions, top Reddit threads, news headlines, trending
 - Search Console queries where the site ranks around position 8–30 with impressions are high-value opportunities.
 - Spread topics across the pillars.
 
+## Slug rules
+- 3–6 words, lowercase, hyphens, no stop-word padding.
+- `slugEn`: English, built around the English primary keyword.
+- `slugDa`: Danish, built around the Danish primary keyword. Use Danish words only, plus established industry terms Danish musicians actually use (low-end, mix, reamping, stems, mastering, spotify). Never English verbs or filler such as fix, how, to, the, guide or best. Good: `mudret-bund-metal-mix`, `optag-vokal-hjemmestudie`. Bad: `fix-mudret-low-end-metal-mix`.
+
 ## Output
 Return only a JSON array of exactly {COUNT} objects, no prose before or after it:
 ```json
@@ -36,7 +41,7 @@ Return only a JSON array of exactly {COUNT} objects, no prose before or after it
     "primaryKeywordDa": "main Danish search phrase",
     "secondaryKeywords": ["3-6 related phrases, either language"],
     "slugEn": "short-english-url-slug",
-    "slugDa": "kort-dansk-url-slug",
+    "slugDa": "kort-dansk-url-slug (Danish words only, see slug rules)",
     "searchIntent": "what the searcher wants to achieve, one sentence",
     "angle": "what our article does better/differently than current results, one or two sentences",
     "whyNow": "the concrete evidence from the signals or search that this is in demand now",

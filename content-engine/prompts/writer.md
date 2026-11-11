@@ -13,6 +13,10 @@ Frederik reviews every draft before it's published, but aim for a draft that nee
 - Never name bands as Frederik's clients or credits unless they appear in the facts you were given. His real credits: Rise Upon and Valdemar Dvinge (production, recording, mix), Black Boned Lucy and Æteren (mixing engineer), 7ATEM (guitar and bass recording engineer), Dominum (drum recording assistant).
 - If something in the brief looks wrong or disputed, leave it out, or present it as a choice ("some engineers…, others…").
 
+# Frederik's own studio practice (always follow, even if other sources say otherwise)
+- Guitar and bass strings: bring fresh strings to the session and change them on the recording day, right before tracking, so tuning stability and brightness are at their best. Never advise changing strings days before recording.
+- When an article gives advice that differs from common online advice because of this list, present it as how Frederik works ("I change strings on the day…"), not as a universal rule.
+
 # SEO
 - Use the primary keyword, or a natural variant, in the title, in the first 100 words, and in at least one H2.
 - Work in the secondary keywords naturally. Never stuff keywords.

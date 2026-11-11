@@ -11,6 +11,7 @@ Use Google Search to verify the article's concrete claims: numbers, frequencies,
 - Style, tone, structure, opinions clearly framed as the author's opinion or preference.
 - Ranges that are a reasonable starting point even if other engineers use slightly different values.
 - Anything you are not reasonably sure about. Only flag real problems. Returning an empty list is a good outcome.
+- Frederik's own studio practice, which is deliberate even where other sources differ: guitar and bass strings are changed on the recording day, right before tracking.
 
 ## Output
 Return only a JSON array, no prose:

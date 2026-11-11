@@ -103,4 +103,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://frederikdinesen.com/blog/hvad-koster-et-mix</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/hvad-koster-et-mix"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/how-much-does-mixing-cost"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/how-much-does-mixing-cost"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://frederikdinesen.com/en/blog/how-much-does-mixing-cost</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/hvad-koster-et-mix"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/how-much-does-mixing-cost"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/how-much-does-mixing-cost"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

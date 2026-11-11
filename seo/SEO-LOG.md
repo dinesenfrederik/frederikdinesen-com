@@ -10,6 +10,13 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-11 – Prisartikel: "Hvad koster et mix?"
+
+- `/blog/hvad-koster-et-mix` (DA, ca. 1.460 ord) + `/en/blog/how-much-does-mixing-cost` (EN), hreflang-par. Skrevet manuelt (ikke via content-motoren), fordi motoren ikke må nævne priser, der ikke står i dens research-brief.
+- Målsøgeord: "hvad koster et mix", "pris på mix af sang", "hvad koster det at mixe en EP/album", "mix pris pr. sang", "er mastering inkluderet".
+- Indhold: direkte svar (GEO), prisfaktorer, prismodeller (sang/time/dag), EP/album-eksempler, mastering, tjekliste til tilbud, mix selv vs. få mixet, budgettips. Ingen markedspriser, som ikke kan verificeres.
+- Valideret med content-motorens validator (0 fejl/advarsler). Sitemap via `addToSitemap`. Krydslinks fra `/remote-mixing` og `/en/remote-mixing`.
+
 ## 2026-11-11 – Landingssider: /indspilning-aarhus og /en/remote-mixing
 
 - `/indspilning-aarhus` (DA, ca. 1.100 ord): målrettet "lydstudie Aarhus", "indspilning Aarhus", "studio tracking Aarhus", "indspille vokal Aarhus". Fakta fra handelsbetingelserne: heldagssession 3.125 kr., 50 % depositum, afbuds-/flytteregler. Studiet er IKKE indrettet til trommer (vokal, guitar, bas, synths). Mobil indspilning ved særlige projekter. Prisexempler inkl. mix. CTA forvælger "Studio Tracking" i formularen. Schema: WebPage, Service (Offer pr. dag), HowTo, FAQPage, BreadcrumbList.

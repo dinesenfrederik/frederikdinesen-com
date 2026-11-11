@@ -286,7 +286,9 @@ export default function RemoteMixingEnPage() {
           <section id="pricing" className="mb-24 scroll-mt-28" aria-labelledby="pricing-h">
             <h2 id="pricing-h" className="text-3xl md:text-4xl font-bold text-white mb-3">How much does it cost to get a song mixed?</h2>
             <p className="text-zinc-300 mb-10 max-w-2xl">
-              Fixed project prices including 25% Danish VAT. You know the price before we start.
+              Fixed project prices including 25% Danish VAT. You know the price before we start. Want to know what
+              drives the price? Read{' '}
+              <Link href="/en/blog/how-much-does-mixing-cost" className="text-amber hover:underline">How much does mixing a song cost?</Link>
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {[

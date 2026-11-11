@@ -295,7 +295,9 @@ export default function RemoteMixingPage() {
           <section id="priser" className="mb-24 scroll-mt-28" aria-labelledby="priser-h">
             <h2 id="priser-h" className="text-3xl md:text-4xl font-bold text-white mb-3">Hvad koster det at få mixet en sang?</h2>
             <p className="text-zinc-300 mb-10 max-w-2xl">
-              Faste projektpriser inkl. moms. Du kender prisen, før vi går i gang.
+              Faste projektpriser inkl. moms. Du kender prisen, før vi går i gang. Vil du vide mere om, hvad der
+              påvirker prisen? Læs{' '}
+              <Link href="/blog/hvad-koster-et-mix" className="text-amber hover:underline">Hvad koster et mix?</Link>
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {[

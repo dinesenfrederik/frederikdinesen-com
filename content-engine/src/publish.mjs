@@ -32,7 +32,8 @@ export function addToSitemap(config, { daSlug, enSlug, date }) {
   if (!added) return false;
   xml = xml.replace(/\n?<\/urlset>/, `\n${added}</urlset>`);
   // Blog index pages changed too.
-  for (const idx of [`${base}${config.site.blogPath.da}`, `${base}${config.site.blogPath.en}`]) {
+  // Index URLs have no trailing slash: /blog/ 308-redirects to /blog.
+  for (const idx of [`${base}${config.site.blogPath.da.replace(/\/$/, '')}`, `${base}${config.site.blogPath.en.replace(/\/$/, '')}`]) {
     xml = xml.replace(
       new RegExp(`(<loc>${idx.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')}</loc>[\\s\\S]*?<lastmod>)[^<]*(</lastmod>)`),
       `$1${date}$2`,

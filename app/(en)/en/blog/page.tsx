@@ -9,11 +9,11 @@ import ArticleAmbience from '@/components/blog/ArticleAmbience';
 import { TestMixModalProvider } from '@/components/blog/TestMixModalContext';
 
 export const metadata: Metadata = {
-  title: 'Blog & Audio Guides | Rock & Metal Produktion',
+  title: 'Blog & Audio Guides | Rock & Metal Production',
   description:
-    'Lær at tracke, indspille og klargøre dine rock- og metal-sange til mix. Professionelle tips, mikrofonteknikker og studieviden fra FD Sound Labs.',
+    'Learn how to track, record, and prepare your heavy rock and metal songs for mixing. Professional advice, mic techniques, and studio knowledge from FD Sound Labs.',
   alternates: {
-    canonical: 'https://frederikdinesen.com/blog',
+    canonical: 'https://frederikdinesen.com/en/blog',
     languages: {
       da: 'https://frederikdinesen.com/blog',
       en: 'https://frederikdinesen.com/en/blog',
@@ -21,20 +21,21 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Blog & Audio Guides | Rock & Metal Produktion | FD Sound Labs',
+    title: 'Blog & Audio Guides | Rock & Metal Production | FD Sound Labs',
     description:
-      'Lær at tracke, indspille og klargøre dine rock- og metal-sange til mix. Professionelle tips fra FD Sound Labs.',
-    url: 'https://frederikdinesen.com/blog',
+      'Learn how to track, record, and prepare your heavy rock and metal songs for mixing. Studio tips from FD Sound Labs.',
+    url: 'https://frederikdinesen.com/en/blog',
     type: 'website',
+    images: [{ url: 'https://frederikdinesen.com/assets/og-image-en.jpg', width: 1200, height: 630 }],
   },
 };
 
-export default function BlogIndexPage() {
-  const posts = getBlogPosts('da');
+export default function EnglishBlogIndexPage() {
+  const posts = getBlogPosts('en');
 
   return (
-    <TestMixModalProvider lang="da">
-      <BlogNavbar lang="da" />
+    <TestMixModalProvider lang="en">
+      <BlogNavbar lang="en" />
 
       <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 relative overflow-hidden">
         {/* Ambient Canvas Particles & Lighting Glow */}
@@ -45,31 +46,31 @@ export default function BlogIndexPage() {
           <header className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-amber bg-amber/10 border border-amber/20 px-3.5 py-1.5 rounded-full mb-6">
               <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
-              VIDEN &amp; GUIDES FRA STUDIET
+              STUDIO INSIGHTS &amp; PRODUCTION GUIDES
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-tight font-sans">
-              Rock &amp; Metal Produktion: Guider, Tips &amp; Teknikker
+              Rock &amp; Metal Production: Guides, Tips &amp; Techniques
             </h1>
 
             <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              Praktiske råd og håndgribelige teknikker til DIY-indspilning, gain staging og klargøring af multitracks, så dine produktioner skærer igennem på streamingtjenesterne.
+              Actionable engineering advice on DIY tracking, gain staging, and delivering pristine multitracks so your heavy music cuts through the wall of sound on streaming platforms.
             </p>
           </header>
 
           {/* Pillars List / Categories */}
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 font-mono text-xs">
             <span className="bg-amber text-obsidian px-3.5 py-1.5 rounded-full font-bold">
-              Alle artikler ({posts.length})
+              All articles ({posts.length})
             </span>
             <span className="bg-zinc-900 border border-[#222228] text-zinc-300 px-3.5 py-1.5 rounded-full">
-              DIY Indspilning &amp; Tracking
+              DIY Recording &amp; Tracking
             </span>
             <span className="bg-zinc-900 border border-[#222228] text-zinc-300 px-3.5 py-1.5 rounded-full">
-              Mixing &amp; Audio-tips
+              Mixing &amp; Audio Tips
             </span>
             <span className="bg-zinc-900 border border-[#222228] text-zinc-300 px-3.5 py-1.5 rounded-full">
-              Musikudgivelse &amp; Business
+              Music Release &amp; Business
             </span>
           </div>
 
@@ -91,7 +92,7 @@ export default function BlogIndexPage() {
 
                   {/* Title */}
                   <h2 className="text-xl font-bold text-white group-hover:text-amber transition-colors mb-3 leading-snug font-sans">
-                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    <Link href={`/en/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
 
                   {/* Excerpt */}
@@ -103,10 +104,10 @@ export default function BlogIndexPage() {
                 <div className="pt-4 border-t border-[#222228] flex items-center justify-between text-xs font-mono">
                   <span className="text-zinc-500">{post.date}</span>
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/en/blog/${post.slug}`}
                     className="inline-flex items-center gap-1 text-amber font-semibold group-hover:translate-x-1 transition-transform"
                   >
-                    Læs guide <span>&rarr;</span>
+                    Read guide <span>&rarr;</span>
                   </Link>
                 </div>
               </article>
@@ -114,11 +115,11 @@ export default function BlogIndexPage() {
           </div>
 
           {/* In-page CTA */}
-          <TestMixCTA lang="da" />
+          <TestMixCTA lang="en" />
         </div>
       </main>
 
-      <BlogFooter lang="da" />
+      <BlogFooter lang="en" />
     </TestMixModalProvider>
   );
 }

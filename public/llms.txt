@@ -1,0 +1,34 @@
+# FD Sound Labs
+
+> FD Sound Labs is a mixing and recording studio in Aarhus, Denmark, run by mix engineer and producer Frederik Dinesen. It specialises in modern rock and metal (metalcore, hardcore, death metal, alternative metal, hard rock) and offers remote mixing for bands across Denmark and Europe plus studio tracking in Aarhus C. New clients can get a free test mix before booking.
+
+FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydtekniker og producer Frederik Dinesen. Studiet er specialiseret i moderne rock og metal og tilbyder remote mixing til bands i hele Danmark og Europa samt studio tracking i Aarhus C. Nye kunder kan få et gratis test-mix, inden de booker.
+
+## Key facts
+
+- Services: Full Production Mix (remote mixing of multitracks) and Studio Tracking (vocals, high-gain guitars, bass, synths) in Aarhus.
+- Prices (fixed project prices incl. Danish VAT): Full Production Mix 2,499 DKK (€335) per song; 2,195 DKK (€295) per song for 3+ songs; Studio Tracking 3,125 DKK (€420) per day.
+- Turnaround: first mix draft in 3–4 working days. 3 revision rounds included in every paid project.
+- Free test mix: send raw multitracks and a reference track; a representative section of the song (typically verse and chorus) is mixed free of charge.
+- Delivery format: 24-bit WAV, 44.1 kHz or higher, all tracks starting at 00:00:00, plus tempo (BPM) and clean DI tracks for guitar and bass (for re-amping).
+- Programmed drums (Superior Drummer, GetGood Drums, MIDI) and rehearsal-room drum recordings are mixed and sample-blended.
+- Payment: 50/50 (deposit at start, final payment on approval of the mix).
+- Selected credits: Rise Upon, Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves. Releases nominated for the GAFFA Award and Den Hårde Tone (Rise Upon).
+- Location: Ceresbyen 10E, st., 8000 Aarhus C, Denmark. Phone: +45 30 13 89 75.
+
+## Pages
+
+- [Forside (dansk)](https://frederikdinesen.com/): services, portfolio with before/after mixes, prices, FAQ and contact form for a free test mix.
+- [Homepage (English)](https://frederikdinesen.com/en): remote mixing for rock and metal bands across Europe, prices in EUR.
+- [Blog (dansk)](https://frederikdinesen.com/blog) and [Blog (English)](https://frederikdinesen.com/en/blog): practical guides on recording, mixing and releasing rock and metal.
+- [Handelsbetingelser / Terms](https://frederikdinesen.com/terms.html)
+
+## Guides (dansk)
+
+- [Mudret Bund i Metal Mix? Sådan Får Du en Stram Bund Uden at Miste Tyngde](https://frederikdinesen.com/blog/fix-mudret-low-end-metal-mix): Få en stram bund uden at miste tyngde: sådan fixer du mudret bund i dit metal mix med polaritet, frekvensfordeling, split-bas og dynamisk EQ på palm mutes.
+- [Vokalindspilning i Hjemmestudie: 7 Trin til Rå, Professionel Rock- & Metal-vokal](https://frederikdinesen.com/blog/vokalindspilning-hjemmestudie): Lær hvordan du tracker kompromisløse rock- og metal-vokaler derhjemme. Mikrofonvalg, akustik, gain staging og tricks til at levere klare spor til mix.
+
+## Guides (English)
+
+- [Muddy Low End in Your Metal Mix? How to Get It Tight Without Losing Weight](https://frederikdinesen.com/en/blog/fix-muddy-low-end-metal-mix): Get a tight, heavy low end: fix the muddy low end in your metal mix with polarity checks, kick and bass slotting, split bass and dynamic EQ on palm mutes.
+- [Home Studio Vocal Tracking: 7 Steps to Raw, Professional Rock & Metal Vocals](https://frederikdinesen.com/en/blog/home-studio-vocal-tracking): Learn how to record uncompromising rock and metal vocals at home. Mic selection, DIY acoustics, gain staging, and delivering pristine tracks for mixing.

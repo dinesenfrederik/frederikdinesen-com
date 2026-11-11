@@ -39,12 +39,22 @@ if (fs.existsSync(enSrc)) {
   fs.copyFileSync(enSrc, enDest);
 }
 
+// Copy assets directory (OG images, logo)
+const assetsSrc = path.join(rootDir, 'assets');
+if (fs.existsSync(assetsSrc)) {
+  fs.cpSync(assetsSrc, path.join(publicDir, 'assets'), { recursive: true });
+}
+
 // Copy tools directory recursively
 const toolsSrc = path.join(rootDir, 'tools');
 const toolsDest = path.join(publicDir, 'tools');
 if (fs.existsSync(toolsSrc)) {
   fs.cpSync(toolsSrc, toolsDest, { recursive: true });
 }
+
+// Generate llms.txt for AI answer engines
+const { buildLlmsTxt } = require('./build-llms');
+fs.writeFileSync(path.join(publicDir, 'llms.txt'), buildLlmsTxt());
 
 console.log('✓ Public assets synced cleanly (real files, no symlinks).');
 

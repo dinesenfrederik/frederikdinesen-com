@@ -22,10 +22,10 @@ export default function BlogNavbar({ lang, currentSlug, alternateSlug }: BlogNav
     ? `/en/blog/${!isDa ? currentSlug : alternateSlug || currentSlug}`
     : '/en/blog';
 
-  const homeUrl = isDa ? '/' : '/en/';
-  const portfolioUrl = isDa ? '/#portfolio' : '/en/#portfolio';
-  const pricingUrl = isDa ? '/#pricing' : '/en/#pricing';
-  const contactUrl = isDa ? '/#contact' : '/en/#contact';
+  const homeUrl = isDa ? '/' : '/en';
+  const portfolioUrl = isDa ? '/#portfolio' : '/en#portfolio';
+  const pricingUrl = isDa ? '/#pricing' : '/en#pricing';
+  const contactUrl = isDa ? '/#contact' : '/en#contact';
   const blogUrl = isDa ? '/blog' : '/en/blog';
 
   const handleOpenModal = () => {

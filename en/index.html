@@ -7,19 +7,26 @@
   <!-- Primære SEO Tags -->
   <title>Professional Rock & Metal Remote Mixing Service Europe | FD Sound Labs</title>
   <meta name="description" content="Punchy, modern remote mixing for rock, metalcore & death metal bands across Europe. 3-4 day turnaround, 3 revisions included. Claim your free test mix.">
-  <link rel="canonical" href="https://frederikdinesen.com/en/">
+  <link rel="canonical" href="https://frederikdinesen.com/en">
   
   <!-- Hreflang Tags til flersproget struktur -->
   <link rel="alternate" hreflang="da" href="https://frederikdinesen.com/">
-  <link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/">
-  <link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/">
+  <link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en">
+  <link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en">
 
   <!-- Open Graph / SoMe Deling -->
-  <meta property="og:type" content="business.business">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Professional Rock & Metal Remote Mixing Service Europe | FD Sound Labs">
   <meta property="og:description" content="Punchy, modern remote mixing for rock, metalcore & death metal bands across Europe. 3-4 day turnaround, 3 revisions included. Claim your free test mix.">
-  <meta property="og:url" content="https://frederikdinesen.com/en/">
-  <meta property="og:image" content="https://frederikdinesen.com/assets/og-image.jpg">
+  <meta property="og:url" content="https://frederikdinesen.com/en">
+  <meta property="og:image" content="https://frederikdinesen.com/assets/og-image-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="da_DK">
+  <meta property="og:site_name" content="FD Sound Labs">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://frederikdinesen.com/assets/og-image-en.jpg">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF9F0A'><path d='M12 3v18M8 6v12M4 9v6M16 6v12M20 9v6' stroke='%23FF9F0A' stroke-width='2.5' stroke-linecap='round'/></svg>">
   
@@ -49,19 +56,29 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MusicStudio",
-      "@id": "https://frederikdinesen.com/en/#studio",
+      "@type": "LocalBusiness",
+      "@id": "https://frederikdinesen.com/#studio",
+      "additionalType": "https://en.wikipedia.org/wiki/Recording_studio",
       "name": "FD Sound Labs",
-      "url": "https://frederikdinesen.com/en/",
+      "legalName": "FD Sound Labs v/ Frederik Dinesen",
+      "url": "https://frederikdinesen.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://frederikdinesen.com/assets/logo.png",
+        "width": 512,
+        "height": 512
+      },
       "image": "https://frederikdinesen.com/assets/og-image.jpg",
       "telephone": "+4530138975",
-      "priceRange": "$$",
-      "description": "Professional recording studio and remote mixing service specializing in modern rock, metalcore, and heavy metal.",
+      "priceRange": "2.195–3.125 DKK",
+      "currenciesAccepted": "DKK, EUR",
+      "description": "Mixing and recording studio in Aarhus, Denmark, specialising in modern rock, metalcore, hardcore and death metal. Offers remote mixing for bands across Denmark and Europe, plus studio tracking in Aarhus C.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Ceresbyen 10E, st.",
         "addressLocality": "Aarhus C",
         "postalCode": "8000",
+        "addressRegion": "Region Midtjylland",
         "addressCountry": "DK"
       },
       "geo": {
@@ -70,65 +87,190 @@
         "longitude": 10.1916
       },
       "areaServed": [
-        { "@type": "Country", "name": "Denmark" },
-        { "@type": "Continent", "name": "Europe" }
+        {
+          "@type": "City",
+          "name": "Aarhus"
+        },
+        {
+          "@type": "Country",
+          "name": "Denmark"
+        },
+        {
+          "@type": "Continent",
+          "name": "Europe"
+        }
+      ],
+      "knowsAbout": [
+        "Music mixing",
+        "Remote mixing",
+        "Rock music production",
+        "Metal music production",
+        "Metalcore",
+        "Death metal",
+        "Hardcore punk",
+        "Vocal recording",
+        "Guitar re-amping",
+        "Drum sample replacement"
       ],
       "founder": {
-        "@type": "Person",
-        "name": "Frederik Dinesen",
-        "jobTitle": "Mix Engineer & Producer",
-        "award": [
-          "Nominated for GAFFA Award (Rise Upon)",
-          "Nominated for Den Hårde Tone (Rise Upon)"
-        ]
+        "@id": "https://frederikdinesen.com/#frederik"
+      },
+      "employee": {
+        "@id": "https://frederikdinesen.com/#frederik"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://frederikdinesen.com/#frederik",
+      "name": "Frederik Dinesen",
+      "jobTitle": "Mix Engineer & Producer",
+      "url": "https://frederikdinesen.com/",
+      "worksFor": {
+        "@id": "https://frederikdinesen.com/#studio"
+      },
+      "knowsAbout": [
+        "Mixing",
+        "Music production",
+        "Rock",
+        "Metal",
+        "Recording engineering"
+      ],
+      "award": [
+        "Nominated for the GAFFA Award (Rise Upon)",
+        "Nominated for Den Hårde Tone (Rise Upon)"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://frederikdinesen.com/#website",
+      "url": "https://frederikdinesen.com/",
+      "name": "FD Sound Labs",
+      "inLanguage": [
+        "da-DK",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://frederikdinesen.com/#studio"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://frederikdinesen.com/en#webpage",
+      "url": "https://frederikdinesen.com/en",
+      "name": "Professional Rock & Metal Remote Mixing Service Europe | FD Sound Labs",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://frederikdinesen.com/#website"
+      },
+      "about": {
+        "@id": "https://frederikdinesen.com/#studio"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://frederikdinesen.com/assets/og-image-en.jpg",
+        "width": 1200,
+        "height": 630
       }
     },
     {
       "@type": "Service",
-      "@id": "https://frederikdinesen.com/en/#service-mixing",
-      "name": "Full Production Remote Mixing",
-      "provider": { "@id": "https://frederikdinesen.com/en/#studio" },
-      "serviceType": "Music Mixing Service",
-      "description": "Digital mixing of modern rock and metal for bands across Europe. 3-4 day turnaround and 3 revisions included.",
-      "offers": {
-        "@type": "Offer",
-        "price": "335",
-        "priceCurrency": "EUR",
-        "url": "https://frederikdinesen.com/en/#pricing"
-      }
+      "@id": "https://frederikdinesen.com/#service-mixing-en",
+      "name": "Remote Mixing for Rock & Metal",
+      "serviceType": "Music mixing",
+      "provider": {
+        "@id": "https://frederikdinesen.com/#studio"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Denmark"
+        },
+        {
+          "@type": "Continent",
+          "name": "Europe"
+        }
+      ],
+      "description": "Full production mix of rock and metal songs from your multitracks. First draft in 3-4 working days, 3 revision rounds included and a free test mix.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "price": "335",
+          "priceCurrency": "EUR",
+          "url": "https://frederikdinesen.com/en#pricing",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "335",
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": true
+          },
+          "description": "Price per song (1-2 songs)"
+        },
+        {
+          "@type": "Offer",
+          "price": "295",
+          "priceCurrency": "EUR",
+          "url": "https://frederikdinesen.com/en#pricing",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "295",
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": true
+          },
+          "description": "Price per song for 3+ songs"
+        }
+      ]
     },
     {
       "@type": "Service",
-      "@id": "https://frederikdinesen.com/en/#service-tracking",
+      "@id": "https://frederikdinesen.com/#service-tracking-en",
       "name": "Studio Tracking Aarhus",
-      "provider": { "@id": "https://frederikdinesen.com/en/#studio" },
-      "serviceType": "Audio Recording",
-      "description": "Recording of vocals, guitars, bass, and synths in professional studio facilities in Aarhus C.",
+      "serviceType": "Audio recording",
+      "provider": {
+        "@id": "https://frederikdinesen.com/#studio"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Aarhus"
+      },
+      "description": "Recording of vocals, high-gain guitars, bass and synths in Aarhus C, Denmark. Price per day including VAT.",
       "offers": {
         "@type": "Offer",
         "price": "420",
         "priceCurrency": "EUR",
-        "url": "https://frederikdinesen.com/en/#pricing"
+        "url": "https://frederikdinesen.com/en#pricing",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "420",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": true
+        },
+        "description": "Price per day"
       }
     },
     {
       "@type": "AudioObject",
-      "@id": "https://frederikdinesen.com/en/#audio-illuminate",
-      "name": "Illuminate The Sky – Everything Happens (Mix Demonstration)",
+      "@id": "https://frederikdinesen.com/#audio-illuminate",
+      "name": "Illuminate The Sky – Everything Happens (before/after mix)",
       "description": "Before and after mix demonstration of modern metalcore production by FD Sound Labs.",
       "encodingFormat": "audio/mpeg",
-      "contentUrl": "https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Illuminate%20The%20Sky(2).mp3"
+      "contentUrl": "https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Illuminate%20The%20Sky(2).mp3",
+      "creator": {
+        "@id": "https://frederikdinesen.com/#frederik"
+      }
     },
     {
       "@type": "FAQPage",
-      "@id": "https://frederikdinesen.com/en/#faq",
+      "@id": "https://frederikdinesen.com/en#faq",
+      "isPartOf": {
+        "@id": "https://frederikdinesen.com/en#webpage"
+      },
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How does the free sample mix work at FD Sound Labs?",
+          "name": "How does the free sample mix work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By agreement, you send your raw multitrack audio tracks and a reference track. I will select and mix a representative excerpt of the song, delivered completely free of charge so you can evaluate the sound before deciding on a collaboration."
+            "text": "By agreement, you send your raw multitrack audio tracks and a reference track to me. I will select and mix a representative excerpt of the song (typically verse and chorus). You receive it completely free, so you can evaluate the sound and our fit before deciding on a collaboration."
           }
         },
         {
@@ -136,23 +278,31 @@
           "name": "What format should multitracks be delivered in?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "All tracks must be exported as 24-bit WAV or AIFF files (minimum 44.1 kHz or above) starting from the exact same timestamp (00:00:00), including tempo (BPM) and clean D.I. tracks for guitar and bass."
+            "text": "All tracks must be exported as 24-bit WAV files (minimum 44.1 kHz or above) starting from the exact same timestamp (00:00:00). Feel free to include tempo (BPM), any tempo changes, and clean D.I. tracks for guitar and bass so I can use re-amping if needed."
           }
         },
         {
           "@type": "Question",
-          "name": "Can you mix programmed drums like Superior Drummer or GGD?",
+          "name": "Can you mix programmed drums (Superior Drummer / GGD)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Most modern rock and metal music is produced today with programmed drums. Whether MIDI or rehearsal room tracks, I process and blend them with professional samples to achieve maximum punch and album-ready quality."
+            "text": "Yes. Most modern rock and metal music is produced today with programmed drums. Whether you send MIDI tracks, raw multi-out samples, or tracks recorded in a rehearsal room/studio, I process and mix the drums professionally so they cut through with maximum punch and weight."
           }
         },
         {
           "@type": "Question",
-          "name": "What are the rates for mixing and tracking at FD Sound Labs?",
+          "name": "How does payment and revision rounds work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Full Production Mix is €335 per song (€295 per song for 3+ songs). Studio Tracking in Aarhus is €420 per day. Both services include 3 revision rounds."
+            "text": "Work is billed securely in a 50/50 milestone payment (deposit upon kickoff and final payment upon mix approval). Every paid project includes 3 consolidated revision rounds within a 14-day feedback window."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does mixing and studio tracking cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Full Production Mix costs €335 per song including VAT, or €295 per song for 3 or more songs. Studio Tracking in Aarhus costs €420 per day including VAT. All prices are fixed project prices with 3 revision rounds included, and the test mix is free."
           }
         }
       ]
@@ -165,7 +315,7 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-            <a href="/en/" class="font-bold tracking-widest text-white hover:text-amber transition-colors text-base sm:text-lg">FD SOUND LABS</a>
+            <a href="/en" class="font-bold tracking-widest text-white hover:text-amber transition-colors text-base sm:text-lg">FD SOUND LABS</a>
             <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
                 <a href="#portfolio" class="hover:text-amber transition-colors text-gray-300">Portfolio</a>
                 <a href="#pricing" class="hover:text-amber transition-colors text-gray-300">Pricing</a>
@@ -176,7 +326,7 @@
                 <div class="flex items-center gap-1 sm:gap-2 font-mono text-xs sm:text-sm font-medium bg-zinc-900 border border-border rounded-full px-2.5 sm:px-3 py-1">
                     <a href="/" class="text-zinc-400 hover:text-white transition-colors">DA</a>
                     <span class="text-border">|</span>
-                    <a href="/en/" class="font-bold text-amber">EN</a>
+                    <a href="/en" class="font-bold text-amber">EN</a>
                 </div>
                 <div class="flex items-center gap-1 sm:gap-2 font-mono text-xs sm:text-sm font-medium bg-zinc-900 border border-border rounded-full px-2.5 sm:px-3 py-1 text-amber font-bold">
                     EUR
@@ -698,6 +848,16 @@
                   <span class="text-amber transition-transform duration-300 group-open:rotate-180">↓</span>
                 </summary>
                 <p class="mt-4 text-[15px] sm:text-base text-zinc-200 leading-relaxed font-sans">Work is billed securely in a 50/50 milestone payment (deposit upon kickoff and final payment upon mix approval). Every paid project includes 3 consolidated revision rounds within a 14-day feedback window.</p>
+              </details>
+
+              <details class="group bg-zinc-950 border border-border rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-colors hover:border-amber/40">
+                <summary class="flex justify-between items-center text-lg font-bold text-white">
+                  <span data-da="Hvad koster mixing og studio tracking?" data-en="How much does mixing and studio tracking cost?">How much does mixing and studio tracking cost?</span>
+                  <span class="text-amber transition-transform duration-300 group-open:rotate-180">↓</span>
+                </summary>
+                <p class="mt-4 text-[15px] sm:text-base text-zinc-200 leading-relaxed font-sans" data-da="Et Full Production Mix koster 2.499 DKK pr. sang inkl. moms. Ved 3 eller flere sange koster det 2.195 DKK pr. sang. Studio Tracking i Aarhus koster 3.125 DKK pr. dag inkl. moms. Alle priser er faste projektpriser med 3 revisionsrunder inkluderet, og test-mixet er gratis." data-en="A Full Production Mix costs €335 per song including VAT, or €295 per song for 3 or more songs. Studio Tracking in Aarhus costs €420 per day including VAT. All prices are fixed project prices with 3 revision rounds included, and the test mix is free.">
+                  A Full Production Mix costs €335 per song including VAT, or €295 per song for 3 or more songs. Studio Tracking in Aarhus costs €420 per day including VAT. All prices are fixed project prices with 3 revision rounds included, and the test mix is free.
+                </p>
               </details>
             </div>
           </div>

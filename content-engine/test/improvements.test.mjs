@@ -65,9 +65,9 @@ test('touchSitemap bumps lastmod for one URL', () => {
 test('urlsForFiles maps article files to live URLs (plus blog index)', () => {
   const urls = urlsForFiles({ site }, ['content/blog/da/mudret-bund.md', 'content/blog/en/muddy-low-end.md', 'README.md']);
   assert.deepEqual(urls.sort(), [
-    'https://frederikdinesen.com/blog/',
+    'https://frederikdinesen.com/blog',
     'https://frederikdinesen.com/blog/mudret-bund',
-    'https://frederikdinesen.com/en/blog/',
+    'https://frederikdinesen.com/en/blog',
     'https://frederikdinesen.com/en/blog/muddy-low-end',
   ]);
 });

@@ -18,6 +18,8 @@ export interface BlogPostMeta {
   title: string;
   description: string;
   date: string;
+  /** Optional last-updated date (frontmatter `updated`), used for dateModified. */
+  updated?: string;
   author: string;
   pillar: string;
   faq: FAQItem[];
@@ -102,6 +104,7 @@ export function getBlogPosts(lang: 'da' | 'en'): BlogPostMeta[] {
       title: data.title || slug,
       description: data.description || '',
       date: formattedDate,
+      updated: data.updated ? formatDateString(data.updated) : undefined,
       author: data.author || 'Frederik Dinesen',
       pillar: data.pillar || (lang === 'da' ? 'Mixing & Audio-tips' : 'Mixing & Audio Tips'),
       faq: Array.isArray(data.faq) ? data.faq : [],
@@ -138,6 +141,7 @@ export async function getBlogPostBySlug(slug: string, lang: 'da' | 'en'): Promis
     title: data.title || slug,
     description: data.description || '',
     date: formattedDate,
+    updated: data.updated ? formatDateString(data.updated) : undefined,
     author: data.author || 'Frederik Dinesen',
     pillar: data.pillar || (lang === 'da' ? 'Mixing & Audio-tips' : 'Mixing & Audio Tips'),
     faq: Array.isArray(data.faq) ? data.faq : [],

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllBlogSlugs, getBlogPostBySlug } from '@/lib/blog';
+import { buildArticleGraph, ogImageFor } from '@/lib/blogSchema';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogFooter from '@/components/blog/BlogFooter';
 import TestMixCTA from '@/components/blog/TestMixCTA';
@@ -15,6 +16,9 @@ import { TestMixModalProvider } from '@/components/blog/TestMixModalContext';
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
+// Only the articles in content/blog exist; unknown slugs return a real 404.
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const slugs = getAllBlogSlugs('en');
@@ -50,11 +54,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.description,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.updated || post.date,
+      locale: 'en_GB',
+      siteName: 'FD Sound Labs',
       authors: [post.author],
       url: `https://frederikdinesen.com/en/blog/${slug}`,
       images: [
         {
-          url: 'https://frederikdinesen.com/assets/og-image.jpg',
+          url: post.coverImage || ogImageFor('en'),
           width: 1200,
           height: 630,
           alt: post.title,
@@ -72,52 +79,8 @@ export default async function EnglishBlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  // Schema.org Article structured data
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'TechArticle',
-    headline: post.title,
-    description: post.description,
-    image: 'https://frederikdinesen.com/assets/og-image.jpg',
-    datePublished: post.date,
-    dateModified: post.date,
-    author: {
-      '@type': 'Person',
-      name: post.author,
-      url: 'https://frederikdinesen.com/',
-    },
-    publisher: {
-      '@type': 'MusicStudio',
-      name: 'FD Sound Labs',
-      url: 'https://frederikdinesen.com/',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://frederikdinesen.com/assets/og-image.jpg',
-      },
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://frederikdinesen.com/en/blog/${slug}`,
-    },
-    articleSection: post.pillar,
-  };
-
-  // Schema.org FAQPage structured data
-  const faqSchema =
-    post.faq.length > 0
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: post.faq.map((item) => ({
-            '@type': 'Question',
-            name: item.question,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: item.answer,
-            },
-          })),
-        }
-      : null;
+  // Schema.org structured data: article + breadcrumb + FAQ in one @graph
+  const articleGraph = buildArticleGraph(post, 'en');
 
   return (
     <TestMixModalProvider lang="en">
@@ -127,14 +90,8 @@ export default async function EnglishBlogPostPage({ params }: PageProps) {
       {/* Structured Data injection */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleGraph) }}
       />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
 
       <BlogNavbar
         lang="en"
@@ -149,7 +106,7 @@ export default async function EnglishBlogPostPage({ params }: PageProps) {
         <article className="max-w-4xl mx-auto relative z-10">
           {/* Breadcrumbs Navigation */}
           <nav className="flex items-center gap-2 text-xs font-mono text-zinc-500 mb-8 overflow-x-auto">
-            <Link href="/en/" className="hover:text-amber transition-colors">
+            <Link href="/en" className="hover:text-amber transition-colors">
               Home
             </Link>
             <span>/</span>

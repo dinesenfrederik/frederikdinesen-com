@@ -17,7 +17,7 @@ export function urlsForFiles(config, files) {
     const m = f.match(/content\/blog\/(da|en)\/([a-z0-9-]+)\.md$/);
     if (!m) continue;
     urls.add(`${config.site.baseUrl}${config.site.blogPath[m[1]]}${m[2]}`);
-    urls.add(`${config.site.baseUrl}${config.site.blogPath[m[1]]}`); // the blog index changed too
+    urls.add(`${config.site.baseUrl}${config.site.blogPath[m[1]].replace(/\/$/, '')}`); // the blog index changed too (no trailing slash: /blog/ redirects)
   }
   return [...urls];
 }

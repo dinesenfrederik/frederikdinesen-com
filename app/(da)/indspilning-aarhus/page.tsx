@@ -47,7 +47,7 @@ const STEPS = [
 
 const PREP = [
   'Øv sangene til klik i det tempo, I vil indspille i.',
-  'Skift strenge på guitar og bas 1–2 dage før, og tjek intonationen.',
+  'Medbring nye strenge til guitar og bas. De skiftes på dagen lige før indspilningen, så stemningen og lyden er så frisk som muligt.',
   'Medbring jeres egne instrumenter, kabler og eventuelle pedaler.',
   'Hav tekster klar, så vokalisten ikke skal huske dem under takes.',
   'Send demo, tempo og eventuelle guide-spor eller programmerede trommer på forhånd.',

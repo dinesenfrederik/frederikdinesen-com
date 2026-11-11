@@ -3,7 +3,7 @@
 Automated SEO + GEO blog drafting for frederikdinesen.com. You review every article before it goes live.
 
 ```
- Twice a week (GitHub Actions)
+ Once a week (GitHub Actions)
  ┌────────────────────────────────────────────────────────────────────────────┐
  │ 1. SCAN      Google autocomplete · Reddit · Google News/RSS · YouTube ·    │
  │              your own Google Search Console queries                        │
@@ -55,7 +55,7 @@ Repo → Settings → Actions → General → *Workflow permissions* → tick **
 
 ## Running it
 
-- **Automatically:** Mondays and Thursdays at 06:17 Danish time (`.github/workflows/content-engine.yml`).
+- **Automatically:** Mondays at 06:17 Danish time (one draft a week) (`.github/workflows/content-engine.yml`).
 - **Manually:** GitHub → Actions → *Content engine* → *Run workflow*. Optional inputs:
   - **topic:** write about exactly this topic, e.g. "Kompression og EQ til moderne rock-trommer".
   - **count:** how many articles to draft in this run.

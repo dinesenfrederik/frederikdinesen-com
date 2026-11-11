@@ -10,6 +10,12 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-11 – Fremtidig plan
+
+- Plan skrevet i `seo/PLAN.md`. Frederik har ca. 1 time/uge; content-motoren er sat til 1 artikel/uge (mandag). Der kører en månedlig gennemgang som planlagt opgave.
+- Fundet og rettet: Blog og landingssider (Next.js) indlæste ikke GA4, Ahrefs eller Vercel Analytics. Besøg og test-mix-henvendelser fra de sider blev derfor ikke målt. Tilføjet i `lib/rootLayout.tsx`.
+- Case-studie om *The Dimming Effect* godkendt; afventer interview.
+
 ## 2026-11-11 – IndexNow for alle sider + Google-sitemap
 
 - IndexNow-workflowet reagerer nu på ændringer i alle sider (forsider, landingssider, blog, terms, skabeloner) og ikke kun på blogartikler. Filer mappes til URL'er; ændringer i fælles skabeloner (components/, lib/, layouts, CSS) melder hele sitemap'et. Nye `<loc>` i sitemap.xml meldes automatisk. Kun URL'er fra sitemap.xml (canonical) indsendes.

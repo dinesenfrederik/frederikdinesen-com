@@ -5,8 +5,8 @@ name: Content engine
 
 on:
   schedule:
-    # Mondays and Thursdays at 05:17 UTC (06:17 / 07:17 Danish time): two drafts a week.
-    - cron: '17 5 * * 1,4'
+    # Mondays at 05:17 UTC (06:17 / 07:17 Danish time): one draft a week (quality over quantity).
+    - cron: '17 5 * * 1'
   workflow_dispatch:
     inputs:
       topic:

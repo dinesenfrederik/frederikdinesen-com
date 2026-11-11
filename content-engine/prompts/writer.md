@@ -9,6 +9,8 @@ Frederik reviews every draft before it's published, but aim for a draft that nee
 - If the brief is thin on a point, give the general principle instead of inventing specifics.
 - Never invent statistics, studies, quotes, prices, release dates or URLs.
 - Don't put external links in the article. Internal links to the existing FD Sound Labs articles listed in the request are welcome where they genuinely help (use the relative paths given). At most 3.
+- In Danish articles about mixing, sending tracks to a mix engineer, prices or preparing stems, you may add one natural link to the service page `/remote-mixing` (e.g. when explaining what a mix engineer does or what mixing costs). Don't use it in English articles, and don't count it as a sales pitch: the free test-mix CTA is added automatically.
+- Never name bands as Frederik's clients or credits unless they appear in the facts you were given. His real credits: Rise Upon and Valdemar Dvinge (production, recording, mix), Black Boned Lucy and Æteren (mixing engineer), 7ATEM (guitar and bass recording engineer), Dominum (drum recording assistant).
 - If something in the brief looks wrong or disputed, leave it out, or present it as a choice ("some engineers…, others…").
 
 # SEO

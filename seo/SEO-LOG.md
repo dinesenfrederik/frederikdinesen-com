@@ -10,6 +10,13 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-11 – Landingsside: /remote-mixing
+
+Ny side `app/(da)/remote-mixing/page.tsx` (statisk, ca. 1.300 ord). Målsøgeord: "remote mixing", "mixing af metal/rock", "få mixet en sang", "hvad koster det at få mixet en sang", "online mixing", "mix engineer". Indhold: definition (AI-citerbar), proces i 5 trin, priser med eksempler (EP 10.975 kr., album 21.950 kr.), inkluderet/ikke inkluderet (mastering), tjekliste til spor, credits, 8 FAQ og test-mix-CTA (genbruger modal + web3forms).
+Schema: WebPage, Service (3 offers), HowTo, FAQPage, BreadcrumbList.
+Interne links: forsidens priskort, "Om mig", footer, blog-footer. Sitemap og llms.txt opdateret. Writer-prompten må linke til `/remote-mixing` i danske mixing-artikler og har nu en fast liste over rigtige credits.
+Næste: Overvåg GSC for siden. Overvej EN-version (`/en/remote-mixing`) i fase 3 og en artikel "Hvad koster det at få mixet en sang?", der linker hertil.
+
 ## 2026-11-11 – Portfolio-ærlighed + credits
 
 Fakta: Portfolio-numrene undtagen Rise Upon (Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves) er mix af frit tilgængelige multitracks til porteføljebrug, **ikke** kundearbejde. Rigtige samarbejder: Rise Upon, Valdemar Dvinge (produktion, indspilning, mix), Black Boned Lucy (mixing engineer), 7ATEM (guitar- og basindspilning), Dominum (assistent ved trommeindspilning), Æteren (mixing engineer). Øvelsesnumrenes multitracks er anskaffet gennem mixing-kurser (ikke frit tilgængelige).
@@ -62,7 +69,7 @@ Rettet:
 1. **sameAs / entitet:** GBP er koblet. Tilføj Instagram, Facebook, YouTube og LinkedIn, når de findes, og en SoundBetter-profil.
 2. ~~Om Frederik-sektion~~ (gjort 2026-11-11). Mangler: billede af Frederik/studiet.
 3. **Anmeldelser:** Udtalelser fra kunder på siden. Indsaml Google-anmeldelser på GBP.
-4. **Landingsside for remote mixing (DA):** fx `/remote-mixing` (eller `/mixing-af-metal`) med dybt indhold, proces, priser og FAQ.
+4. ~~Landingsside for remote mixing (DA)~~ (gjort 2026-11-11: `/remote-mixing`).
 5. **Landingsside for studio tracking Aarhus:** lokal side, der understøtter GBP.
 6. **Søgeordsresearch DK:** Valider volumen for "mixing af metal", "mix af sang pris", "lydstudie Aarhus", "indspilning Aarhus", "remote mixing" osv. med GSC-data.
 7. **Lydfiler:** Flyt fra raw.githubusercontent.com til eget domæne / Vercel Blob (hastighed + AudioObject på eget domæne).

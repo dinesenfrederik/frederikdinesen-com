@@ -29,6 +29,7 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 ## Pages
 
 - [Forside (dansk)](https://frederikdinesen.com/): services, before/after mix examples, prices, FAQ and contact form for a free test mix.
+- [Remote mixing af rock og metal (dansk)](https://frederikdinesen.com/remote-mixing): how remote mixing works step by step, fixed prices with examples (EP, album), what is and is not included, how to prepare stems, FAQ.
 - [Homepage (English)](https://frederikdinesen.com/en): remote mixing for rock and metal bands across Europe, prices in EUR.
 - [Blog (dansk)](https://frederikdinesen.com/blog) and [Blog (English)](https://frederikdinesen.com/en/blog): practical guides on recording, mixing and releasing rock and metal.
 - [Handelsbetingelser / Terms](https://frederikdinesen.com/terms.html)

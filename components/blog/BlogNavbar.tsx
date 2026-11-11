@@ -7,20 +7,24 @@ interface BlogNavbarProps {
   lang: 'da' | 'en';
   currentSlug?: string;
   alternateSlug?: string;
+  /** Override the DA/EN switch targets (pages outside the blog). */
+  languageUrls?: { da: string; en: string };
+  /** Highlight "Blog" as the active section (default true). */
+  blogActive?: boolean;
 }
 
-export default function BlogNavbar({ lang, currentSlug, alternateSlug }: BlogNavbarProps) {
+export default function BlogNavbar({ lang, currentSlug, alternateSlug, languageUrls, blogActive = true }: BlogNavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isDa = lang === 'da';
   const { openModal } = useTestMixModal();
 
   // Compute language switch URLs
-  const daUrl = currentSlug
+  const daUrl = languageUrls?.da ?? (currentSlug
     ? `/blog/${isDa ? currentSlug : alternateSlug || currentSlug}`
-    : '/blog';
-  const enUrl = currentSlug
+    : '/blog');
+  const enUrl = languageUrls?.en ?? (currentSlug
     ? `/en/blog/${!isDa ? currentSlug : alternateSlug || currentSlug}`
-    : '/en/blog';
+    : '/en/blog');
 
   const homeUrl = isDa ? '/' : '/en';
   const portfolioUrl = isDa ? '/#portfolio' : '/en#portfolio';
@@ -52,7 +56,7 @@ export default function BlogNavbar({ lang, currentSlug, alternateSlug }: BlogNav
           <a href={pricingUrl} className="hover:text-amber transition-colors text-zinc-300">
             {isDa ? 'Priser' : 'Pricing'}
           </a>
-          <a href={blogUrl} className="text-amber font-semibold transition-colors">
+          <a href={blogUrl} className={blogActive ? 'text-amber font-semibold transition-colors' : 'hover:text-amber transition-colors text-zinc-300'}>
             Blog
           </a>
           <a href={contactUrl} className="hover:text-amber transition-colors text-zinc-300">
@@ -129,7 +133,7 @@ export default function BlogNavbar({ lang, currentSlug, alternateSlug }: BlogNav
           </a>
           <a
             href={blogUrl}
-            className="block text-base font-semibold text-amber py-2"
+            className={`block text-base font-semibold py-2 ${blogActive ? 'text-amber' : 'text-zinc-200 hover:text-amber'}`}
           >
             Blog
           </a>

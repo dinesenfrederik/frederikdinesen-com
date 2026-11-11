@@ -102,7 +102,8 @@ async function main() {
   }
 
   // Google ignores IndexNow and leans on <lastmod>; flag changed pages whose lastmod wasn't bumped.
-  if (!args.includes('--all')) {
+  // Skip when a shared template changed (every URL is resubmitted, but page content may be unchanged).
+  if (!args.includes('--all') && urls.length < sitemapUrls.length) {
     const today = new Date().toISOString().slice(0, 10);
     for (const u of urls) {
       const lm = sitemap.find((e) => e.loc === u)?.lastmod;

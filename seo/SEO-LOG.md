@@ -10,6 +10,14 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-11 – IndexNow for alle sider + Google-sitemap
+
+- IndexNow-workflowet reagerer nu på ændringer i alle sider (forsider, landingssider, blog, terms, skabeloner) og ikke kun på blogartikler. Filer mappes til URL'er; ændringer i fælles skabeloner (components/, lib/, layouts, CSS) melder hele sitemap'et. Nye `<loc>` i sitemap.xml meldes automatisk. Kun URL'er fra sitemap.xml (canonical) indsendes.
+- Manuel kørsel: GitHub → Actions → IndexNow → Run workflow (all = true) melder alle URL'er i sitemap.xml.
+- Workflowet advarer, hvis en ændret side har en `<lastmod>`, der ikke er opdateret (Google bruger lastmod).
+- Google: understøtter ikke IndexNow, og Indexing API'et må kun bruges til jobopslag/livestreams. For Google gælder: sitemap.xml med korrekt lastmod (opdateret for / og /en i dag), sitemap indsendt i Search Console og "Anmod om indeksering" på nye sider.
+- **Regel:** Ved indholdsændringer på en side skal dens `<lastmod>` i sitemap.xml opdateres i samme commit.
+
 ## 2026-11-11 – Prisartikel: "Hvad koster et mix?"
 
 - `/blog/hvad-koster-et-mix` (DA, ca. 1.460 ord) + `/en/blog/how-much-does-mixing-cost` (EN), hreflang-par. Skrevet manuelt (ikke via content-motoren), fordi motoren ikke må nævne priser, der ikke står i dens research-brief.

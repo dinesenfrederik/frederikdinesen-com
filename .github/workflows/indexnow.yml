@@ -1,16 +1,40 @@
 name: IndexNow
 
-# When blog articles are published or updated on main, notify IndexNow (Bing → ChatGPT search,
-# Copilot, Yandex…) so they're crawled within hours instead of weeks.
+# When pages are published or updated on main, notify IndexNow (Bing → ChatGPT search,
+# Copilot, Yandex, Seznam, Naver…) so they're crawled within hours instead of weeks.
+# Google doesn't use IndexNow: it reads sitemap.xml, so keep <lastmod> accurate there.
+#
+# Manual run (Actions → IndexNow → Run workflow) with "all" ticked submits every URL in sitemap.xml.
 
 on:
   push:
     branches: [main]
     paths:
       - 'content/blog/**'
+      - 'index.html'
+      - 'en/**'
+      - 'terms.html'
+      - 'terms.js'
+      - 'main.js'
+      - 'tools/**'
+      - 'app/**'
+      - 'components/**'
+      - 'lib/**'
+      - 'src/input.css'
+      - 'sitemap.xml'
+  workflow_dispatch:
+    inputs:
+      all:
+        description: 'Submit every URL in sitemap.xml'
+        type: boolean
+        default: true
 
 permissions:
   contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
 
 jobs:
   ping:
@@ -25,15 +49,24 @@ jobs:
         with:
           node-version: 24
 
-      - name: Submit changed articles
+      - name: Submit all sitemap URLs
+        if: github.event_name == 'workflow_dispatch' && inputs.all
+        run: node content-engine/src/indexnow.mjs --all
+
+      - name: Submit changed pages
+        if: github.event_name == 'push'
         env:
           BEFORE: ${{ github.event.before }}
           AFTER: ${{ github.sha }}
         run: |
           if git cat-file -e "$BEFORE" 2>/dev/null; then
-            files=$(git diff --name-only --diff-filter=AM "$BEFORE" "$AFTER" -- content/blog)
+            range="$BEFORE $AFTER"
           else
-            files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- content/blog)
+            range="HEAD~1 HEAD"
           fi
-          echo "Changed: $files"
-          node content-engine/src/indexnow.mjs $files
+          files=$(git diff --name-only --diff-filter=AM $range)
+          echo "Changed files:"; echo "$files"
+          # URLs newly added to sitemap.xml (e.g. a new landing page) are submitted too.
+          new_urls=$(git diff $range -- sitemap.xml | sed -n 's#^+ *<loc>\(.*\)</loc>#\1#p')
+          echo "New sitemap URLs:"; echo "$new_urls"
+          node content-engine/src/indexnow.mjs $files $new_urls

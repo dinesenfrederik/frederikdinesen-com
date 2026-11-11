@@ -90,3 +90,21 @@ test('resolveSourceUrls follows grounding redirects and de-duplicates', async ()
     globalThis.fetch = realFetch;
   }
 });
+
+test('urlsForChangedFiles maps static pages, landing pages and templates to sitemap URLs', async () => {
+  const { urlsForChangedFiles, parseSitemap } = await import('../src/indexnow.mjs');
+  const B = 'https://frederikdinesen.com';
+  const sitemapUrls = [`${B}/`, `${B}/en`, `${B}/remote-mixing`, `${B}/en/remote-mixing`, `${B}/indspilning-aarhus`,
+    `${B}/blog`, `${B}/en/blog`, `${B}/blog/a`, `${B}/en/blog/b`, `${B}/terms.html`];
+  const cfg = { site };
+  assert.deepEqual(urlsForChangedFiles(cfg, ['index.html'], sitemapUrls), [`${B}/`]);
+  assert.deepEqual(urlsForChangedFiles(cfg, ['en/index.html'], sitemapUrls).sort(), [`${B}/`, `${B}/en`].sort());
+  assert.deepEqual(urlsForChangedFiles(cfg, ['app/(da)/remote-mixing/page.tsx'], sitemapUrls), [`${B}/remote-mixing`]);
+  assert.deepEqual(urlsForChangedFiles(cfg, ['app/(en)/en/remote-mixing/page.tsx'], sitemapUrls), [`${B}/en/remote-mixing`]);
+  assert.deepEqual(urlsForChangedFiles(cfg, ['app/(da)/blog/[slug]/page.tsx'], sitemapUrls).sort(),
+    [`${B}/blog`, `${B}/blog/a`, `${B}/en/blog`, `${B}/en/blog/b`].sort());
+  assert.deepEqual(urlsForChangedFiles(cfg, ['components/blog/BlogNavbar.tsx'], sitemapUrls), sitemapUrls);
+  assert.deepEqual(urlsForChangedFiles(cfg, ['seo/SEO-LOG.md', 'content-engine/src/run.mjs'], sitemapUrls), []);
+  const sm = parseSitemap('<urlset><url><loc>https://x.dk/</loc><lastmod>2026-01-02</lastmod></url><url><loc>https://x.dk/a</loc></url></urlset>');
+  assert.deepEqual(sm, [{ loc: 'https://x.dk/', lastmod: '2026-01-02' }, { loc: 'https://x.dk/a', lastmod: undefined }]);
+});

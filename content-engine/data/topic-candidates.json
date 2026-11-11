@@ -1,0 +1,33 @@
+{
+  "scannedAt": "2026-11-11",
+  "candidates": [
+    {
+      "pillar": "mixing",
+      "titleEn": "How to Fix Muddy Low-End in Heavy Metal: Kick, Bass & Downtuned Guitars",
+      "titleDa": "Mudret Low-End i Tung Metal? Sådan Renser Du Bunden Uden at Miste Tyngde",
+      "primaryKeywordEn": "muddy low end metal mix",
+      "primaryKeywordDa": "mudret bund metal mix",
+      "secondaryKeywords": [
+        "kick and bass separation metal",
+        "tight low end metal mix",
+        "how to fix muddy mix metal",
+        "sidechain bas kick metal",
+        "palm mute low mid mud"
+      ],
+      "slugEn": "fix-muddy-low-end-metal-mix",
+      "slugDa": "fix-mudret-low-end-metal-mix",
+      "searchIntent": "Home-studio producers and DIY metal bands want to eliminate the boomy, blurry buildup between kick, bass, and low-tuned guitars while preserving aggressive sub-bass weight and punch.",
+      "angle": "Generic mix advice tells producers to 'just high-pass at 100 Hz and duck the bass,' which cripples heavy guitar tones and destroys kick impact. We provide an aggressive metal-specific protocol: polarity checks first, frequency slotting (deciding who owns 50–70 Hz), split-frequency bass processing, and dynamic multiband compression on palm-mute buildup (200–350 Hz).",
+      "whyNow": "Downtuned 7/8-string guitars and high-tempo double bass are standard in modern rock/metal, making low-end masking the single most frequent problem DIY producers seek help with across production forums and YouTube tutorials.",
+      "youtubeQuery": "fix muddy low end metal mix kick and bass",
+      "scores": {
+        "demand": 5,
+        "trend": 4,
+        "businessFit": 5,
+        "competitionGap": 4
+      },
+      "score": 93,
+      "duplicateOf": null
+    }
+  ]
+}

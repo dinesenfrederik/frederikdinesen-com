@@ -10,6 +10,12 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-11 – Interview runde 3
+
+Fakta: Albummet *The Dimming Effect* (Rise Upon) var nomineret til GAFFA-Prisen i kategorien dansk hard rock/metal. Rise Upon var nomineret til publikumsprisen ved Den Hårde Tone. Frederik laver ikke mastering (anbefaler en ekstern mastering engineer), men kan efter aftale levere et loud master. Valdemar Dvinge: samme rolle som ved Rise Upon (produktion, indspilning, mix). Frederik ønsker ikke hjælp til at skrive anmeldelsesbeskeder.
+
+Rettet: Hero-badge og "Om mig" med præcise nomineringer. Nyt FAQ-punkt om mastering (DA/EN + schema). GBP koblet via `hasMap`/`sameAs` (CID 15858331334067921623, kgmid /g/11m_k4mgpg). Schema-geo rettet til GBP-koordinaterne (56.1553365, 10.1881346). Credits opdelt i produktion vs. mix.
+
 ## 2026-11-11 – Interview runde 2 + "Om Frederik"
 
 Fakta fra Frederik:
@@ -45,7 +51,7 @@ Rettet:
 ## Backlog (prioriteret)
 
 0. **Anmeldelser (vigtigst nu):** Bed tidligere kunder (Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves, Valdemar Dvinge) om en Google-anmeldelse. Opret SoundBetter-profil.
-1. **sameAs / entitet:** Link til Google Business Profile, Instagram, Facebook, Spotify, YouTube, LinkedIn osv. i `sameAs` (venter på URL'er fra Frederik).
+1. **sameAs / entitet:** GBP er koblet. Tilføj Instagram, Facebook, YouTube og LinkedIn, når de findes, og en SoundBetter-profil.
 2. ~~Om Frederik-sektion~~ (gjort 2026-11-11). Mangler: billede af Frederik/studiet.
 3. **Anmeldelser:** Udtalelser fra kunder på siden. Indsaml Google-anmeldelser på GBP.
 4. **Landingsside for remote mixing (DA):** fx `/remote-mixing` (eller `/mixing-af-metal`) med dybt indhold, proces, priser og FAQ.

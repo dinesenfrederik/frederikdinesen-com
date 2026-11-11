@@ -13,13 +13,15 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 - Delivery format: 24-bit WAV, 44.1 kHz or higher, all tracks starting at 00:00:00, plus tempo (BPM) and clean DI tracks for guitar and bass (for re-amping).
 - Programmed drums (Superior Drummer, GetGood Drums, MIDI) and rehearsal-room drum recordings are mixed and sample-blended.
 - Payment: 50/50 (deposit at start, final payment on approval of the mix).
-- Selected credits: Rise Upon, Valdemar Dvinge, Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves.
+- Mastering: not included. Frederik is a mix engineer and recommends a dedicated mastering engineer for the final master. By agreement he can deliver a loud master of the mix for listening and testing, and he delivers files ready for mastering.
+- Selected credits: production, recording and mix for Rise Upon and Valdemar Dvinge; mix for Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid and Raised With Wolves.
+- Google Business Profile: https://www.google.com/maps?cid=15858331334067921623
 
 ## About Frederik Dinesen
 
 - Recording engineer, producer and mix engineer with about 9 years of experience in rock and metal.
 - Self-taught, with further training through courses from Nail The Mix and Hardcore Music Studio (Jordan Valeriote).
-- Drummer and songwriter in the Danish metalcore band Rise Upon. Producer, recording engineer and mixing engineer on Rise Upon's album The Dimming Effect (2024).
+- Drummer and songwriter in the Danish metalcore band Rise Upon. Producer, recording engineer and mixing engineer on Rise Upon's album The Dimming Effect (2024). The album was nominated for a GAFFA Award in the Danish hard rock/metal category, and Rise Upon was nominated for the audience award at Den Hårde Tone. (The nominations were for the album and the band, not specifically for the production or mix.)
 - Works from his own studio in Aarhus C and mixes remotely for bands across Denmark and Europe.
 - Location: Ceresbyen 10E, st., 8000 Aarhus C, Denmark. Phone: +45 30 13 89 75.
 

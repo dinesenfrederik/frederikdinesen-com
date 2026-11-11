@@ -10,6 +10,14 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-11 – Portfolio-ærlighed + credits
+
+Fakta: Portfolio-numrene undtagen Rise Upon (Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves) er mix af frit tilgængelige multitracks til porteføljebrug, **ikke** kundearbejde. Rigtige samarbejder: Rise Upon, Valdemar Dvinge (produktion, indspilning, mix), Black Boned Lucy, 7ATEM, Dominum, Æteren (roller ukendte).
+GBP: Kategorier "Pladestudie" (primær) og "Musikproducer". Beskrivelsen påstod "produktioner nomineret til GAFFA-Prisen og Den Hårde Tone". Der er foreslået en rettet tekst.
+
+Rettet: Øvelsesnumrene er mærket "Mix-eksempel" med forklaring i portfolio-intro. Credits viser kun rigtige samarbejder (én pr. linje). Schemaets AudioObject peger nu på Rise Upon – Lost Track. llms.txt forklarer, at eksemplerne ikke er kundearbejde.
+Regel fremover: Brug aldrig øvelsesnumrenes bandnavne som kunder/credits i indhold, schema eller artikler.
+
 ## 2026-11-11 – Interview runde 3
 
 Fakta: Albummet *The Dimming Effect* (Rise Upon) var nomineret til GAFFA-Prisen i kategorien dansk hard rock/metal. Rise Upon var nomineret til publikumsprisen ved Den Hårde Tone. Frederik laver ikke mastering (anbefaler en ekstern mastering engineer), men kan efter aftale levere et loud master. Valdemar Dvinge: samme rolle som ved Rise Upon (produktion, indspilning, mix). Frederik ønsker ikke hjælp til at skrive anmeldelsesbeskeder.

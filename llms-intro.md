@@ -14,7 +14,8 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 - Programmed drums (Superior Drummer, GetGood Drums, MIDI) and rehearsal-room drum recordings are mixed and sample-blended.
 - Payment: 50/50 (deposit at start, final payment on approval of the mix).
 - Mastering: not included. Frederik is a mix engineer and recommends a dedicated mastering engineer for the final master. By agreement he can deliver a loud master of the mix for listening and testing, and he delivers files ready for mastering.
-- Selected credits: production, recording and mix for Rise Upon and Valdemar Dvinge; mix for Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid and Raised With Wolves.
+- Credits: production, recording and mix for Rise Upon and Valdemar Dvinge. Has also worked with Black Boned Lucy, 7ATEM, Dominum and Æteren.
+- Portfolio note: apart from Rise Upon, the before/after examples on the website (Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves) are mixes of freely available multitracks licensed for portfolio use, not client work.
 - Google Business Profile: https://www.google.com/maps?cid=15858331334067921623
 
 ## About Frederik Dinesen
@@ -27,7 +28,7 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 
 ## Pages
 
-- [Forside (dansk)](https://frederikdinesen.com/): services, portfolio with before/after mixes, prices, FAQ and contact form for a free test mix.
+- [Forside (dansk)](https://frederikdinesen.com/): services, before/after mix examples, prices, FAQ and contact form for a free test mix.
 - [Homepage (English)](https://frederikdinesen.com/en): remote mixing for rock and metal bands across Europe, prices in EUR.
 - [Blog (dansk)](https://frederikdinesen.com/blog) and [Blog (English)](https://frederikdinesen.com/en/blog): practical guides on recording, mixing and releasing rock and metal.
 - [Handelsbetingelser / Terms](https://frederikdinesen.com/terms.html)

@@ -12,7 +12,7 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 
 ## 2026-11-11 – Portfolio-ærlighed + credits
 
-Fakta: Portfolio-numrene undtagen Rise Upon (Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves) er mix af frit tilgængelige multitracks til porteføljebrug, **ikke** kundearbejde. Rigtige samarbejder: Rise Upon, Valdemar Dvinge (produktion, indspilning, mix), Black Boned Lucy, 7ATEM, Dominum, Æteren (roller ukendte).
+Fakta: Portfolio-numrene undtagen Rise Upon (Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves) er mix af frit tilgængelige multitracks til porteføljebrug, **ikke** kundearbejde. Rigtige samarbejder: Rise Upon, Valdemar Dvinge (produktion, indspilning, mix), Black Boned Lucy (mixing engineer), 7ATEM (guitar- og basindspilning), Dominum (assistent ved trommeindspilning), Æteren (mixing engineer). Øvelsesnumrenes multitracks er anskaffet gennem mixing-kurser (ikke frit tilgængelige).
 GBP: Kategorier "Pladestudie" (primær) og "Musikproducer". Beskrivelsen påstod "produktioner nomineret til GAFFA-Prisen og Den Hårde Tone". Der er foreslået en rettet tekst.
 
 Rettet: Øvelsesnumrene er mærket "Mix-eksempel" med forklaring i portfolio-intro. Credits viser kun rigtige samarbejder (én pr. linje). Schemaets AudioObject peger nu på Rise Upon – Lost Track. llms.txt forklarer, at eksemplerne ikke er kundearbejde.

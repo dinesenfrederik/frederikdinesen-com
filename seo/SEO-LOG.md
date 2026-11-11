@@ -10,6 +10,13 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-11 – Case: The Dimming Effect
+
+- `/blog/case-the-dimming-effect` + `/en/blog/case-study-the-dimming-effect` (interview med Frederik). Fakta: 4 lokationer (3 private hjemmestudier + studie i øvelokalefællesskab), trommer akustisk i dødt rum med kreative rum-mikrofoner + samples (egne og andres), Studio One, Drop A, amp sims primært Neural DSP, ingen re-amping, clean vokal i mange lag i hjemmestudiet, startede mixet forfra pga. perfektionisme, mastering af Jacob Hansen (Hansen Studios), referencer Bad Omens/BMTH/Starset. Spotify: https://open.spotify.com/album/0ww92N8qUxXSWJDOGjHrZU
+- Ny komponent `AudioCompare` (frontmatter `audioCompare`) med før/efter-afspiller (Rise Upon – Lost Track). Afklar med Frederik, om Lost Track er på albummet; teksten påstår det ikke.
+- Bevidst undtagelse: ét eksternt link (Spotify) i casen; validatorens regel mod eksterne links gælder motorens udkast.
+- MusicAlbum-schema: Spotify som url/sameAs og subjectOf → casen. Link fra "Om mig" til casen.
+
 ## 2026-11-11 – Fremtidig plan
 
 - Plan skrevet i `seo/PLAN.md`. Frederik har ca. 1 time/uge; content-motoren er sat til 1 artikel/uge (mandag). Der kører en månedlig gennemgang som planlagt opgave.

@@ -11,6 +11,7 @@ import ReadingProgressBar from '@/components/blog/ReadingProgressBar';
 import ArticleAmbience from '@/components/blog/ArticleAmbience';
 import AudioSpectrumIndicator from '@/components/blog/AudioSpectrumIndicator';
 import TableOfContents from '@/components/blog/TableOfContents';
+import AudioCompare from '@/components/blog/AudioCompare';
 import { TestMixModalProvider } from '@/components/blog/TestMixModalContext';
 
 interface PageProps {
@@ -158,6 +159,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           {post.toc && post.toc.length > 0 && (
             <TableOfContents toc={post.toc} lang="da" />
           )}
+
+          {post.audioCompare && <AudioCompare data={post.audioCompare} lang="da" />}
 
           {/* High-Readability Editorial Markdown Body */}
           <div

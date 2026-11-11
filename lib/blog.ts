@@ -28,6 +28,8 @@ export interface BlogPostMeta {
   readingTime: string;
   alternateSlug?: string;
   coverImage?: string;
+  /** Optional before/after audio player shown above the article body. */
+  audioCompare?: { title: string; before: string; after: string; caption?: string };
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -111,6 +113,7 @@ export function getBlogPosts(lang: 'da' | 'en'): BlogPostMeta[] {
       readingTime,
       alternateSlug: data.alternateSlug,
       coverImage: data.coverImage,
+      audioCompare: data.audioCompare,
     };
   });
 
@@ -148,6 +151,7 @@ export async function getBlogPostBySlug(slug: string, lang: 'da' | 'en'): Promis
     readingTime,
     alternateSlug: data.alternateSlug,
     coverImage: data.coverImage,
+    audioCompare: data.audioCompare,
     contentHtml,
     rawContent: content,
     toc,

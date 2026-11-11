@@ -39,7 +39,7 @@ export function validateArticle(markdown, { lang, date, pillar, alternateSlug, m
   if (data.date !== date) errors.push(`frontmatter.date must be "${date}"`);
   if (data.pillar !== pillar) errors.push(`frontmatter.pillar must be "${pillar}"`);
   if (data.alternateSlug !== alternateSlug) errors.push(`frontmatter.alternateSlug must be "${alternateSlug}"`);
-  const extraKeys = Object.keys(data).filter((k) => !['title', 'description', 'date', 'author', 'pillar', 'alternateSlug', 'faq', 'coverImage'].includes(k));
+  const extraKeys = Object.keys(data).filter((k) => !['title', 'description', 'date', 'author', 'pillar', 'alternateSlug', 'faq', 'coverImage', 'audioCompare', 'updated'].includes(k));
   if (extraKeys.length) errors.push(`Unexpected frontmatter keys: ${extraKeys.join(', ')}`);
 
   const body = content.replace(/```[\s\S]*?```/g, ''); // ignore code blocks for structure checks

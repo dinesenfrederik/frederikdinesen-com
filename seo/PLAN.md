@@ -23,7 +23,7 @@ Troværdighedsopgaver, i prioriteret rækkefølge (én pr. uge):
 - [ ] Google-profil: billeder af setup/studie, ydelser med priser, rettet beskrivelse
 - [ ] Bing Webmaster Tools: importér fra Search Console
 - [ ] SoundBetter-profil
-- [ ] Credits på Spotify og Discogs (Rise Upon, Valdemar Dvinge m.fl.)
+- [ ] Credits på Spotify og Discogs (Rise Upon, Valdemar Dvinge m.fl.). Tjek at *The Dimming Effect* krediterer producer/mix/recording = Frederik Dinesen og mastering = Jacob Hansen
 - [ ] Bed bands om "Mixed by Frederik Dinesen / FD Sound Labs" + link på deres side/Bandcamp
 - [ ] Første Search Console-eksport til Drev (Ydeevne + Sider, 3 mdr.)
 
@@ -32,7 +32,7 @@ Claude:
 - [x] GA4/Ahrefs/Vercel-tracking på blog og landingssider (manglede før 2026-11-11), `generate_lead` ved test-mix-formular
 - [ ] Udgangspunkt for Search Console (når den første eksport ligger i Drev)
 - [ ] Udgangspunkt for AI-synlighed: faste spørgsmål (se nedenfor) i ChatGPT, Perplexity og Gemini
-- [ ] Case-studie: produktionen af *The Dimming Effect* (interview med Frederik)
+- [x] Case-studie: produktionen af *The Dimming Effect* (2026-11-11, DA+EN med før/efter-afspiller)
 - [ ] Artikler tæt på et køb: "Hvad skal jeg sende til en mix engineer?", "Mix eller mastering – hvad er forskellen?"
 
 ## Fase 2 – Indhold og optimering (jan.–mar. 2027)

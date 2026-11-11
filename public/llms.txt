@@ -23,6 +23,7 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 - Recording engineer, producer and mix engineer with about 9 years of experience in rock and metal.
 - Self-taught, with further training through courses from Nail The Mix and Hardcore Music Studio (Jordan Valeriote).
 - Drummer and songwriter in the Danish metalcore band Rise Upon. Producer, recording engineer and mixing engineer on Rise Upon's album The Dimming Effect (2024). The album was nominated for a GAFFA Award in the Danish hard rock/metal category, and Rise Upon was nominated for the audience award at Den Hårde Tone. (The nominations were for the album and the band, not specifically for the production or mix.)
+- The Dimming Effect: recorded at four locations (drums acoustically in a rehearsal-space studio, guitar and bass in Drop A with amp sims mainly from Neural DSP without re-amping, vocals and synths in Frederik's home studio in Aarhus), mixed in Studio One, mastered by Jacob Hansen (Hansen Studios). Album on Spotify: https://open.spotify.com/album/0ww92N8qUxXSWJDOGjHrZU. Case study: https://frederikdinesen.com/blog/case-the-dimming-effect
 - Works from his own studio in Aarhus C and mixes remotely for bands across Denmark and Europe.
 - Location: Ceresbyen 10E, st., 8000 Aarhus C, Denmark. Phone: +45 30 13 89 75.
 
@@ -38,12 +39,14 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 
 ## Guides (dansk)
 
+- [Case: Sådan Producerede Jeg Rise Upons Album The Dimming Effect](https://frederikdinesen.com/blog/case-the-dimming-effect): Fra fire lokationer og amp sims i Drop A til et GAFFA-nomineret album: sådan indspillede og mixede jeg The Dimming Effect, og hvad jeg lærte af det.
 - [Mudret Bund i Metal Mix? Sådan Får Du en Stram Bund Uden at Miste Tyngde](https://frederikdinesen.com/blog/fix-mudret-low-end-metal-mix): Få en stram bund uden at miste tyngde: sådan fixer du mudret bund i dit metal mix med polaritet, frekvensfordeling, split-bas og dynamisk EQ på palm mutes.
 - [Hvad Koster et Mix? Priser på Mixing af en Sang, EP og Album](https://frederikdinesen.com/blog/hvad-koster-et-mix): Hvad koster det at få mixet en sang? Se hvad der påvirker prisen, forskellen på pris pr. sang, time og dag, og hvad en EP eller et album koster at mixe.
 - [Vokalindspilning i Hjemmestudie: 7 Trin til Rå, Professionel Rock- & Metal-vokal](https://frederikdinesen.com/blog/vokalindspilning-hjemmestudie): Lær hvordan du tracker kompromisløse rock- og metal-vokaler derhjemme. Mikrofonvalg, akustik, gain staging og tricks til at levere klare spor til mix.
 
 ## Guides (English)
 
+- [Case Study: Producing Rise Upon's Album The Dimming Effect](https://frederikdinesen.com/en/blog/case-study-the-dimming-effect): From four locations and amp sims in Drop A to a GAFFA-nominated album: how I recorded and mixed The Dimming Effect, and what I would do differently today.
 - [Muddy Low End in Your Metal Mix? How to Get It Tight Without Losing Weight](https://frederikdinesen.com/en/blog/fix-muddy-low-end-metal-mix): Get a tight, heavy low end: fix the muddy low end in your metal mix with polarity checks, kick and bass slotting, split bass and dynamic EQ on palm mutes.
 - [How Much Does Mixing a Song Cost? Prices for a Single, EP and Album](https://frederikdinesen.com/en/blog/how-much-does-mixing-cost): How much does it cost to get a song mixed? See what drives the price, per-song vs. hourly vs. day rates, and what it costs to mix an EP or an album.
 - [Home Studio Vocal Tracking: 7 Steps to Raw, Professional Rock & Metal Vocals](https://frederikdinesen.com/en/blog/home-studio-vocal-tracking): Learn how to record uncompromising rock and metal vocals at home. Mic selection, DIY acoustics, gain staging, and delivering pristine tracks for mixing.

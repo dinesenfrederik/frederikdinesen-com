@@ -254,10 +254,6 @@ export default function RemoteMixingPage() {
                   andet studie – og sender de rå spor (multitracks) digitalt til en mix engineer. Mixet laves uden at
                   I behøver at møde op, og al feedback foregår online.
                 </p>
-                <p>
-                  Det giver jer en professionel, moderne lyd uden dyre studiedage. I betaler kun for mixet, og I kan
-                  bo hvor som helst i Danmark eller Europa.
-                </p>
               </div>
             </div>
             <div className={`${card} p-8`}>

@@ -1,0 +1,39 @@
+name: IndexNow
+
+# When blog articles are published or updated on main, notify IndexNow (Bing → ChatGPT search,
+# Copilot, Yandex…) so they're crawled within hours instead of weeks.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/blog/**'
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Submit changed articles
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          if git cat-file -e "$BEFORE" 2>/dev/null; then
+            files=$(git diff --name-only --diff-filter=AM "$BEFORE" "$AFTER" -- content/blog)
+          else
+            files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- content/blog)
+          fi
+          echo "Changed: $files"
+          node content-engine/src/indexnow.mjs $files

@@ -103,3 +103,34 @@ export function slugify(s, lang = 'en') {
   // Cut at a word boundary so the slug never ends in half a word.
   return slug.slice(0, 70).replace(/-[^-]*$/, '');
 }
+
+/**
+ * Gemini's grounding sources are temporary vertexaisearch redirect links that only show the
+ * domain and expire. Follow each redirect once to get the real article URL (best effort).
+ */
+export async function resolveSourceUrls(sources, { concurrency = 6 } = {}) {
+  const out = [...sources];
+  let i = 0;
+  async function worker() {
+    while (i < out.length) {
+      const idx = i++;
+      const s = out[idx];
+      if (!/vertexaisearch\.cloud\.google\.com\/grounding-api-redirect/.test(s.url)) continue;
+      try {
+        const res = await fetch(s.url, {
+          redirect: 'manual',
+          headers: { 'User-Agent': USER_AGENT },
+          signal: AbortSignal.timeout(8000),
+        });
+        const location = res.headers.get('location');
+        if (location && /^https?:\/\//.test(location)) out[idx] = { ...s, url: location };
+      } catch {
+        // keep the redirect link
+      }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(concurrency, out.length) }, worker));
+  // Same page can appear several times once resolved.
+  const seen = new Set();
+  return out.filter((s) => !seen.has(s.url) && seen.add(s.url));
+}

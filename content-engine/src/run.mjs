@@ -19,8 +19,9 @@ import { collectNews } from './sources/news.mjs';
 import { collectYoutube, searchYoutube } from './sources/youtube.mjs';
 import { collectSearchConsole } from './sources/searchConsole.mjs';
 import { loadExistingPosts, slugExists } from './existing.mjs';
-import { addToSitemap, writeArticleFile } from './publish.mjs';
-import { loadConfig, log, readJson, resolveFromEngine, slugify, today, warn, writeJson } from './util.mjs';
+import { addToSitemap, applyBacklink, backlinkCandidates, touchSitemap, writeArticleFile } from './publish.mjs';
+import { englishWordsInDanishSlug, syncHistory } from './history.mjs';
+import { loadConfig, log, readJson, resolveFromEngine, resolveSourceUrls, slugify, today, warn, writeJson } from './util.mjs';
 import * as mock from './mock.mjs';
 
 const { values: args } = parseArgs({
@@ -59,16 +60,9 @@ async function collectSignals() {
   return signals;
 }
 
-/** History = topics already drafted by this engine + PRs found by the workflow (open/merged/closed). */
+/** History = topics already drafted by this engine, with statuses synced from the draft PRs. */
 function loadHistory() {
-  const history = readJson('data/history.json', []);
-  const prs = readJson('.out/pr-history.json', []);
-  for (const pr of prs) {
-    const titleEn = pr.title.replace(/^Blog draft:\s*/i, '');
-    if (history.some((h) => h.titleEn === titleEn)) continue;
-    history.push({ titleEn, status: pr.state === 'MERGED' ? 'published' : pr.state === 'OPEN' ? 'in review' : 'rejected' });
-  }
-  return history;
+  return syncHistory(readJson('data/history.json', []), readJson('.out/pr-history.json', []));
 }
 
 const words = (s) => new Set(s.toLowerCase().split(/[^a-z0-9æøå]+/).filter((w) => w.length > 3));
@@ -105,7 +99,13 @@ function pickTopics(candidates, existing, history) {
 }
 
 function uniqueSlug(lang, raw) {
-  const base = slugify(raw, lang) || `artikel-${Date.now()}`;
+  let base = slugify(raw, lang) || `artikel-${Date.now()}`;
+  if (lang === 'da') {
+    // Strip English filler ("fix-", "how-to-") that sometimes sneaks into Danish slugs.
+    const english = new Set(englishWordsInDanishSlug(base));
+    const cleaned = base.split('-').filter((w) => !english.has(w));
+    if (cleaned.length >= 2) base = cleaned.join('-');
+  }
   let slug = base;
   for (let i = 2; slugExists(config, lang, slug); i++) slug = `${base}-${i}`;
   return slug;
@@ -130,12 +130,38 @@ async function draftArticle(topic, existing) {
     }
   }
   const videoNotes = await ai.analyzeVideos({ config, topic, videos });
-  const { brief, sources } = await ai.researchTopic({ config, topic, videoNotes });
+  const research = await ai.researchTopic({ config, topic, videoNotes });
+  const brief = research.brief;
+  const sources = await resolveSourceUrls(research.sources);
 
   const linksFor = (lang) => existing.filter((p) => p.lang === lang);
   const da = await ai.writeArticle({
     config, lang: 'da', topic, brief, pillarName: pillar.da, date, alternateSlug: slugEn, internalLinks: linksFor('da'),
   });
+
+  // Fact-check the Danish master with Google Search. High-confidence problems are fixed
+  // automatically (and listed in the PR); medium-confidence ones are listed for Frederik to judge.
+  const factCheck = { fixed: [], toReview: [], sources: [] };
+  if (config.run.factCheck !== false) {
+    try {
+      const fc = await ai.factCheck({ config, markdown: da.markdown });
+      factCheck.sources = await resolveSourceUrls(fc.sources);
+      factCheck.fixed = fc.findings.filter((f) => f.confidence === 'high');
+      factCheck.toReview = fc.findings.filter((f) => f.confidence !== 'high');
+      log(`Fact-check: ${factCheck.fixed.length} to fix, ${factCheck.toReview.length} to review`);
+      if (factCheck.fixed.length) {
+        const revised = await ai.reviseArticle({
+          config, lang: 'da', markdown: da.markdown, findings: factCheck.fixed,
+          expected: { lang: 'da', date, pillar: pillar.da, alternateSlug: slugEn, minWords: config.run.minWordsPerArticle },
+        });
+        Object.assign(da, revised);
+      }
+    } catch (e) {
+      warn(`fact-check failed, continuing without it: ${e.message}`);
+      factCheck.error = e.message;
+    }
+  }
+
   const en = await ai.writeArticle({
     config, lang: 'en', topic, brief, pillarName: pillar.en, date, alternateSlug: slugDa, internalLinks: linksFor('en'),
     sourceArticle: da.markdown,
@@ -147,6 +173,32 @@ async function draftArticle(topic, existing) {
   const files = [writeArticleFile(config, 'da', slugDa, da.markdown), writeArticleFile(config, 'en', slugEn, en.markdown)];
   addToSitemap(config, { daSlug: slugDa, enSlug: slugEn, date });
 
+  // Internal links the other way: older articles get a link to the new one where it fits.
+  const backlinks = [];
+  const maxBacklinks = config.run.backlinksPerArticle ?? 2;
+  for (const [lang, slug, article] of maxBacklinks > 0 ? [['da', slugDa, da], ['en', slugEn, en]] : []) {
+    const newPath = `${config.site.blogPath[lang]}${slug}`;
+    const candidates = backlinkCandidates(config, lang, {
+      newPath, newSlug: slug, pillar: lang === 'da' ? pillar.da : pillar.en, max: maxBacklinks,
+    });
+    try {
+      const edits = await ai.proposeBacklinks({
+        config, lang, candidates,
+        newArticle: { title: article.data.title, description: article.data.description, path: newPath },
+      });
+      for (const edit of edits) {
+        const file = applyBacklink(config, lang, edit, newPath);
+        if (file) {
+          backlinks.push({ ...edit, lang, file });
+          touchSitemap(config, `${config.site.blogPath[lang]}${edit.slug}`, date);
+        }
+        else warn(`backlink edit for ${lang}/${edit.slug} rejected (sentence not found exactly once, or edit too big)`);
+      }
+    } catch (e) {
+      warn(`backlinks (${lang}) failed, continuing: ${e.message}`);
+    }
+  }
+
   const briefPath = `data/briefs/${date}-${slugEn}.md`;
   fs.mkdirSync(resolveFromEngine('data/briefs'), { recursive: true });
   fs.writeFileSync(
@@ -154,7 +206,7 @@ async function draftArticle(topic, existing) {
     `# Research brief: ${topic.titleEn}\n\n${brief}\n\n## Sources (Google Search grounding)\n${sources.map((s) => `- [${s.title}](${s.url})`).join('\n')}\n\n## Videos analysed\n${videoNotes.map((v) => `- [${v.title}](${v.url}) (${v.channel})`).join('\n') || '- none'}\n`,
   );
 
-  return { topic, pillar, date, slugDa, slugEn, files, da, en, sources, videoNotes, briefPath };
+  return { topic, pillar, date, slugDa, slugEn, files, da, en, sources, videoNotes, briefPath, factCheck, backlinks };
 }
 
 function prBody(results, ranked) {
@@ -180,7 +232,30 @@ function prBody(results, ranked) {
       `**Angle:** ${t.angle}`,
       '',
     );
-    const warnings = [...r.da.warnings.map((w) => `DA: ${w}`), ...r.en.warnings.map((w) => `EN: ${w}`)];
+    const englishInSlug = englishWordsInDanishSlug(r.slugDa);
+    const warnings = [
+      ...r.da.warnings.map((w) => `DA: ${w}`),
+      ...r.en.warnings.map((w) => `EN: ${w}`),
+      ...(englishInSlug.length ? [`DA slug contains English words (${englishInSlug.join(', ')}). Rename the file before merging if you want a fully Danish URL.`] : []),
+    ];
+    const fc = r.factCheck;
+    parts.push('### Faktatjek (Gemini + Google Search)');
+    if (fc.error) parts.push(`⚠️ Faktatjekket fejlede (${fc.error}). Tjek tallene ekstra grundigt.`);
+    else if (!fc.fixed.length && !fc.toReview.length) parts.push('Ingen problemer fundet. ✅');
+    if (fc.toReview.length) {
+      parts.push('', '**Til dit tjek** (usikre fund, ikke rettet automatisk; ret dem i både DA og EN):');
+      for (const f of fc.toReview) parts.push(`- [${f.verdict}] "${f.quote}"`, `  ${f.explanation} Forslag: ${f.suggestion}`);
+    }
+    if (fc.fixed.length) {
+      parts.push('', '**Rettet automatisk** (sikre fund; den oprindelige tekst ses herunder):');
+      for (const f of fc.fixed) parts.push(`- [${f.verdict}] ~~"${f.quote}"~~`, `  ${f.explanation}`);
+    }
+    parts.push('');
+    if (r.backlinks.length) {
+      parts.push('### Nye interne links i ældre artikler');
+      for (const b of r.backlinks) parts.push(`- \`${b.file}\`: ${b.reason ?? ''}`, `  > ${b.replace}`);
+      parts.push('');
+    }
     if (warnings.length) parts.push('**Automatic check warnings**', ...warnings.map((w) => `- ${w}`), '');
     parts.push(
       '<details><summary>Research sources</summary>',
@@ -250,7 +325,7 @@ async function main() {
 
   if (!args['no-write-history']) {
     writeJson('data/history.json', [
-      ...readJson('data/history.json', []),
+      ...loadHistory(),
       ...results.map((r) => ({
         date: r.date, titleEn: r.topic.titleEn, titleDa: r.topic.titleDa, pillar: r.topic.pillar,
         slugDa: r.slugDa, slugEn: r.slugEn, status: 'drafted',

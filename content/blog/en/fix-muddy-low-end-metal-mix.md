@@ -30,7 +30,7 @@ Below is the protocol I use to clean up the low end in metal, metalcore and djen
 
 ## Why Does Your Metal Mix Have a Muddy Low End?
 
-A muddy low end in metal happens because the kick, the bass and the downtuned guitars all fight over the same narrow range between roughly 50 and 120 Hz. The octave from 50 to 100 Hz is only 50 Hz wide. Broad EQ boosts pile up far faster here than in the top end, so a few "harmless" +3 dB boosts on three different tracks quickly become a droning blanket.
+A muddy low end in metal happens because the kick, the bass and the downtuned guitars all fight over the same narrow range between roughly 50 and 120 Hz. All three instruments have their fundamentals within roughly one octave, and that is where a heavy mix carries the most energy. Even small boosts stack on top of each other, so a few "harmless" +3 dB boosts on three different tracks quickly become a droning blanket.
 
 Modern metal makes the problem worse:
 
@@ -108,7 +108,7 @@ Instead, insert a dynamic EQ or multiband compressor on the bass sub track or ba
 * **Sidechain input:** The kick, ideally a clean kick track or sample without bleed from the rest of the kit.
 * **Attack:** As fast as possible, under 1 ms.
 * **Release:** 40–80 ms depending on tempo. The bass needs to be back before the next hit lands.
-* **Reduction:** 3–6 dB. In Trackspacer that typically corresponds to 10–25%.
+* **Reduction:** 3–6 dB. If you use Trackspacer, set it by ear: raise the effect until the kick steps forward without the bass losing its weight.
 
 Not everyone agrees on dynamic ducking. One camp prefers pure static frequency slotting: the kick gets everything below roughly 60 Hz, and the bass is high-passed at 60 Hz. Its advocates argue this gives a tighter rhythm section with no pumping. The other camp argues that static filtering leaves the bass hollow in passages without drums or with solo bass.
 

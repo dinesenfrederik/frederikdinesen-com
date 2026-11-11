@@ -179,3 +179,42 @@ export async function researchTopic({ config, topic, videoNotes }) {
   if (brief.length < 800) throw new Error('Research brief came back nearly empty');
   return { brief, sources: groundingSources(response) };
 }
+
+const FindingSchema = z.object({
+  quote: z.string().min(5),
+  verdict: z.enum(['wrong', 'misleading', 'unsupported']),
+  confidence: z.enum(['high', 'medium']).catch('medium'),
+  explanation: z.string(),
+  suggestion: z.string().default('remove'),
+});
+
+/**
+ * Step 4b: grounded fact-check of a finished article.
+ * Returns findings whose `quote` actually appears in the article (others are dropped as hallucinated).
+ */
+export async function factCheck({ config, markdown }) {
+  log('Gemini: fact-checking the article with Google Search');
+  const response = await generate({
+    model: config.models.research,
+    contents: fill(readPrompt('factcheck.md'), { ARTICLE: markdown }),
+    config: { tools: [{ googleSearch: {} }] },
+  });
+  let raw;
+  try {
+    raw = extractJson(response.text ?? '[]');
+  } catch {
+    warn('fact-check returned no parseable JSON; treating as no findings');
+    return { findings: [], sources: groundingSources(response) };
+  }
+  const findings = (Array.isArray(raw) ? raw : [])
+    .flatMap((f) => {
+      const r = FindingSchema.safeParse(f);
+      return r.success ? [r.data] : [];
+    })
+    .filter((f) => {
+      const found = markdown.includes(f.quote);
+      if (!found) warn(`fact-check quote not found in article, skipping: "${f.quote.slice(0, 60)}…"`);
+      return found;
+    });
+  return { findings, sources: groundingSources(response) };
+}

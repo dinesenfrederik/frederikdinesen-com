@@ -20,7 +20,8 @@ const rootFiles = [
   'terms.js',
   'robots.txt',
   'sitemap.xml',
-  'style.css'
+  'style.css',
+  'indexnow-key.txt'
 ];
 
 for (const file of rootFiles) {

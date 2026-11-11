@@ -30,7 +30,7 @@ Kort sagt fjerner du mudret bund i et metal mix i tre trin. Først tjekker du po
 
 ## Hvorfor får man mudret bund i et metal mix?
 
-Mudret bund i metal skyldes, at stortromme, bas og lavstemte guitarer kæmper om det samme smalle frekvensområde mellem cirka 50 og 120 Hz. Oktaven fra 50 til 100 Hz er kun 50 Hz bred. Derfor hober brede EQ-boosts sig op meget hurtigere her end i diskanten, og et par "uskyldige" +3 dB på tre forskellige spor bliver hurtigt til et brummende tæppe.
+Mudret bund i metal skyldes, at stortromme, bas og lavstemte guitarer kæmper om det samme smalle frekvensområde mellem cirka 50 og 120 Hz. Alle tre instrumenter har deres grundtoner inden for godt én oktav, og det er her, et tungt mix har allermest energi. Derfor lægger selv små boosts sig oven i hinanden, og et par "uskyldige" +3 dB på tre forskellige spor bliver hurtigt til et brummende tæppe.
 
 Moderne metal gør problemet værre:
 
@@ -108,7 +108,7 @@ Indsæt i stedet en dynamisk EQ eller en multiband-kompressor på bassens sub-sp
 * **Sidechain-input:** Kicket, gerne et rent kickspor eller sample uden overhøring fra resten af trommerne.
 * **Attack:** Så hurtig som muligt, under 1 ms.
 * **Release:** 40–80 ms afhængigt af tempo. Bassen skal være tilbage, før næste slag rammer.
-* **Reduktion:** 3–6 dB. I Trackspacer svarer det typisk til 10–25 %.
+* **Reduktion:** 3–6 dB. Bruger du Trackspacer, så lyt dig frem: skru op for effekten, indtil kicket træder frem, uden at bassen mister fylde.
 
 Ikke alle er enige om dynamisk ducking. Én skole foretrækker ren statisk frekvensfordeling: kicket får alt under cirka 60 Hz, og bassen high-passes ved 60 Hz. Fortalerne mener, at det giver en strammere rytmegruppe uden pumpning. Den anden skole mener, at statisk filtrering gør bassen hul i passager uden trommer eller med solobas.
 

@@ -6,10 +6,10 @@ author: "Frederik Dinesen"
 pillar: "Mixing & Audio-tips"
 alternateSlug: "case-study-the-dimming-effect"
 audioCompare:
-  title: "Rise Upon – Lost Track"
+  title: "Rise Upon – Lost Track (fra The Dimming Effect)"
   before: "https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Lost%20Track%20-%20f%C3%B8r%20mix.mp3"
   after: "https://raw.githubusercontent.com/dinesenfrederik/fdsl-website-antigravity/main/Lost%20Track.mp3"
-  caption: "Skift mellem råsporene og det færdige mix. Produceret, indspillet og mixet af Frederik Dinesen."
+  caption: "Lost Track fra albummet. Skift mellem råsporene og det færdige mix."
 faq:
   - question: "Hvem har produceret og mixet The Dimming Effect af Rise Upon?"
     answer: "The Dimming Effect (2024) blev produceret, indspillet og mixet af Frederik Dinesen, som også er trommeslager og sangskriver i Rise Upon. Albummet blev mastered af Jacob Hansen i Hansen Studios og blev nomineret til GAFFA-Prisen i kategorien dansk hard rock/metal."

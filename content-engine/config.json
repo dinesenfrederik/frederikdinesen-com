@@ -1,0 +1,90 @@
+{
+  "site": {
+    "baseUrl": "https://frederikdinesen.com",
+    "brand": "FD Sound Labs",
+    "author": "Frederik Dinesen",
+    "contentDir": "../content/blog",
+    "sitemapPath": "../sitemap.xml",
+    "blogPath": { "da": "/blog/", "en": "/en/blog/" }
+  },
+
+  "models": {
+    "research": "gemini-3.8-flash",
+    "writer": "claude-opus-5-5",
+    "writerEffort": "high"
+  },
+
+  "run": {
+    "articlesPerRun": 1,
+    "candidatesPerScan": 10,
+    "maxYoutubeVideosPerArticle": 3,
+    "minWordsPerArticle": 900
+  },
+
+  "pillars": [
+    {
+      "id": "tracking",
+      "da": "DIY Indspilning & Tracking",
+      "en": "DIY Recording & Tracking",
+      "focus": "Getting great raw tracks on a budget: home-studio and rehearsal-room acoustics, mic choice and placement, gain staging, DI/reamping, drum tracking, preparing and exporting stems for a mix engineer.",
+      "seeds": {
+        "da": ["optage vokal hjemme", "indspille trommer", "hjemmestudie akustik", "reamping guitar", "optage guitar hjemme", "eksportere stems"],
+        "en": ["record vocals at home", "recording metal drums", "home studio acoustic treatment", "reamping guitar", "di guitar recording", "how to export stems for mixing"]
+      }
+    },
+    {
+      "id": "mixing",
+      "da": "Mixing & Audio-tips",
+      "en": "Mixing & Audio Tips",
+      "focus": "Practical mixing for heavy genres: low-end control, guitar EQ, drum compression and samples, vocal clarity, loudness, mastering prep, plugin and amp-sim workflows.",
+      "seeds": {
+        "da": ["mixe metal", "mixe rock trommer", "mudret bas mix", "eq guitar metal", "mastering loudness spotify"],
+        "en": ["mixing metal guitars", "metal drum mix", "muddy low end mix", "kick and bass mixing metal", "vocal mixing rock", "mastering for spotify loudness", "amp sim mixing"]
+      }
+    },
+    {
+      "id": "release",
+      "da": "Musikudgivelse & Business",
+      "en": "Music Release & Business",
+      "focus": "Releasing and promoting independent rock/metal: release checklists, distributors, Spotify/playlist pitching, metadata, budgeting a release, working with a mix engineer.",
+      "seeds": {
+        "da": ["udgive single spotify", "musikdistribution", "spotify playlist pitch", "udgive musik selv"],
+        "en": ["release a single on spotify", "spotify playlist pitching metal", "music distributor for bands", "how much does mixing cost", "what to send a mix engineer"]
+      }
+    }
+  ],
+
+  "sources": {
+    "autocomplete": { "enabled": true },
+    "reddit": {
+      "enabled": true,
+      "subreddits": ["audioengineering", "mixingmastering", "homerecording", "WeAreTheMusicMakers", "musicmarketing"],
+      "period": "week",
+      "perSubreddit": 15
+    },
+    "googleNews": {
+      "enabled": true,
+      "queries": {
+        "en": ["metal production plugin", "home recording studio", "music mixing", "spotify independent artists"],
+        "da": ["musikproduktion", "dansk metal band udgivelse"]
+      },
+      "perQuery": 8
+    },
+    "rss": {
+      "enabled": true,
+      "feeds": []
+    },
+    "youtube": {
+      "enabled": true,
+      "queries": ["metal mixing tutorial", "rock drum mixing", "home studio vocal recording metal", "reamping guitars tutorial"],
+      "publishedWithinDays": 30,
+      "perQuery": 6
+    },
+    "searchConsole": {
+      "enabled": true,
+      "siteUrl": "sc-domain:frederikdinesen.com",
+      "days": 28,
+      "rowLimit": 200
+    }
+  }
+}

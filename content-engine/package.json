@@ -1,0 +1,20 @@
+{
+  "name": "fdsl-content-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Automated SEO/GEO topic research (Gemini) and article writing (Claude) for the FD Sound Labs blog. Drafts are opened as pull requests for human review.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "scan": "node src/run.mjs --scan-only",
+    "run": "node src/run.mjs",
+    "mock": "node src/run.mjs --mock --no-write-history",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "@google/genai": "^3.1.0",
+    "gray-matter": "^4.0.3",
+    "zod": "^4.6.7"
+  }
+}

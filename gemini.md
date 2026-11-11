@@ -251,6 +251,7 @@ FDSL - website v2.0/
 │       ├── AudioSpectrumIndicator.tsx # Animated studio spectrum equalizer bars
 │       ├── BlogFooter.tsx
 │       ├── BlogNavbar.tsx
+│       ├── BlogPostsFilter.tsx       # Interactive pillar filter bar, live counts & grid
 │       ├── ReadingProgressBar.tsx    # Smooth reading progress indicator
 │       ├── TableOfContents.tsx       # Interactive guide navigation
 │       ├── TestMixCTA.tsx            # Clean studio conversion card (no emojis)
@@ -323,6 +324,7 @@ FDSL - website v2.0/
 | 2026-11-10 | System Pilot | Saneret emojis fra TestMixCTA (sleek SVGs), forbedret læsbarhed (.blog-prose, max-w-3xl, TableOfContents, ReadingProgressBar) samt tilføjet levende partikel-ambience & audio visualizer | Brugerdirektiv / Blog UX & Læsbarhed |
 | 2026-11-10 | System Pilot | Konverteret 'Få gratis test-mix' til in-page pop-up modal (identisk med kontaktformular på forsiden), opdateret CTA-subtekst og af-AI-ficeret overskrift | Brugerdirektiv / Test-Mix Modal & Copy |
 | 2026-11-10 | System Pilot | Opdateret Vercel Framework Preset til Next.js, erstattet public symlinks med sync-public automatik og deployet til produktion | Fejlretning & Vercel Produktion |
+| 2026-11-11 | System Pilot | Implementeret interaktiv emnefiltrering (`BlogPostsFilter.tsx`) med dynamisk antalstæller pr. kategori, toggle/URL-synk (`?pillar=`) og klikbare artikel-badges på dansk & engelsk | Brugerdirektiv / Blog Emnefiltrering |
 
 
 

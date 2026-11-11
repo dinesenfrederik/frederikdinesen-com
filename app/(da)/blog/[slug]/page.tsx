@@ -115,16 +115,24 @@ export default async function BlogPostPage({ params }: PageProps) {
               Blog
             </Link>
             <span>/</span>
-            <span className="text-zinc-400 truncate">{post.pillar}</span>
+            <Link
+              href={`/blog?pillar=${encodeURIComponent(post.pillar)}`}
+              className="text-zinc-400 hover:text-amber transition-colors truncate"
+            >
+              {post.pillar}
+            </Link>
           </nav>
 
           {/* Article Header */}
           <header className="mb-10 border-b border-[#222228] pb-10">
             {/* Meta Tags Row */}
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-400 mb-6">
-              <span className="bg-amber/10 border border-amber/20 text-amber font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
+              <Link
+                href={`/blog?pillar=${encodeURIComponent(post.pillar)}`}
+                className="bg-amber/10 hover:bg-amber/20 border border-amber/20 text-amber font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full transition-colors"
+              >
                 {post.pillar}
-              </span>
+              </Link>
               <span>&bull;</span>
               <span className="text-zinc-400">{post.date}</span>
               <span>&bull;</span>

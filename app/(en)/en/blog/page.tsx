@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { getBlogPosts } from '@/lib/blog';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogFooter from '@/components/blog/BlogFooter';
+import BlogPostsFilter from '@/components/blog/BlogPostsFilter';
 import TestMixCTA from '@/components/blog/TestMixCTA';
 import ArticleAmbience from '@/components/blog/ArticleAmbience';
 import { TestMixModalProvider } from '@/components/blog/TestMixModalContext';
@@ -58,61 +58,8 @@ export default function EnglishBlogIndexPage() {
             </p>
           </header>
 
-          {/* Pillars List / Categories */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 font-mono text-xs">
-            <span className="bg-amber text-obsidian px-3.5 py-1.5 rounded-full font-bold">
-              All articles ({posts.length})
-            </span>
-            <span className="bg-zinc-900 border border-[#222228] text-zinc-300 px-3.5 py-1.5 rounded-full">
-              DIY Recording &amp; Tracking
-            </span>
-            <span className="bg-zinc-900 border border-[#222228] text-zinc-300 px-3.5 py-1.5 rounded-full">
-              Mixing &amp; Audio Tips
-            </span>
-            <span className="bg-zinc-900 border border-[#222228] text-zinc-300 px-3.5 py-1.5 rounded-full">
-              Music Release &amp; Business
-            </span>
-          </div>
-
-          {/* Articles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {posts.map((post) => (
-              <article
-                key={post.slug}
-                className="bg-[#0D0D11] border border-[#222228] hover:border-amber/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
-              >
-                <div>
-                  {/* Pillar & Date */}
-                  <div className="flex items-center justify-between text-xs font-mono mb-4 text-zinc-400">
-                    <span className="text-amber font-semibold uppercase tracking-wider">
-                      {post.pillar}
-                    </span>
-                    <span>{post.readingTime}</span>
-                  </div>
-
-                  {/* Title */}
-                  <h2 className="text-xl font-bold text-white group-hover:text-amber transition-colors mb-3 leading-snug font-sans">
-                    <Link href={`/en/blog/${post.slug}`}>{post.title}</Link>
-                  </h2>
-
-                  {/* Excerpt */}
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                    {post.description}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-[#222228] flex items-center justify-between text-xs font-mono">
-                  <span className="text-zinc-500">{post.date}</span>
-                  <Link
-                    href={`/en/blog/${post.slug}`}
-                    className="inline-flex items-center gap-1 text-amber font-semibold group-hover:translate-x-1 transition-transform"
-                  >
-                    Read guide <span>&rarr;</span>
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+          {/* Interactive Pillars Filter & Articles Grid */}
+          <BlogPostsFilter posts={posts} lang="en" />
 
           {/* In-page CTA */}
           <TestMixCTA lang="en" />

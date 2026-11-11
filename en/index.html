@@ -131,14 +131,70 @@
       "knowsAbout": [
         "Mixing",
         "Music production",
-        "Rock",
-        "Metal",
-        "Recording engineering"
+        "Recording engineering",
+        "Drum production",
+        "Metalcore",
+        "Death metal",
+        "Hardcore",
+        "Rock"
       ],
-      "award": [
-        "Nominated for the GAFFA Award (Rise Upon)",
-        "Nominated for Den Hårde Tone (Rise Upon)"
-      ]
+      "description": "Recording engineer, producer and mix engineer in Aarhus, Denmark, with about 9 years of experience in rock and metal. Drummer and songwriter in the metalcore band Rise Upon.",
+      "memberOf": {
+        "@id": "https://frederikdinesen.com/#rise-upon"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Aarhus",
+          "addressCountry": "DK"
+        }
+      }
+    },
+    {
+      "@type": "MusicGroup",
+      "@id": "https://frederikdinesen.com/#rise-upon",
+      "name": "Rise Upon",
+      "genre": [
+        "Metalcore",
+        "Alternative metal"
+      ],
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Denmark"
+      },
+      "member": {
+        "@type": "OrganizationRole",
+        "member": {
+          "@id": "https://frederikdinesen.com/#frederik"
+        },
+        "roleName": "Drums, songwriting"
+      }
+    },
+    {
+      "@type": "MusicAlbum",
+      "@id": "https://frederikdinesen.com/#the-dimming-effect",
+      "name": "The Dimming Effect",
+      "datePublished": "2024",
+      "byArtist": {
+        "@id": "https://frederikdinesen.com/#rise-upon"
+      },
+      "albumProductionType": "https://schema.org/StudioAlbum",
+      "albumReleaseType": "https://schema.org/AlbumRelease",
+      "producer": {
+        "@id": "https://frederikdinesen.com/#frederik"
+      },
+      "contributor": {
+        "@type": "Role",
+        "contributor": {
+          "@id": "https://frederikdinesen.com/#frederik"
+        },
+        "roleName": [
+          "Producer",
+          "Recording engineer",
+          "Mixing engineer"
+        ]
+      }
     },
     {
       "@type": "WebSite",
@@ -318,6 +374,7 @@
             <a href="/en" class="font-bold tracking-widest text-white hover:text-amber transition-colors text-base sm:text-lg">FD SOUND LABS</a>
             <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
                 <a href="#portfolio" class="hover:text-amber transition-colors text-gray-300">Portfolio</a>
+                <a href="#about" class="hover:text-amber transition-colors text-gray-300">About</a>
                 <a href="#pricing" class="hover:text-amber transition-colors text-gray-300">Pricing</a>
                 <a href="/en/blog" class="hover:text-amber transition-colors text-gray-300">Blog</a>
                 <a href="#contact" class="hover:text-amber transition-colors text-gray-300">Contact</a>
@@ -346,6 +403,7 @@
         <!-- Mobile Drawer Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-obsidian/95 backdrop-blur-xl border-b border-border px-6 py-6 space-y-4 text-center">
             <a href="#portfolio" class="mobile-nav-link block text-base font-semibold text-gray-200 hover:text-amber py-2">Portfolio</a>
+            <a href="#about" class="mobile-nav-link block text-base font-semibold text-gray-200 hover:text-amber py-2">About</a>
             <a href="#pricing" class="mobile-nav-link block text-base font-semibold text-gray-200 hover:text-amber py-2">Pricing</a>
             <a href="/en/blog" class="mobile-nav-link block text-base font-semibold text-gray-200 hover:text-amber py-2">Blog</a>
             <a href="#contact" class="mobile-nav-link block text-base font-semibold text-gray-200 hover:text-amber py-2">Contact</a>
@@ -730,6 +788,44 @@
                 <div class="flex justify-center mt-16">
                     <button id="show-more-btn" class="bg-zinc-900 border border-border text-zinc-300 hover:text-amber hover:border-amber px-8 py-3 rounded-full text-sm font-bold font-mono tracking-widest uppercase transition-all" onclick="toggleMoreTracks()">Show more tracks (5) &darr;</button>
                 </div>
+            </div>
+        </section>
+
+
+
+        <!-- About Section (E-E-A-T / entity facts for search and AI answers) -->
+        <section id="about" class="py-32 px-6 border-t border-border bg-obsidian">
+            <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-12 items-start">
+                <div class="md:col-span-3">
+                    <div class="inline-block border border-border rounded-full px-4 py-1 text-sm font-mono text-[#C4C4CC] uppercase tracking-wider font-semibold mb-6">About</div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white">About Frederik Dinesen – the mix engineer behind FD Sound Labs</h2>
+                    <div class="space-y-5 text-zinc-300 text-[17px] leading-relaxed">
+                        <p>I’m Frederik Dinesen, and I’ve been recording and mixing rock and metal for about 9 years. I’m self-taught and have sharpened my craft through courses from Nail The Mix and Hardcore Music Studio (Jordan Valeriote).</p>
+                        <p>I know both sides of the glass. As drummer and songwriter in the Danish metalcore band Rise Upon, I produced, recorded and mixed our album <em>The Dimming Effect</em> (2024). So I know what it means to a band when the mix finally sounds like the record you hear in your head – and when the process is easy to follow.</p>
+                        <p>Today I mix for bands across Denmark and Europe from my studio in Aarhus, Denmark. The focus is modern metalcore, hardcore, death metal and rock: tight drums, heavy guitars and vocals that cut through.</p>
+                    </div>
+                </div>
+                <aside class="md:col-span-2 card p-8 rounded-3xl">
+                    <h3 class="text-lg font-bold text-white mb-6">In short</h3>
+                    <dl class="space-y-5">
+                            <div>
+                                <dt class="font-mono text-xs uppercase tracking-wider text-amber mb-1">Experience</dt>
+                                <dd class="text-zinc-200 text-[15px] leading-relaxed">About 9 years of recording and mixing</dd>
+                            </div>
+                            <div>
+                                <dt class="font-mono text-xs uppercase tracking-wider text-amber mb-1">Latest album</dt>
+                                <dd class="text-zinc-200 text-[15px] leading-relaxed"><em>The Dimming Effect</em> – Rise Upon (2024): producer, recording &amp; mix engineer</dd>
+                            </div>
+                            <div>
+                                <dt class="font-mono text-xs uppercase tracking-wider text-amber mb-1">Credits</dt>
+                                <dd class="text-zinc-200 text-[15px] leading-relaxed">Rise Upon, Valdemar Dvinge, Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves</dd>
+                            </div>
+                            <div>
+                                <dt class="font-mono text-xs uppercase tracking-wider text-amber mb-1">Training</dt>
+                                <dd class="text-zinc-200 text-[15px] leading-relaxed">Self-taught + courses from Nail The Mix and Hardcore Music Studio</dd>
+                            </div>
+                    </dl>
+                </aside>
             </div>
         </section>
 

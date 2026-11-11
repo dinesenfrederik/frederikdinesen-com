@@ -13,7 +13,14 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 - Delivery format: 24-bit WAV, 44.1 kHz or higher, all tracks starting at 00:00:00, plus tempo (BPM) and clean DI tracks for guitar and bass (for re-amping).
 - Programmed drums (Superior Drummer, GetGood Drums, MIDI) and rehearsal-room drum recordings are mixed and sample-blended.
 - Payment: 50/50 (deposit at start, final payment on approval of the mix).
-- Selected credits: Rise Upon, Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves. Releases nominated for the GAFFA Award and Den Hårde Tone (Rise Upon).
+- Selected credits: Rise Upon, Valdemar Dvinge, Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves.
+
+## About Frederik Dinesen
+
+- Recording engineer, producer and mix engineer with about 9 years of experience in rock and metal.
+- Self-taught, with further training through courses from Nail The Mix and Hardcore Music Studio (Jordan Valeriote).
+- Drummer and songwriter in the Danish metalcore band Rise Upon. Producer, recording engineer and mixing engineer on Rise Upon's album The Dimming Effect (2024).
+- Works from his own studio in Aarhus C and mixes remotely for bands across Denmark and Europe.
 - Location: Ceresbyen 10E, st., 8000 Aarhus C, Denmark. Phone: +45 30 13 89 75.
 
 ## Pages

@@ -10,6 +10,26 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-11 – Interview runde 2 + "Om Frederik"
+
+Fakta fra Frederik:
+- Ca. 9 års erfaring, selvlært + kurser fra Nail The Mix og Hardcore Music Studio (Jordan Valeriote).
+- Trommeslager og sangskriver i Rise Upon. Producer, recording og mix engineer på albummet *The Dimming Effect* (2024).
+- Spotify-credits: primært Rise Upon og Valdemar Dvinge.
+- Nomineringerne (GAFFA, Den Hårde Tone) gjaldt **ikke** hans produktion/mix. Fjernet som personlig `award` i schema og fra llms.txt. Hero-badge'en "Nominerede udgivelser" afventer præcisering (hvad blev nomineret, hvilket år).
+- Ingen anmeldelser, ingen udtalelser, ingen billeder endnu.
+- Konkurrenter: Uglebjerg, Everloud Studios (Kristian Øgir), Jacob Hansen, Tapetown (Aarhus). Desuden Tue Madsen (Antfarm, Aarhus).
+- GBP-link: https://share.google/D2NwaO7roj4sfnivU (kortlink, mangler fuld Maps-URL/CID til `hasMap`/`sameAs`).
+
+Rettet/tilføjet:
+- "Om mig"-sektion (`#about`) på DA og EN forsiden + menupunkt.
+- Schema: `Person` uden `award`, med beskrivelse og `memberOf` Rise Upon. Nye entiteter `MusicGroup` (Rise Upon) og `MusicAlbum` (*The Dimming Effect*, 2024) med Frederik som producer.
+- llms.txt: korrekt bio og credits.
+
+Research (konkurrenter/SERP):
+- SoundBetter er en stor kanal for danske metal-mixere (Everloud har profil der) og et sted med anmeldelser, som Google og AI citerer.
+- Prissøgninger ("hvad koster mixing og mastering af en sang") domineres af generiske guides (Handyhand, eMastered). Der er en åbning for en dansk metal-specifik prisartikel, og FD Sound Labs har allerede faste, offentlige priser.
+
 ## 2026-11-11 – Teknisk audit + rettelser (commit 0605aa1)
 
 Rettet:
@@ -24,8 +44,9 @@ Rettet:
 
 ## Backlog (prioriteret)
 
+0. **Anmeldelser (vigtigst nu):** Bed tidligere kunder (Illuminate The Sky, Kingdoms, Prophers, The Year, Acrid, Raised With Wolves, Valdemar Dvinge) om en Google-anmeldelse. Opret SoundBetter-profil.
 1. **sameAs / entitet:** Link til Google Business Profile, Instagram, Facebook, Spotify, YouTube, LinkedIn osv. i `sameAs` (venter på URL'er fra Frederik).
-2. **Om Frederik-sektion/side:** Bio, erfaring, credits, billede, nomineringer med år og kategori (E-E-A-T + GEO).
+2. ~~Om Frederik-sektion~~ (gjort 2026-11-11). Mangler: billede af Frederik/studiet.
 3. **Anmeldelser:** Udtalelser fra kunder på siden. Indsaml Google-anmeldelser på GBP.
 4. **Landingsside for remote mixing (DA):** fx `/remote-mixing` (eller `/mixing-af-metal`) med dybt indhold, proces, priser og FAQ.
 5. **Landingsside for studio tracking Aarhus:** lokal side, der understøtter GBP.

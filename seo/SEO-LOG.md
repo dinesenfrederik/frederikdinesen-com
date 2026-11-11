@@ -10,6 +10,14 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-11 – Landingssider: /indspilning-aarhus og /en/remote-mixing
+
+- `/indspilning-aarhus` (DA, ca. 1.100 ord): målrettet "lydstudie Aarhus", "indspilning Aarhus", "studio tracking Aarhus", "indspille vokal Aarhus". Fakta fra handelsbetingelserne: heldagssession 3.125 kr., 50 % depositum, afbuds-/flytteregler. Studiet er IKKE indrettet til trommer (vokal, guitar, bas, synths). Mobil indspilning ved særlige projekter. Prisexempler inkl. mix. CTA forvælger "Studio Tracking" i formularen. Schema: WebPage, Service (Offer pr. dag), HowTo, FAQPage, BreadcrumbList.
+- `/en/remote-mixing` (EN): engelsk udgave med EUR-vejledende priser og forklaring af reverse charge for EU-B2B. hreflang-par med `/remote-mixing`.
+- Rettet på `/remote-mixing`: "du kan også betale i euro" var unøjagtigt (EUR-fakturering kun B2B i EU). Nu: "du kan se dem i euro på den engelske side".
+- Interne links: forsidens tracking-kort + footer (DA), EN-forsidens mix-kort, "About" og footer, blog-footer på begge sprog. Sitemap (12 URL'er), llms.txt og writer-prompt opdateret.
+- Beslutning: Ingen yderligere landingssider (undgå doorway pages som "mixing <by>"). Næste fokus: autoritet uden for siden (anmeldelser, profiler, links fra bands), prisartikel, måling.
+
 ## 2026-11-11 – Landingsside: /remote-mixing
 
 Ny side `app/(da)/remote-mixing/page.tsx` (statisk, ca. 1.300 ord). Målsøgeord: "remote mixing", "mixing af metal/rock", "få mixet en sang", "hvad koster det at få mixet en sang", "online mixing", "mix engineer". Indhold: definition (AI-citerbar), proces i 5 trin, priser med eksempler (EP 10.975 kr., album 21.950 kr.), inkluderet/ikke inkluderet (mastering), tjekliste til spor, credits, 8 FAQ og test-mix-CTA (genbruger modal + web3forms).
@@ -70,7 +78,7 @@ Rettet:
 2. ~~Om Frederik-sektion~~ (gjort 2026-11-11). Mangler: billede af Frederik/studiet.
 3. **Anmeldelser:** Udtalelser fra kunder på siden. Indsaml Google-anmeldelser på GBP.
 4. ~~Landingsside for remote mixing (DA)~~ (gjort 2026-11-11: `/remote-mixing`).
-5. **Landingsside for studio tracking Aarhus:** lokal side, der understøtter GBP.
+5. ~~Landingsside for studio tracking Aarhus~~ (gjort 2026-11-11: `/indspilning-aarhus`). EN remote mixing også gjort: `/en/remote-mixing`.
 6. **Søgeordsresearch DK:** Valider volumen for "mixing af metal", "mix af sang pris", "lydstudie Aarhus", "indspilning Aarhus", "remote mixing" osv. med GSC-data.
 7. **Lydfiler:** Flyt fra raw.githubusercontent.com til eget domæne / Vercel Blob (hastighed + AudioObject på eget domæne).
 8. **Bing Webmaster Tools:** Importér fra GSC; IndexNow kører allerede.

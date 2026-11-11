@@ -6,7 +6,7 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 
 ## Key facts
 
-- Services: Full Production Mix (remote mixing of multitracks) and Studio Tracking (vocals, high-gain guitars, bass, synths) in Aarhus.
+- Services: Full Production Mix (remote mixing of multitracks) and Studio Tracking (full-day sessions for vocals, high-gain guitars, bass, synths) in Aarhus. The studio is not set up for recording drums; programmed or rehearsal-room drums are edited and sample-blended in the mix.
 - Prices (fixed project prices incl. Danish VAT): Full Production Mix 2,499 DKK (€335) per song; 2,195 DKK (€295) per song for 3+ songs; Studio Tracking 3,125 DKK (€420) per day.
 - Turnaround: first mix draft in 3–4 working days. 3 revision rounds included in every paid project.
 - Free test mix: send raw multitracks and a reference track; a representative section of the song (typically verse and chorus) is mixed free of charge.
@@ -30,6 +30,8 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 
 - [Forside (dansk)](https://frederikdinesen.com/): services, before/after mix examples, prices, FAQ and contact form for a free test mix.
 - [Remote mixing af rock og metal (dansk)](https://frederikdinesen.com/remote-mixing): how remote mixing works step by step, fixed prices with examples (EP, album), what is and is not included, how to prepare stems, FAQ.
+- [Lydstudie i Aarhus – indspilning (dansk)](https://frederikdinesen.com/indspilning-aarhus): studio tracking of vocals, guitar, bass and synths in Aarhus C (no drum recording in the studio), 3,125 DKK per full day, price examples incl. mix, preparation checklist, booking and cancellation terms.
+- [Remote mixing for rock & metal (English)](https://frederikdinesen.com/en/remote-mixing): the English version of the remote mixing page, prices in EUR.
 - [Homepage (English)](https://frederikdinesen.com/en): remote mixing for rock and metal bands across Europe, prices in EUR.
 - [Blog (dansk)](https://frederikdinesen.com/blog) and [Blog (English)](https://frederikdinesen.com/en/blog): practical guides on recording, mixing and releasing rock and metal.
 - [Handelsbetingelser / Terms](https://frederikdinesen.com/terms.html)

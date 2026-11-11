@@ -16,7 +16,10 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: { absolute: `${TITLE} | FD Sound Labs` },
   description: DESCRIPTION,
-  alternates: { canonical: URL },
+  alternates: {
+    canonical: URL,
+    languages: { da: URL, en: `${BASE}/en/remote-mixing`, 'x-default': `${BASE}/en/remote-mixing` },
+  },
   openGraph: {
     title: `${TITLE} | FD Sound Labs`,
     description: DESCRIPTION,
@@ -107,7 +110,7 @@ const FAQ = [
   },
   {
     q: 'Mixer du kun for bands i Danmark?',
-    a: 'Nej. Fordi alt foregår online, mixer jeg for bands i hele Danmark og resten af Europa. Priserne er de samme, og du kan også betale i euro.',
+    a: 'Nej. Fordi alt foregår online, mixer jeg for bands i hele Danmark og resten af Europa. Priserne er de samme, og du kan se dem i euro på den engelske side.',
   },
 ];
 
@@ -207,7 +210,7 @@ export default function RemoteMixingPage() {
   return (
     <TestMixModalProvider lang="da">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData()) }} />
-      <BlogNavbar lang="da" blogActive={false} languageUrls={{ da: '/remote-mixing', en: '/en' }} />
+      <BlogNavbar lang="da" blogActive={false} languageUrls={{ da: '/remote-mixing', en: '/en/remote-mixing' }} />
 
       <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 relative overflow-hidden">
         <ArticleAmbience />

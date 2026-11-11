@@ -21,10 +21,14 @@ export default function BlogFooter({ lang }: BlogFooterProps) {
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm">
+          <a href={isDa ? '/remote-mixing' : '/en/remote-mixing'} className="text-zinc-300 hover:text-amber transition-colors">
+            Remote mixing
+          </a>
+          <span className="text-zinc-700">&bull;</span>
           {isDa && (
             <>
-              <a href="/remote-mixing" className="text-zinc-300 hover:text-amber transition-colors">
-                Remote mixing
+              <a href="/indspilning-aarhus" className="text-zinc-300 hover:text-amber transition-colors">
+                Indspilning i Aarhus
               </a>
               <span className="text-zinc-700">&bull;</span>
             </>

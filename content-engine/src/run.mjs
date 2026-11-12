@@ -206,12 +206,29 @@ async function draftArticle(topic, existing) {
     `# Research brief: ${topic.titleEn}\n\n${brief}\n\n## Sources (Google Search grounding)\n${sources.map((s) => `- [${s.title}](${s.url})`).join('\n')}\n\n## Videos analysed\n${videoNotes.map((v) => `- [${v.title}](${v.url}) (${v.channel})`).join('\n') || '- none'}\n`,
   );
 
+  // Machine-readable summary for the review dashboard (frederikdinesen.com/review).
+  writeJson(`data/reviews/${date}-${slugEn}.json`, {
+    topic: {
+      titleDa: topic.titleDa, titleEn: topic.titleEn, pillar: topic.pillar,
+      primaryKeywordDa: topic.primaryKeywordDa, primaryKeywordEn: topic.primaryKeywordEn,
+      whyNow: topic.whyNow, angle: topic.angle, score: topic.score,
+    },
+    factCheck: { fixed: factCheck.fixed, toReview: factCheck.toReview, ...(factCheck.error ? { error: factCheck.error } : {}) },
+    backlinks: backlinks.map((b) => ({ lang: b.lang, file: b.file, replace: b.replace, reason: b.reason })),
+    sources,
+    videos: videoNotes.map((v) => ({ title: v.title, url: v.url, channel: v.channel })),
+    warnings: [...da.warnings.map((w) => `DA: ${w}`), ...en.warnings.map((w) => `EN: ${w}`)],
+  });
+
   return { topic, pillar, date, slugDa, slugEn, files, da, en, sources, videoNotes, briefPath, factCheck, backlinks };
 }
 
 function prBody(results, ranked) {
   const base = config.site.baseUrl;
-  const parts = [];
+  const parts = [
+    `> **Gennemgå og udgiv i dashboardet: ${base}/review** (ingen GitHub nødvendig)`,
+    '',
+  ];
   for (const r of results) {
     const t = r.topic;
     parts.push(

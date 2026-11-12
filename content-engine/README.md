@@ -53,6 +53,23 @@ Repo → Settings → Actions → General → *Workflow permissions* → tick **
 3. Paste the whole JSON file into the `GSC_SERVICE_ACCOUNT_JSON` secret.
 4. If your property is a URL-prefix property rather than a domain property, change `sources.searchConsole.siteUrl` in `config.json` to `https://frederikdinesen.com/`.
 
+## Review dashboard: frederikdinesen.com/review
+
+The easy way to review drafts, with no GitHub needed. Log in with your password, then:
+- **Læs som på siden** shows the article exactly as it will look. Claims the fact-checker wants you to look at are highlighted.
+- **Ret teksten** lets you edit the title, Google description, text and FAQ, with a live preview.
+- **Udgiv på siden** publishes the article with today's date. **Afvis** rejects the topic for good.
+- **Bestil en artikel** starts the engine on a topic of your choice.
+
+One-time setup, in Vercel → the project → Settings → Environment Variables (Production), then redeploy:
+
+| Variable | Value |
+|---|---|
+| `REVIEW_PASSWORD` | a long password you choose (changing it logs out every device) |
+| `GITHUB_TOKEN` | GitHub → Settings → Developer settings → **Fine-grained tokens** → Generate. Repository access: only `frederikdinesen-com`. Permissions: **Contents**, **Pull requests** and **Actions** set to *Read and write*. |
+
+The dashboard code lives in `app/(review)/`. It is `noindex` and blocked in robots.txt, and it doesn't load analytics.
+
 ## Running it
 
 - **Automatically:** Mondays at 06:17 Danish time (one draft a week) (`.github/workflows/content-engine.yml`).

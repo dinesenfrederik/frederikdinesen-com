@@ -16,6 +16,8 @@ export interface TOCItem {
 
 export interface BlogPostMeta {
   title: string;
+  /** Optional shorter <title> for search results (max ~60 chars); the H1 keeps `title`. */
+  seoTitle?: string;
   description: string;
   date: string;
   /** Optional last-updated date (frontmatter `updated`), used for dateModified. */
@@ -104,6 +106,7 @@ export function getBlogPosts(lang: 'da' | 'en'): BlogPostMeta[] {
       slug,
       lang,
       title: data.title || slug,
+      seoTitle: data.seoTitle,
       description: data.description || '',
       date: formattedDate,
       updated: data.updated ? formatDateString(data.updated) : undefined,
@@ -142,6 +145,7 @@ export async function getBlogPostBySlug(slug: string, lang: 'da' | 'en'): Promis
     slug,
     lang,
     title: data.title || slug,
+    seoTitle: data.seoTitle,
     description: data.description || '',
     date: formattedDate,
     updated: data.updated ? formatDateString(data.updated) : undefined,

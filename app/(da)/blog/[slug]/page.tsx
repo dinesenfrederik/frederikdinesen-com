@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllBlogSlugs, getBlogPostBySlug } from '@/lib/blog';
-import { buildArticleGraph, ogImageFor } from '@/lib/blogSchema';
+import { buildArticleGraph, documentTitle, ogImageFor } from '@/lib/blogSchema';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogFooter from '@/components/blog/BlogFooter';
 import TestMixCTA from '@/components/blog/TestMixCTA';
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const enSlug = post.alternateSlug || slug;
 
   return {
-    title: post.title,
+    title: { absolute: documentTitle(post) },
     description: post.description,
     authors: [{ name: post.author }],
     alternates: {

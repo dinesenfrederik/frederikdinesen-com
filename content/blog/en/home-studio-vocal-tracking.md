@@ -1,5 +1,6 @@
 ---
 title: "Home Studio Vocal Tracking: 7 Steps to Raw, Professional Rock & Metal Vocals"
+seoTitle: "Home Studio Vocal Tracking: 7 Steps for Rock & Metal"
 description: "Learn how to record uncompromising rock and metal vocals at home. Mic selection, DIY acoustics, gain staging, and delivering pristine tracks for mixing."
 date: "2026-11-10"
 author: "Frederik Dinesen"

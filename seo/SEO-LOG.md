@@ -10,6 +10,13 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-13 – Bing Site Scan: "Title too long" (8 sider)
+
+- Bing Webmaster Tools Site Scan: kun én advarsel, "Title too long" på 8 sider; ingen fejl. Årsag: alle 8 blogartikler havde lange titler + automatisk " | FD Sound Labs" (76-96 tegn).
+- Rettet: nyt valgfrit frontmatter-felt `seoTitle` (kort <title>, H1 uændret). Brand-suffikset tilføjes kun, hvis titlen holder sig ≤ 65 tegn (`documentTitle()` i lib/blogSchema.ts). seoTitle sat på 5 artikler. EN-forsidens titel forkortet (70 → 60).
+- Content-motoren: writer-prompten skriver `seoTitle`, når titlen er > 60 tegn; validatoren tillader feltet og advarer, hvis den effektive titel er > 65 tegn. Review-dashboardet bevarer feltet ved redigering.
+- Alle titler på sitet er nu ≤ 65 tegn.
+
 ## 2026-11-11 – Case: The Dimming Effect
 
 - `/blog/case-the-dimming-effect` + `/en/blog/case-study-the-dimming-effect` (interview med Frederik). Fakta: 4 lokationer (3 private hjemmestudier + studie i øvelokalefællesskab), trommer akustisk i dødt rum med kreative rum-mikrofoner + samples (egne og andres), Studio One, Drop A, amp sims primært Neural DSP, ingen re-amping, clean vokal i mange lag i hjemmestudiet, startede mixet forfra pga. perfektionisme, mastering af Jacob Hansen (Hansen Studios), referencer Bad Omens/BMTH/Starset. Spotify: https://open.spotify.com/album/0ww92N8qUxXSWJDOGjHrZU

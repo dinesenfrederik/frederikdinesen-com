@@ -1,5 +1,6 @@
 ---
 title: "How Much Does Mixing a Song Cost? Prices for a Single, EP and Album"
+seoTitle: "How Much Does Mixing a Song Cost? Single, EP & Album"
 description: "How much does it cost to get a song mixed? See what drives the price, per-song vs. hourly vs. day rates, and what it costs to mix an EP or an album."
 date: "2026-11-11"
 author: "Frederik Dinesen"

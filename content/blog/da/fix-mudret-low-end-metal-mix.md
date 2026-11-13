@@ -1,5 +1,6 @@
 ---
 title: "Mudret Bund i Metal Mix? Sådan Får Du en Stram Bund Uden at Miste Tyngde"
+seoTitle: "Mudret Bund i Metal Mix? Sådan Får Du en Stram Bund"
 description: "Få en stram bund uden at miste tyngde: sådan fixer du mudret bund i dit metal mix med polaritet, frekvensfordeling, split-bas og dynamisk EQ på palm mutes."
 date: "2026-11-11"
 author: "Frederik Dinesen"

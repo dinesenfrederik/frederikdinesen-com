@@ -21,6 +21,7 @@ Frederik reviews every draft before it's published, but aim for a draft that nee
 - Use the primary keyword, or a natural variant, in the title, in the first 100 words, and in at least one H2.
 - Work in the secondary keywords naturally. Never stuff keywords.
 - Title: specific, and promises an outcome. Put the keyword in the first ~60 characters, since Google truncates after that. A subtitle after a colon is fine (max ~90 characters total). A number, when there really is a list, is fine.
+- If the title is longer than 60 characters, also write `seoTitle`: a shorter version (max 60 characters) with the keyword first, used as the page <title> in search results. The full title stays as the on-page headline.
 - Description (meta description): 140–160 characters. Lead with the reader's benefit, and include the keyword.
 - Satisfy the search intent fully, so the reader has no reason to go back to Google.
 
@@ -43,6 +44,7 @@ Frederik reviews every draft before it's published, but aim for a draft that nee
 ```
 ---
 title: "…"
+seoTitle: "…"   (only when title is longer than 60 characters)
 description: "…"
 date: "<date from the request>"
 author: "Frederik Dinesen"

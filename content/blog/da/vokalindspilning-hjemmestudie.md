@@ -1,5 +1,6 @@
 ---
 title: "Vokalindspilning i Hjemmestudie: 7 Trin til Rå, Professionel Rock- & Metal-vokal"
+seoTitle: "Vokalindspilning i Hjemmestudie: 7 Trin til Metal-vokal"
 description: "Lær hvordan du tracker kompromisløse rock- og metal-vokaler derhjemme. Mikrofonvalg, akustik, gain staging og tricks til at levere klare spor til mix."
 date: "2026-11-10"
 author: "Frederik Dinesen"

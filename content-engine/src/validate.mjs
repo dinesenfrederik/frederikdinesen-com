@@ -39,7 +39,7 @@ export function validateArticle(markdown, { lang, date, pillar, alternateSlug, m
   if (data.date !== date) errors.push(`frontmatter.date must be "${date}"`);
   if (data.pillar !== pillar) errors.push(`frontmatter.pillar must be "${pillar}"`);
   if (data.alternateSlug !== alternateSlug) errors.push(`frontmatter.alternateSlug must be "${alternateSlug}"`);
-  const extraKeys = Object.keys(data).filter((k) => !['title', 'description', 'date', 'author', 'pillar', 'alternateSlug', 'faq', 'coverImage', 'audioCompare', 'updated'].includes(k));
+  const extraKeys = Object.keys(data).filter((k) => !['title', 'description', 'date', 'author', 'pillar', 'alternateSlug', 'faq', 'coverImage', 'audioCompare', 'updated', 'seoTitle'].includes(k));
   if (extraKeys.length) errors.push(`Unexpected frontmatter keys: ${extraKeys.join(', ')}`);
 
   const body = content.replace(/```[\s\S]*?```/g, ''); // ignore code blocks for structure checks
@@ -67,7 +67,8 @@ export function validateArticle(markdown, { lang, date, pillar, alternateSlug, m
   if (ctaMentions > 2) warnings.push(`Test mix mentioned ${ctaMentions} times; it can read as salesy.`);
 
   for (const re of CLICHES) if (re.test(body)) warnings.push(`Cliché detected: ${re}`);
-  if (data.title && data.title.length > 70) warnings.push(`Title is ${data.title.length} chars; Google may truncate it after ~60–65.`);
+  const docTitle = data.seoTitle || data.title;
+  if (docTitle && docTitle.length > 65) warnings.push(`${data.seoTitle ? 'seoTitle' : 'Title'} is ${docTitle.length} chars; add a shorter seoTitle (max ~60) so search engines don't truncate it.`);
   if (data.description && (data.description.length < 140 || data.description.length > 160))
     warnings.push(`Description is ${data.description.length} chars (ideal 140–160).`);
   if (lang === 'da' && /\b(the|and|with|your)\b/.test(data.title ?? '')) warnings.push('Danish title looks like it contains English words.');

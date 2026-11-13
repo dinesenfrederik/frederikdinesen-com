@@ -1,5 +1,6 @@
 ---
 title: "Muddy Low End in Your Metal Mix? How to Get It Tight Without Losing Weight"
+seoTitle: "Muddy Low End in a Metal Mix? How to Get It Tight"
 description: "Get a tight, heavy low end: fix the muddy low end in your metal mix with polarity checks, kick and bass slotting, split bass and dynamic EQ on palm mutes."
 date: "2026-11-11"
 author: "Frederik Dinesen"

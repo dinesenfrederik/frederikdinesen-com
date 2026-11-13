@@ -75,3 +75,13 @@ export function buildArticleGraph(post: BlogPost, lang: 'da' | 'en') {
 
   return { '@context': 'https://schema.org', '@graph': graph };
 }
+
+/**
+ * <title> for an article: the short seoTitle if set, otherwise the title. The brand suffix is only
+ * added when the result stays within ~65 characters (Bing flags titles over 70; Google truncates ~60).
+ */
+export function documentTitle(post: Pick<BlogPost, 'title' | 'seoTitle'>): string {
+  const base = (post.seoTitle || post.title).trim();
+  const withBrand = `${base} | FD Sound Labs`;
+  return withBrand.length <= 65 ? withBrand : base;
+}

@@ -150,7 +150,7 @@ Problemet opstår primært, når normaliseringen er slået fra. Derfor er min an
 
 Høj loudness i metal kommer ikke fra én limiter, der skruer op. Hvis en brickwall-limiter alene skal tage 8 dB dynamik, kollapser kicktransienterne, og lilletrommen bliver begravet. Professionel metal når -7 LUFS ved at fordele arbejdet over flere trin.
 
-En typisk kæde på mixbussen eller masteren ser sådan ud:
+En typisk kæde på mixbussen eller masteren kan se sådan ud:
 
 1. **Pre-EQ:** Fjern unødvendig rumlen og tæm den bund, der ikke bidrager.
 2. **Hard clipper på transienterne:** Skær de skarpeste, umusikalske toppe af kick og lilletromme, før de rammer limiteren. Start med et par dB, og stop, når trommerne begynder at lyde flade.

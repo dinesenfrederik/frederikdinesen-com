@@ -1,22 +1,51 @@
 ---
-title: "Mastering Loudness til Spotify: Hvorfor -14 LUFS Ødelægger Dit Rock- og Metalmix"
-seoTitle: "Mastering Loudness til Spotify: Rigtige LUFS-tal til Metal"
-description: "Få de rigtige tal til mastering loudness på Spotify: hvorfor -14 LUFS gør metal tyndt, hvad pro-masters måler, og hvilken True Peak du skal sigte efter."
-date: "2026-11-16"
-author: "Frederik Dinesen"
-pillar: "Musikudgivelse & Business"
-alternateSlug: "mastering-loudness-spotify-metal"
+title: >-
+  Mastering Loudness til Spotify: Hvorfor -14 LUFS Ødelægger Dit Rock- og
+  Metalmix
+seoTitle: 'Mastering Loudness til Spotify: Rigtige LUFS-tal til Metal'
+description: >-
+  Få de rigtige tal til mastering loudness på Spotify: hvorfor -14 LUFS gør
+  metal tyndt, hvad pro-masters måler, og hvilken lydstyrke du skal sigte efter.
+date: '2026-11-16'
+author: Frederik Dinesen
+pillar: Musikudgivelse & Business
+alternateSlug: mastering-loudness-spotify-metal
 faq:
-  - question: "Skal jeg mastre min metal-sang til -14 LUFS til Spotify?"
-    answer: "Nej. -14 LUFS er Spotifys afspilningsniveau og ikke et kreativt mål for din master. Kommercielle moderne metalmasters ligger typisk mellem -8 og -5 LUFS integrated, og Spotify skruer dem blot ned med ren digital gain. Mastrer du til -14 LUFS, mister du tæthed og energi, og nummeret lyder op til 6-8 dB lavere end konkurrenterne, når normaliseringen er slået fra."
-  - question: "Hvor høje er kommercielle metal- og rocknumre på Spotify?"
-    answer: "Moderne metal og metalcore ligger typisk mellem -7,5 og -5 LUFS integrated, og de mest aggressive undergenrer kan nå omkring -4 LUFS. Kommerciel rock, hård rock og alternative ligger oftest mellem -9 og -7 LUFS. Organisk rock og grunge holder ofte sine trommer bedst omkring -10 til -8 LUFS."
-  - question: "Hvilken True Peak-ceiling skal jeg bruge, når jeg mastrer rock og metal?"
-    answer: "Spotify anbefaler -1 dBTP til masters på -14 LUFS eller derunder og -2 dBTP til højere masters. I praksis sætter mange mastering engineers ceilingen på metal og rock mellem -1,0 og -0,3 dBTP. Mastrer du selv, er -1,0 til -0,5 dBTP et sikkert udgangspunkt, der forhindrer de fleste codec-overs."
-  - question: "Ødelægger Spotify høje masters, når de bliver skruet ned?"
-    answer: "Nej. Når et nummer er højere end Spotifys referenceniveau, sænker Spotify blot afspilningsniveauet med flad, digital gain. Der bliver ikke tilføjet kompression, limiting eller forvrængning, så punch og den interne balance i masteren er uændret. Spotify bruger kun en limiter, når stille numre skal skrues op i lytterens Loud-indstilling."
-  - question: "Skal jeg lave separate masters til Spotify, Apple Music og CD?"
-    answer: "Den nuværende konsensus blandt aktive mastering engineers er at mastre én gang. Lav den bedst lydende og mest genretro master og send den samme fil til din distributør. Ældre råd om en dynamisk -14 LUFS-version til streaming og en høj version til CD er stort set forladt, fordi normaliseringen alligevel udligner niveauforskellene."
+  - question: Skal jeg mastre min metal-sang til -14 LUFS til Spotify?
+    answer: >-
+      Nej. -14 LUFS er Spotifys afspilningsniveau og ikke et kreativt mål for
+      din master. Kommercielle moderne metalmasters ligger typisk mellem -8 og
+      -5 LUFS integrated, og Spotify skruer dem blot ned med ren digital gain.
+      Mastrer du til -14 LUFS, mister du tæthed og energi, og nummeret lyder op
+      til 6-8 dB lavere end konkurrenterne, når normaliseringen er slået fra.
+  - question: Hvor høje er kommercielle metal- og rocknumre på Spotify?
+    answer: >-
+      Moderne metal og metalcore ligger typisk mellem -7,5 og -5 LUFS
+      integrated, og de mest aggressive undergenrer kan nå omkring -4 LUFS.
+      Kommerciel rock, hård rock og alternative ligger oftest mellem -9 og -7
+      LUFS. Organisk rock og grunge holder ofte sine trommer bedst omkring -10
+      til -8 LUFS.
+  - question: 'Hvilken True Peak-ceiling skal jeg bruge, når jeg mastrer rock og metal?'
+    answer: >-
+      Spotify anbefaler -1 dBTP til masters på -14 LUFS eller derunder og -2
+      dBTP til højere masters. I praksis sætter mange mastering engineers
+      ceilingen på metal og rock mellem -1,0 og -0,3 dBTP. Mastrer du selv, er
+      -1,0 til -0,5 dBTP et sikkert udgangspunkt, der forhindrer de fleste
+      codec-overs.
+  - question: 'Ødelægger Spotify høje masters, når de bliver skruet ned?'
+    answer: >-
+      Nej. Når et nummer er højere end Spotifys referenceniveau, sænker Spotify
+      blot afspilningsniveauet med flad, digital gain. Der bliver ikke tilføjet
+      kompression, limiting eller forvrængning, så punch og den interne balance
+      i masteren er uændret. Spotify bruger kun en limiter, når stille numre
+      skal skrues op i lytterens Loud-indstilling.
+  - question: 'Skal jeg lave separate masters til Spotify, Apple Music og CD?'
+    answer: >-
+      Den nuværende konsensus blandt aktive mastering engineers er at mastre én
+      gang. Lav den bedst lydende og mest genretro master og send den samme fil
+      til din distributør. Ældre råd om en dynamisk -14 LUFS-version til
+      streaming og en høj version til CD er stort set forladt, fordi
+      normaliseringen alligevel udligner niveauforskellene.
 ---
 
 Du har brugt måneder på sangen. Mixet sidder, og masteren rammer præcis -14 LUFS og -1 dBTP, fordi internettet sagde, at det var reglen for mastering loudness til Spotify. Så lægger du nummeret i en playliste ved siden af Periphery eller Bring Me The Horizon, og pludselig lyder jeres sang lille, flad og tam.
@@ -35,19 +64,19 @@ Her får du forklaringen og de konkrete tal.
 
 Misforståelsen opstår, fordi Spotifys egen dokumentation nævner -14 LUFS og -1 dBTP som anbefaling. Mange tutorials har gjort den anbefaling til en lov. For akustisk musik, jazz og klassisk giver tallet mening. For tung musik gør det ikke.
 
-Metal og hård rock bygger på tæthed: forvrængede guitarer, der fylder hele frekvensbilledet, bas og kick, der skal sidde som én blok, og trommetransienter, der skal slå igennem uden at stikke af. Den lyd kræver kontrolleret clipping, saturation og limiting. Trækker du limiteren tilbage for at lande på -14 LUFS, forsvinder den lim, der får en wall of sound til at lyde som en wall of sound.
+Metal og hård rock bygger på tæthed: forvrængede guitarer, der fylder hele frekvensbilledet, bas og kick, der skal sidde som én blok, og trommetransienter, der skal slå igennem uden at stikke af. Den lyd kræver kontrolleret clipping, saturation og limiting. Trækker du limiteren tilbage for at lande på -14 LUFS, forsvinder den sammensætning, der får en wall of sound til at lyde som en wall of sound.
 
 **Spotifys -14 LUFS er et benchmark for afspilning, ikke en kreativ produktionsstandard.**
 
 ### Myten om "loudness penalty"
 
-Mange frygter, at Spotify straffer høje masters ved at komprimere dem eller gøre lyden grim. Det sker ikke. Når et nummer er højere end referenceniveauet, sænker Spotify blot gain, præcis som hvis du drejede på en fader. Dynamikken, punchen og balancen i din master er fuldstændig den samme, bare lavere.
+Mange frygter, at Spotify straffer høje masters ved at komprimere dem eller gøre lyden grim. Det sker ikke. Når et nummer er højere end referenceniveauet, sænker Spotify blot gain, præcis som hvis du skruede ned på dit lydkort. Dynamikken, punchen og balancen i din master er fuldstændig den samme, bare lavere.
 
 ---
 
 ## Hvordan virker Spotifys loudness-normalisering?
 
-Spotify måler hvert nummers integrerede loudness efter den internationale standard ITU-R BS.1770 og justerer derefter afspilningsniveauet mod -14 LUFS. Selve justeringen fungerer forskelligt, afhængigt af om nummeret er for højt eller for lavt.
+Nu bliver det en smule nørdet. Spotify måler hvert nummers integrerede loudness efter den internationale standard ITU-R BS.1770 og justerer derefter afspilningsniveauet mod -14 LUFS. Selve justeringen fungerer forskelligt, afhængigt af om nummeret er for højt eller for lavt.
 
 **Negativ gain (nummeret er for højt):**
 * En master på -6 LUFS bliver skruet ca. 8 dB ned.

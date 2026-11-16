@@ -88,7 +88,7 @@ Mastering er ikke altid med i prisen på et mix, og det er en af de ting, flest 
 * **Mixing:** Alle de enkelte spor balanceres, formes med EQ og kompression og placeres i stereobilledet, så de fungerer som et samlet nummer.
 * **Mastering:** Det færdige stereomix finpudses, så det får den rette loudness, lyder ens på tværs af højttalere og hænger sammen med resten af udgivelsen.
 
-Nogle studier laver begge dele, andre kun det ene. Jeg er mix engineer og anbefaler, at den endelige master laves af en dedikeret mastering engineer, så jeres udgivelse får et ekstra sæt friske ører. Efter aftale kan jeg levere et loud master af mixet, som I kan bruge til at lytte, dele og teste sangene. **Afsæt derfor et separat budget til mastering, når du planlægger din udgivelse.**
+Nogle studier laver begge dele, andre kun det ene. Jeg er mix engineer og anbefaler, at den endelige master laves af en dedikeret mastering engineer, så jeres udgivelse får et ekstra sæt friske ører. Efter aftale kan jeg levere et loud master af mixet, som I kan bruge til at lytte, dele og teste sangene. Læs også, hvorfor [-14 LUFS ikke er målet for et rock- og metalmix på Spotify](/blog/mastering-loudness-spotify). **Afsæt derfor et separat budget til mastering, når du planlægger din udgivelse.**
 
 ---
 

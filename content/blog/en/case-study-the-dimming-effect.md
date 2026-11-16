@@ -107,7 +107,7 @@ The second time I mixed with fresh ears and didn't touch everything that was alr
 
 ## Mastering by Jacob Hansen
 
-The album was mastered by Jacob Hansen at Hansen Studios. The mastering made the mix wider, a bit heavier and gave the final polish to a mix I had worked hard on.
+The album was mastered by Jacob Hansen at Hansen Studios. The mastering made the mix wider, a bit heavier and gave the final polish to a mix I had worked hard on. If you're unsure how loud a metal master should be for streaming, I've covered that in [mastering loudness for Spotify](/en/blog/mastering-loudness-spotify-metal).
 
 That's also why I recommend bands get their music mastered by a dedicated mastering engineer today. An extra set of fresh ears on the finished mix lifts the release, especially when you've been close to the whole process yourself.
 

@@ -1,25 +1,25 @@
 {
-  "scannedAt": "2026-11-11",
+  "scannedAt": "2026-11-16",
   "candidates": [
     {
-      "pillar": "mixing",
-      "titleEn": "How to Fix Muddy Low-End in Heavy Metal: Kick, Bass & Downtuned Guitars",
-      "titleDa": "Mudret Low-End i Tung Metal? Sådan Renser Du Bunden Uden at Miste Tyngde",
-      "primaryKeywordEn": "muddy low end metal mix",
-      "primaryKeywordDa": "mudret bund metal mix",
+      "pillar": "release",
+      "titleEn": "Mastering Loudness for Spotify: Why -14 LUFS is Ruining Your Rock & Metal Releases",
+      "titleDa": "Mastering Loudness til Spotify: Hvorfor -14 LUFS Ødelægger Dit Rock- og Metalmix",
+      "primaryKeywordEn": "mastering loudness for spotify",
+      "primaryKeywordDa": "mastering loudness spotify",
       "secondaryKeywords": [
-        "kick and bass separation metal",
-        "tight low end metal mix",
-        "how to fix muddy mix metal",
-        "sidechain bas kick metal",
-        "palm mute low mid mud"
+        "how loud should i master for spotify",
+        "spotify loudness requirements",
+        "spotify mastering levels",
+        "true peak limit metal mastering",
+        "lufs metal mix"
       ],
-      "slugEn": "fix-muddy-low-end-metal-mix",
-      "slugDa": "fix-mudret-low-end-metal-mix",
-      "searchIntent": "Home-studio producers and DIY metal bands want to eliminate the boomy, blurry buildup between kick, bass, and low-tuned guitars while preserving aggressive sub-bass weight and punch.",
-      "angle": "Generic mix advice tells producers to 'just high-pass at 100 Hz and duck the bass,' which cripples heavy guitar tones and destroys kick impact. We provide an aggressive metal-specific protocol: polarity checks first, frequency slotting (deciding who owns 50–70 Hz), split-frequency bass processing, and dynamic multiband compression on palm-mute buildup (200–350 Hz).",
-      "whyNow": "Downtuned 7/8-string guitars and high-tempo double bass are standard in modern rock/metal, making low-end masking the single most frequent problem DIY producers seek help with across production forums and YouTube tutorials.",
-      "youtubeQuery": "fix muddy low end metal mix kick and bass",
+      "slugEn": "mastering-loudness-spotify-metal",
+      "slugDa": "mastering-loudness-spotify",
+      "searchIntent": "Independent bands and producers preparing their masters want to know what integrated LUFS and True Peak numbers they should actually aim for on streaming services.",
+      "angle": "Debunks the widespread internet dogma of delivering metal at -14 LUFS (which leaves tracks anemic against commercial competition), explaining how Spotify normalization really works alongside real commercial genre references (-8 to -6 LUFS).",
+      "whyNow": "Persistent, recurring top queries ('mastering loudness for spotify') paired with widespread confusion among DIY artists comparing their masters to commercial Spotify releases.",
+      "youtubeQuery": "mastering loudness for spotify rock metal lufs",
       "scores": {
         "demand": 5,
         "trend": 4,
@@ -27,6 +27,258 @@
         "competitionGap": 4
       },
       "score": 93,
+      "duplicateOf": null
+    },
+    {
+      "pillar": "tracking",
+      "titleEn": "How to Export Stems for Mixing: The Complete Checklist for Rock & Metal Bands",
+      "titleDa": "Eksport af Stems til Mix: Den Komplette Tjekliste til Rock- og Metalbands",
+      "primaryKeywordEn": "how to export stems for mixing",
+      "primaryKeywordDa": "eksport af stems til mix",
+      "secondaryKeywords": [
+        "how to export tracks for mixing",
+        "export stems logic pro",
+        "export stems reaper",
+        "dry vs wet stems",
+        "multitracks vs stems"
+      ],
+      "slugEn": "export-stems-for-mixing",
+      "slugDa": "eksport-stems-mix",
+      "searchIntent": "DIY musicians and home producers need exact, step-by-step export settings so they can deliver clean, aligned multitracks to their mix engineer without missing files or clipping.",
+      "angle": "Demystifies the confusing difference between multitrack raw stems and bus stems, addressing heavy-genre requirements like printing guitar DIs alongside amp sims, drum MIDI tempo maps, and sample rates.",
+      "whyNow": "Directly reflected in high-frequency Search Console and autocomplete queries across DAWs (Logic, Reaper, Pro Tools), serving as the single highest-converting touchpoint right before ordering a free test mix.",
+      "youtubeQuery": "how to export stems for mixing rock metal",
+      "scores": {
+        "demand": 5,
+        "trend": 3,
+        "businessFit": 5,
+        "competitionGap": 4
+      },
+      "score": 89,
+      "duplicateOf": null
+    },
+    {
+      "pillar": "tracking",
+      "titleEn": "Recording DI Guitars for Reamping: Avoid the 5 Common Mistakes in Modern Metal",
+      "titleDa": "Indspilning af DI-Guitar til Reamping: Undgå de 5 Klassiske Fejl i Moderne Metal",
+      "primaryKeywordEn": "recording di guitar for reamping",
+      "primaryKeywordDa": "indspilning af di guitar til reamping",
+      "secondaryKeywords": [
+        "guitar di recording level",
+        "di box for metal guitar recording",
+        "reamping di guitar",
+        "how to track guitars for reamping metal",
+        "best di for guitar recording"
+      ],
+      "slugEn": "record-di-guitars-reamping",
+      "slugDa": "indspilning-di-guitar-reamping",
+      "searchIntent": "Metal and rock guitarists want to know how to record clean, transient-rich DI tracks at home that translate into massive reamped guitar tones in the studio.",
+      "angle": "Busts the common 'record as hot as possible' myth by specifying exact dBFS headroom levels, impedance traps with standard interface Hi-Z inputs, and setup rules for down-tuned baritones.",
+      "whyNow": "Multiple autocomplete queries on DI recording levels and reamping boxes, matched with home producers tracking at home and outsourcing final tones to mix/reamp engineers.",
+      "youtubeQuery": "how to record di guitar for reamping metal",
+      "scores": {
+        "demand": 4,
+        "trend": 4,
+        "businessFit": 5,
+        "competitionGap": 4
+      },
+      "score": 87,
+      "duplicateOf": null
+    },
+    {
+      "pillar": "release",
+      "titleEn": "Spotify Playlist Pitching for Rock & Metal: Real Examples and Pitch Templates",
+      "titleDa": "Spotify Playlist Pitch for Rock og Metal: Skabeloner og Konkrete Eksempler",
+      "primaryKeywordEn": "spotify playlist pitch example",
+      "primaryKeywordDa": "spotify playlist pitch",
+      "secondaryKeywords": [
+        "spotify playlist pitch template",
+        "spotify playlist pitch guide",
+        "release radar pitch metal",
+        "spotify for artists pitch description",
+        "how to pitch song on spotify"
+      ],
+      "slugEn": "spotify-playlist-pitch-templates",
+      "slugDa": "spotify-playlist-pitch-skabelon",
+      "searchIntent": "Bands preparing an upcoming single release want realistic pitch formulas and metadata strategies that help get their heavy track placed on editorial and algorithmic playlists.",
+      "angle": "Eliminates empty marketing buzzwords, providing field-tested, genre-specific pitch templates that frame production value, regional touring, and mood tags accurately for heavy music curators.",
+      "whyNow": "Surging search interest across Danish and English markets for pitch templates, amplified by Spotify's recent Fresh Finds initiatives and AI spam crackdowns prioritizing authentic indie submissions.",
+      "youtubeQuery": "spotify playlist pitch template rock metal",
+      "scores": {
+        "demand": 4,
+        "trend": 5,
+        "businessFit": 4,
+        "competitionGap": 4
+      },
+      "score": 84,
+      "duplicateOf": null
+    },
+    {
+      "pillar": "release",
+      "titleEn": "DistroKid Alternatives for Independent Bands: Where to Release Heavy Music",
+      "titleDa": "Alternativer til DistroKid: Hvilken Musikdistribution Passer til Rock- og Metalbands?",
+      "primaryKeywordEn": "distrokid alternatives",
+      "primaryKeywordDa": "musikdistribution",
+      "secondaryKeywords": [
+        "best music distribution for bands",
+        "tunecore vs distrokid band",
+        "spotify distributor comparison",
+        "indie rock release distributor",
+        "gratis musikdistribution"
+      ],
+      "slugEn": "distrokid-alternatives-rock-metal",
+      "slugDa": "musikdistribution-rock-metal-bands",
+      "searchIntent": "Bandleaders seeking reliable music distributors want an honest comparison focusing on band splits, customer support, hidden fees, and avoiding algorithmic takedowns.",
+      "angle": "Assesses distributors (TuneCore, CD Baby, Amuse, Proton) strictly from a multi-member rock/metal band perspective, emphasizing royalty splits, metadata handling, and lead times for editorial pitching.",
+      "whyNow": "Top discussion threads in music marketing communities this week asking how and where to switch away from DistroKid due to rising costs, customer support friction, and recent distributor policy shifts.",
+      "youtubeQuery": "distrokid alternatives for independent bands",
+      "scores": {
+        "demand": 4,
+        "trend": 5,
+        "businessFit": 4,
+        "competitionGap": 4
+      },
+      "score": 84,
+      "duplicateOf": null
+    },
+    {
+      "pillar": "tracking",
+      "titleEn": "Recording Acoustic Drums in a Rehearsal Space: The DIY Metal Band Guide",
+      "titleDa": "Indspilning af Trommer i Øvelokalet: DIY Guiden til Rock- og Metaltrommeslagere",
+      "primaryKeywordEn": "how to record metal drums",
+      "primaryKeywordDa": "indspilning af trommer i øvelokale",
+      "secondaryKeywords": [
+        "recording drums in small room",
+        "drum mic placement metal",
+        "rehearsal room drum acoustics",
+        "time aligning drum mics",
+        "diy drum recording metal"
+      ],
+      "slugEn": "record-metal-drums-rehearsal-room",
+      "slugDa": "indspil-trommer-oevelokale",
+      "searchIntent": "Drummers and bands without a multi-thousand-dollar live room want to capture clean, hard-hitting drum tracks in low-ceiling rehearsal basements.",
+      "angle": "Provides minimal 4- to 6-mic setups engineered to reject ugly rehearsal-room flutter, tackles mic phase alignment, and details how to track cleanly so a mixer can seamlessly sample-augment.",
+      "whyNow": "Reddit audio engineering trends highlight intense discussions on time-aligning drum mics versus live bleed, coinciding with steady search volume for tracking metal drums.",
+      "youtubeQuery": "recording metal drums rehearsal room diy",
+      "scores": {
+        "demand": 4,
+        "trend": 3,
+        "businessFit": 5,
+        "competitionGap": 4
+      },
+      "score": 83,
+      "duplicateOf": null
+    },
+    {
+      "pillar": "mixing",
+      "titleEn": "Metal Guitar EQ Guide: How to Cut Harsh Fizz and Keep Heavy Riffs Clear",
+      "titleDa": "Metal Guitar EQ: Sådan Fjerner Du Skinger Top og Mudder Uden at Miste Råstyrke",
+      "primaryKeywordEn": "eq metal guitar mixing",
+      "primaryKeywordDa": "metal guitar eq",
+      "secondaryKeywords": [
+        "guitar eq cheat sheet metal",
+        "mixing modern metal guitars",
+        "eq settings metal guitar",
+        "how to mix heavy metal guitars",
+        "metal guitar low cut"
+      ],
+      "slugEn": "eq-metal-guitars-mix",
+      "slugDa": "metal-guitar-eq-mix",
+      "searchIntent": "Home studio producers want practical EQ moves and frequency guideposts to stop distorted rhythm guitars from sounding muddy, fizzy, or masking the rest of the band.",
+      "angle": "Replaces generic frequency cheat sheets with dynamic EQ workflows, high-pass vs. low-shelf decisions, and specific strategies to tame whistle resonances between 2.5 kHz and 4.5 kHz without gutting bite.",
+      "whyNow": "A breakout cluster in autocomplete queries ('eq metal guitar mixing', 'guitar eq cheat sheet metal') with active discussions in audio engineering communities about low cuts vs shelves.",
+      "youtubeQuery": "how to eq heavy metal rhythm guitars",
+      "scores": {
+        "demand": 5,
+        "trend": 4,
+        "businessFit": 5,
+        "competitionGap": 3
+      },
+      "score": 82,
+      "duplicateOf": null
+    },
+    {
+      "pillar": "mixing",
+      "titleEn": "Mixing Metal Drums: Sample Blending, Phase Alignment & Punchy Kicks",
+      "titleDa": "Mix af Metaltrommer: Sample-Blending, Fasetjek og Punchy Lilletromme",
+      "primaryKeywordEn": "how to mix metal drums",
+      "primaryKeywordDa": "mix af metaltrommer",
+      "secondaryKeywords": [
+        "metal drum mixing cheat sheet",
+        "metal kick drum mixing",
+        "sample blending metal drums",
+        "modern metal drum mixing",
+        "drum bus compression metal"
+      ],
+      "slugEn": "mix-metal-drums-samples",
+      "slugDa": "mix-metaltrommer-hjemmestudie",
+      "searchIntent": "DIY producers tracking acoustic or e-drums want their kick and snare to achieve modern punch, velocity consistency, and transient clarity in dense arrangements.",
+      "angle": "Tackles the controversial debate on drum bus compression raised on Reddit this week, focusing instead on sample reinforcement, polarity alignment, and transient shaping over heavy pump compression.",
+      "whyNow": "Prominent demand signals across autocomplete and reddit threads debating whether drum bus compression is overhyped by YouTube gurus.",
+      "youtubeQuery": "how to mix modern metal drums sample blending",
+      "scores": {
+        "demand": 5,
+        "trend": 4,
+        "businessFit": 5,
+        "competitionGap": 3
+      },
+      "score": 82,
+      "duplicateOf": null
+    },
+    {
+      "pillar": "tracking",
+      "titleEn": "Cheap Acoustic Treatment for Home Studios: Why Foam Fails in Heavy Music",
+      "titleDa": "Akustikregulering i Hjemmestudiet på Budget: Hvorfor Skum Fejler til Rock og Metal",
+      "primaryKeywordEn": "cheap acoustic treatment for home studio",
+      "primaryKeywordDa": "akustikregulering hjemmestudie",
+      "secondaryKeywords": [
+        "home studio acoustic panel placement",
+        "acoustic foam vs rockwool bass traps",
+        "diy bass traps home studio",
+        "home recording studio acoustic treatment",
+        "untreated room mixing"
+      ],
+      "slugEn": "cheap-home-studio-acoustic-treatment",
+      "slugDa": "akustikregulering-hjemmestudie-budget",
+      "searchIntent": "DIY artists working in spare bedrooms or garages want to stop acoustic buildup and harsh reflections without wasting money on useless gear.",
+      "angle": "Explains why cheap thin foam leaves the low end and low-mids (crucial for heavy guitars and kick drums) completely untreated, giving step-by-step DIY bass-trap instructions using rigid insulation.",
+      "whyNow": "A massive cluster of autocomplete and Reddit queries ('cheap acoustic treatment for home studio', 'home studio acoustic treatment reddit') searching for affordable, real-world solutions.",
+      "youtubeQuery": "diy acoustic treatment home studio rockwool bass traps",
+      "scores": {
+        "demand": 4,
+        "trend": 4,
+        "businessFit": 4,
+        "competitionGap": 4
+      },
+      "score": 80,
+      "duplicateOf": null
+    },
+    {
+      "pillar": "mixing",
+      "titleEn": "How to Blend Vocals in a Heavy Mix: Cutting Through Distorted Guitars",
+      "titleDa": "Få Vokalen Frem i et Tungt Rockmix: Skær Igennem Væggen af Guitarer",
+      "primaryKeywordEn": "how to blend vocals into a mix",
+      "primaryKeywordDa": "få vokal til at sidde i mix",
+      "secondaryKeywords": [
+        "rock vocal mixing",
+        "how to make space for vocals in a mix",
+        "mixing metal vocals",
+        "vocal compression rock",
+        "mid side dynamic eq vocal guitar"
+      ],
+      "slugEn": "blend-vocals-heavy-mix",
+      "slugDa": "vokal-rock-metal-mix",
+      "searchIntent": "Mixers and DIY artists need actionable ways to place aggressive rock or metal vocals right in your face without fighting dense, wall-to-wall rhythm guitars.",
+      "angle": "Focuses on the acoustic war zone between 1 kHz and 3 kHz using mid-side dynamic unmasking, serial compression, and parallel saturation rather than just cranking the vocal fader.",
+      "whyNow": "High search volume on 'how to blend vocals into a mix' and 'how to make space for vocals', addressing the natural follow-up stage after FD Sound Labs' published vocal tracking guide.",
+      "youtubeQuery": "how to mix rock vocals sit in the mix",
+      "scores": {
+        "demand": 4,
+        "trend": 4,
+        "businessFit": 5,
+        "competitionGap": 4
+      },
+      "score": 79,
       "duplicateOf": null
     }
   ]

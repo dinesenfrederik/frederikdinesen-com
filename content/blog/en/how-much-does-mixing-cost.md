@@ -91,7 +91,7 @@ Mastering isn't always included in the price of a mix, and it's one of the thing
 * **Mixing:** All the individual tracks are balanced, shaped with EQ and compression and placed in the stereo image, so they work as one song.
 * **Mastering:** The finished stereo mix is polished so it gets the right loudness, translates across speakers and fits with the rest of the release.
 
-Some studios do both, others only one. I'm a mix engineer and recommend having the final master done by a dedicated mastering engineer, so your release gets a fresh set of ears. By agreement, I can deliver a loud master of the mix for listening, sharing and testing the songs. **So set aside a separate budget for mastering when you plan your release.**
+Some studios do both, others only one. I'm a mix engineer and recommend having the final master done by a dedicated mastering engineer, so your release gets a fresh set of ears. By agreement, I can deliver a loud master of the mix for listening, sharing and testing the songs, and if you're wondering how loud a final master should actually be, see my guide to [mastering loudness for Spotify](/en/blog/mastering-loudness-spotify-metal). **So set aside a separate budget for mastering when you plan your release.**
 
 ---
 

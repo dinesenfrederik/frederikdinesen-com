@@ -109,7 +109,7 @@ Anden gang mixede jeg med friske ører og pillede ikke ved alt det, der allerede
 
 Albummet blev mastered af Jacob Hansen i Hansen Studios. Masteringen gjorde mixet bredere, lidt tungere og gav det sidste polish på et mix, jeg havde arbejdet hårdt på.
 
-Det er også derfor, jeg i dag anbefaler bands at få deres musik mastered af en dedikeret mastering engineer. Et ekstra sæt friske ører på det færdige mix løfter udgivelsen, især når du selv har været tæt på hele processen.
+Det er også derfor, jeg i dag anbefaler bands at få deres musik mastered af en dedikeret mastering engineer, og vil du vide, hvor loudt et metalmix skal være, har jeg skrevet om [mastering loudness til Spotify](/blog/mastering-loudness-spotify). Et ekstra sæt friske ører på det færdige mix løfter udgivelsen, især når du selv har været tæt på hele processen.
 
 ---
 

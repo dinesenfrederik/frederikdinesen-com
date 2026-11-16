@@ -1,0 +1,178 @@
+{
+  "topic": {
+    "titleDa": "Mastering Loudness til Spotify: Hvorfor -14 LUFS Ødelægger Dit Rock- og Metalmix",
+    "titleEn": "Mastering Loudness for Spotify: Why -14 LUFS is Ruining Your Rock & Metal Releases",
+    "pillar": "release",
+    "primaryKeywordDa": "mastering loudness spotify",
+    "primaryKeywordEn": "mastering loudness for spotify",
+    "whyNow": "Persistent, recurring top queries ('mastering loudness for spotify') paired with widespread confusion among DIY artists comparing their masters to commercial Spotify releases.",
+    "angle": "Debunks the widespread internet dogma of delivering metal at -14 LUFS (which leaves tracks anemic against commercial competition), explaining how Spotify normalization really works alongside real commercial genre references (-8 to -6 LUFS).",
+    "score": 93
+  },
+  "factCheck": {
+    "fixed": [
+      {
+        "quote": "Der er altså masser af headroom tilbage til codec'en.",
+        "verdict": "misleading",
+        "confidence": "high",
+        "explanation": "Spotifys transkodning til lossy formater (Ogg Vorbis/AAC) sker ved ingest på den oprindelige masterfil før afspilning, så playback-normaliseringen giver ikke headroom til selve codec-encodingen. Den negative gain på 8 dB dæmper derimod det afkodede signal under afspilning, hvilket forhindrer de rekonstruerede inter-sample peaks i at klippe lytterens D/A-konverter (DAC).",
+        "suggestion": "Der er altså masser af headroom tilbage, så de rekonstruerede inter-sample peaks ikke klipper D/A-konverteren (DAC'en) under afspilning."
+      }
+    ],
+    "toReview": []
+  },
+  "backlinks": [
+    {
+      "lang": "da",
+      "file": "content/blog/da/hvad-koster-et-mix.md",
+      "replace": "Efter aftale kan jeg levere et loud master af mixet, som I kan bruge til at lytte, dele og teste sangene. Læs også, hvorfor [-14 LUFS ikke er målet for et rock- og metalmix på Spotify](/blog/mastering-loudness-spotify).",
+      "reason": "The mastering section explains that mastering sets the right loudness and mentions a loud master. Readers budgeting for mastering get concrete loudness targets for Spotify."
+    },
+    {
+      "lang": "da",
+      "file": "content/blog/da/case-the-dimming-effect.md",
+      "replace": "Det er også derfor, jeg i dag anbefaler bands at få deres musik mastered af en dedikeret mastering engineer, og vil du vide, hvor loudt et metalmix skal være, har jeg skrevet om [mastering loudness til Spotify](/blog/mastering-loudness-spotify).",
+      "reason": "The mastering section of this metal album case study, which links to the album on Spotify, is a natural place to send readers to concrete loudness and True Peak targets for heavy music on Spotify."
+    },
+    {
+      "lang": "en",
+      "file": "content/blog/en/how-much-does-mixing-cost.md",
+      "replace": "By agreement, I can deliver a loud master of the mix for listening, sharing and testing the songs, and if you're wondering how loud a final master should actually be, see my guide to [mastering loudness for Spotify](/en/blog/mastering-loudness-spotify-metal).",
+      "reason": "The mastering section mentions loudness and loud masters, so readers budgeting for mastering will likely want to know what loudness target their release should hit on streaming."
+    },
+    {
+      "lang": "en",
+      "file": "content/blog/en/case-study-the-dimming-effect.md",
+      "replace": "The mastering made the mix wider, a bit heavier and gave the final polish to a mix I had worked hard on. If you're unsure how loud a metal master should be for streaming, I've covered that in [mastering loudness for Spotify](/en/blog/mastering-loudness-spotify-metal).",
+      "reason": "Readers of the mastering section of a metal album case study will naturally want to know which loudness and True Peak targets suit a heavy release on Spotify."
+    }
+  ],
+  "sources": [
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/mdqa1f/mastering_rockmetal_tracks_for_streaming_services/"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/musicproduction/comments/14ipa2d/song_final_output_levels/"
+    },
+    {
+      "title": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=DOKDjabpFTo"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/xhp6tv/music_streaming_services_loudness/"
+    },
+    {
+      "title": "spotify.com",
+      "url": "https://support.spotify.com/us/artists/article/loudness-normalization/"
+    },
+    {
+      "title": "artistrack.com",
+      "url": "https://artistrack.com/mastering-spotify-apple-music-lufs-true-peak/"
+    },
+    {
+      "title": "soundbridge.io",
+      "url": "https://www.soundbridge.io/loudness-normalization-a-mixing-and-mastering-guide"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/mixingmastering/comments/144fp9k/whats_the_point_of_mastering_tracks_to_spotifys/"
+    },
+    {
+      "title": "softube.com",
+      "url": "https://www.softube.com/blog/mastering-for-spotify-why-everything-you-know-is-wrong-and-what-to-do-about-it"
+    },
+    {
+      "title": "masteringthemix.com",
+      "url": "https://www.masteringthemix.com/blogs/learn/76296773-mastering-audio-for-soundcloud-itunes-spotify-and-youtube"
+    },
+    {
+      "title": "obra.art",
+      "url": "https://obra.art/mastering/guides/how-loud-to-master-for-spotify"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/Metallica/comments/1ltpvt5/the_loudness_wars_explained/"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/1addlh4/struggle_with_loudness_in_mastering/"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/ivcfq1/spotify_mastering_levels_confusion/?tl=da"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/1n8oju1/mastered_my_track_to_8_lufs_and_spotify/"
+    },
+    {
+      "title": "cryo-mix.com",
+      "url": "https://cryo-mix.com/blog/posts/lufs-for-spotify-streaming"
+    },
+    {
+      "title": "orphiq.com",
+      "url": "https://orphiq.com/resources/mastering-for-streaming"
+    },
+    {
+      "title": "sageaudio.com",
+      "url": "https://www.sageaudio.com/articles/mastering-for-streaming-platform-loudness-and-normalization-explained"
+    },
+    {
+      "title": "danmurtagh.com",
+      "url": "https://danmurtagh.com/mastering-for-spotify"
+    },
+    {
+      "title": "remasterify.com",
+      "url": "https://blog.remasterify.com/how-spotifys-loudness-system-actually-works-and-what-to-master-for/"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/7ubvmj/if_mastered_songs_are_brickwalled_because_record/"
+    },
+    {
+      "title": "edcabrera.com",
+      "url": "https://edcabrera.com/en/blog/lufs-spotify-youtube-mastering-guide"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/edmproduction/comments/klr4ax/spotify_states_14_lufs_and_10_db_true_peak_for/"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/1hllsnr/how_much_can_perceived_loudness_be_fixed_with/"
+    },
+    {
+      "title": "mastering.com",
+      "url": "https://mastering.com/spotify-lufs/"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/rm504r/practically_speaking_how_important_is_true_peak/"
+    },
+    {
+      "title": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=vidK3mE5Mn0"
+    }
+  ],
+  "videos": [
+    {
+      "title": "I Tested Spotify's Loudness Penalty… The Results Were INSANE",
+      "url": "https://www.youtube.com/watch?v=MulWYuH2ZvM",
+      "channel": "Raytown Productions"
+    },
+    {
+      "title": "How Loud Is Modern Metal in 2026?",
+      "url": "https://www.youtube.com/watch?v=GF2SpC1OCNY",
+      "channel": "Mastering Explained"
+    },
+    {
+      "title": "Loudness Targets for Mastering (...It's not what the streaming services tell you.)",
+      "url": "https://www.youtube.com/watch?v=wtoB6oj_xRw",
+      "channel": "SonicScoop"
+    }
+  ],
+  "warnings": []
+}

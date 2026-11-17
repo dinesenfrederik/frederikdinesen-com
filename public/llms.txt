@@ -7,7 +7,7 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 ## Key facts
 
 - Services: Full Production Mix (remote mixing of multitracks) and Studio Tracking (full-day sessions for vocals, high-gain guitars, bass, synths) in Aarhus. The studio is not set up for recording drums; programmed or rehearsal-room drums are edited and sample-blended in the mix.
-- Prices (fixed project prices incl. Danish VAT): Full Production Mix 2,499 DKK (€335) per song; 2,195 DKK (€295) per song for 3+ songs; Studio Tracking 3,125 DKK (€420) per day.
+- Prices (fixed project prices incl. Danish VAT): Full Production Mix 2,499 DKK (€335) per song; 2,195 DKK (€295) per song for 3+ songs; Studio Tracking 2,699 DKK (€360) per day.
 - Turnaround: first mix draft in 3–4 working days. 3 revision rounds included in every paid project.
 - Free test mix: send raw multitracks and a reference track; a representative section of the song (typically verse and chorus) is mixed free of charge.
 - Delivery format: 24-bit WAV, 44.1 kHz or higher, all tracks starting at 00:00:00, plus tempo (BPM) and clean DI tracks for guitar and bass (for re-amping).
@@ -31,7 +31,7 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 
 - [Forside (dansk)](https://frederikdinesen.com/): services, before/after mix examples, prices, FAQ and contact form for a free test mix.
 - [Remote mixing af rock og metal (dansk)](https://frederikdinesen.com/remote-mixing): how remote mixing works step by step, fixed prices with examples (EP, album), what is and is not included, how to prepare stems, FAQ.
-- [Lydstudie i Aarhus – indspilning (dansk)](https://frederikdinesen.com/indspilning-aarhus): studio tracking of vocals, guitar, bass and synths in Aarhus C (no drum recording in the studio), 3,125 DKK per full day, price examples incl. mix, preparation checklist, booking and cancellation terms.
+- [Lydstudie i Aarhus – indspilning (dansk)](https://frederikdinesen.com/indspilning-aarhus): studio tracking of vocals, guitar, bass and synths in Aarhus C (no drum recording in the studio), 2,699 DKK per full day, price examples incl. mix, preparation checklist, booking and cancellation terms.
 - [Remote mixing for rock & metal (English)](https://frederikdinesen.com/en/remote-mixing): the English version of the remote mixing page, prices in EUR.
 - [Homepage (English)](https://frederikdinesen.com/en): remote mixing for rock and metal bands across Europe, prices in EUR.
 - [Blog (dansk)](https://frederikdinesen.com/blog) and [Blog (English)](https://frederikdinesen.com/en/blog): practical guides on recording, mixing and releasing rock and metal.
@@ -39,6 +39,7 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 
 ## Guides (dansk)
 
+- [Mastering Loudness til Spotify: Hvorfor -14 LUFS Ødelægger Dit Rock- og Metalmix](https://frederikdinesen.com/blog/mastering-loudness-spotify): Få de rigtige tal til mastering loudness på Spotify: hvorfor -14 LUFS gør metal tyndt, hvad pro-masters måler, og hvilken lydstyrke du skal sigte efter.
 - [Case: Sådan Producerede Jeg Rise Upons Album The Dimming Effect](https://frederikdinesen.com/blog/case-the-dimming-effect): Fra fire lokationer og amp sims i Drop A til et GAFFA-nomineret album: sådan indspillede og mixede jeg The Dimming Effect, og hvad jeg lærte af det.
 - [Mudret Bund i Metal Mix? Sådan Får Du en Stram Bund Uden at Miste Tyngde](https://frederikdinesen.com/blog/fix-mudret-low-end-metal-mix): Få en stram bund uden at miste tyngde: sådan fixer du mudret bund i dit metal mix med polaritet, frekvensfordeling, split-bas og dynamisk EQ på palm mutes.
 - [Hvad Koster et Mix? Priser på Mixing af en Sang, EP og Album](https://frederikdinesen.com/blog/hvad-koster-et-mix): Hvad koster det at få mixet en sang? Se hvad der påvirker prisen, forskellen på pris pr. sang, time og dag, og hvad en EP eller et album koster at mixe.
@@ -46,6 +47,7 @@ FD Sound Labs er et mixing- og indspilningsstudie i Aarhus, drevet af lydteknike
 
 ## Guides (English)
 
+- [Mastering Loudness for Spotify: Why -14 LUFS Ruins Rock & Metal Releases](https://frederikdinesen.com/en/blog/mastering-loudness-spotify-metal): Get the real numbers for mastering loudness for Spotify: why -14 LUFS makes metal sound thin, what pro masters measure, and which True Peak ceiling to use.
 - [Case Study: Producing Rise Upon's Album The Dimming Effect](https://frederikdinesen.com/en/blog/case-study-the-dimming-effect): From four locations and amp sims in Drop A to a GAFFA-nominated album: how I recorded and mixed The Dimming Effect, and what I would do differently today.
 - [Muddy Low End in Your Metal Mix? How to Get It Tight Without Losing Weight](https://frederikdinesen.com/en/blog/fix-muddy-low-end-metal-mix): Get a tight, heavy low end: fix the muddy low end in your metal mix with polarity checks, kick and bass slotting, split bass and dynamic EQ on palm mutes.
 - [How Much Does Mixing a Song Cost? Prices for a Single, EP and Album](https://frederikdinesen.com/en/blog/how-much-does-mixing-cost): How much does it cost to get a song mixed? See what drives the price, per-song vs. hourly vs. day rates, and what it costs to mix an EP or an album.

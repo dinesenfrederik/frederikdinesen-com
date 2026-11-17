@@ -12,7 +12,7 @@ const URL = `${BASE}/indspilning-aarhus`;
 const MAPS = 'https://www.google.com/maps?cid=15858331334067921623';
 const TITLE = 'Lydstudie i Aarhus – Indspilning af Rock & Metal';
 const DESCRIPTION =
-  'Indspil vokal, guitar, bas og synths i Aarhus C. Heldagssession til fast pris: 3.125 kr. pr. dag inkl. moms. Kombinér med mix af dine sange ét sted.';
+  'Indspil vokal, guitar, bas og synths i Aarhus C. Heldagssession til fast pris: 2.699 kr. pr. dag inkl. moms. Kombinér med mix af dine sange ét sted.';
 
 export const metadata: Metadata = {
   title: { absolute: `${TITLE} | FD Sound Labs` },
@@ -57,7 +57,7 @@ const PREP = [
 const FAQ = [
   {
     q: 'Hvad koster det at indspille i et lydstudie i Aarhus?',
-    a: 'Studio tracking hos FD Sound Labs koster 3.125 kr. pr. dag inkl. moms for en heldagssession. Mix af sangene afregnes separat: 2.499 kr. pr. sang for 1-2 sange eller 2.195 kr. pr. sang ved 3 eller flere. To dages indspilning og mix af 3 sange koster for eksempel 12.835 kr. i alt.',
+    a: 'Studio tracking hos FD Sound Labs koster 2.699 kr. pr. dag inkl. moms for en heldagssession. Mix af sangene afregnes separat: 2.499 kr. pr. sang for 1-2 sange eller 2.195 kr. pr. sang ved 3 eller flere. To dages indspilning og mix af 3 sange koster for eksempel 11.983 kr. i alt.',
   },
   {
     q: 'Hvad kan man indspille hos FD Sound Labs?',
@@ -120,10 +120,10 @@ function structuredData() {
         offers: {
           '@type': 'Offer',
           name: 'Heldagssession (studio tracking)',
-          price: '3125',
+          price: '2699',
           priceCurrency: 'DKK',
           url: `${URL}#priser`,
-          priceSpecification: { '@type': 'UnitPriceSpecification', price: '3125', priceCurrency: 'DKK', valueAddedTaxIncluded: true, unitText: 'dag' },
+          priceSpecification: { '@type': 'UnitPriceSpecification', price: '2699', priceCurrency: 'DKK', valueAddedTaxIncluded: true, unitText: 'dag' },
         },
       },
       {
@@ -182,7 +182,7 @@ export default function IndspilningAarhusPage() {
             </h1>
             <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed mb-8">
               Indspil vokal, guitar, bas og synths hos FD Sound Labs i Ceresbyen, Aarhus C. En heldagssession koster{' '}
-              <strong className="text-white">3.125 kr. pr. dag inkl. moms</strong>, og når sporene er i kassen, kan jeg
+              <strong className="text-white">2.699 kr. pr. dag inkl. moms</strong>, og når sporene er i kassen, kan jeg
               mixe dem, så I får <strong className="text-white">hele produktionen ét sted</strong>.
             </p>
             <div className="flex flex-wrap items-center gap-4">
@@ -271,7 +271,7 @@ export default function IndspilningAarhusPage() {
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className={`${card} p-7`}>
                 <div className="text-zinc-300 font-semibold mb-3">Studio tracking</div>
-                <div className="text-4xl font-bold text-amber tracking-tight">3.125 kr.</div>
+                <div className="text-4xl font-bold text-amber tracking-tight">2.699 kr.</div>
                 <div className="font-mono text-xs text-zinc-400 mt-1">pr. heldagssession</div>
               </div>
               <div className={`${card} p-7`}>
@@ -295,9 +295,9 @@ export default function IndspilningAarhusPage() {
                 </thead>
                 <tbody className="text-zinc-200">
                   {[
-                    ['Vokal til en single (1 dag)', '3.125 kr.', '–', '3.125 kr.'],
-                    ['Vokal + mix af 3 sange (2 dage)', '6.250 kr.', '6.585 kr.', '12.835 kr.'],
-                    ['Guitar, bas og vokal + mix af EP på 5 sange (3 dage)', '9.375 kr.', '10.975 kr.', '20.350 kr.'],
+                    ['Vokal til en single (1 dag)', '2.699 kr.', '–', '2.699 kr.'],
+                    ['Vokal + mix af 3 sange (2 dage)', '5.398 kr.', '6.585 kr.', '11.983 kr.'],
+                    ['Guitar, bas og vokal + mix af EP på 5 sange (3 dage)', '8.097 kr.', '10.975 kr.', '19.072 kr.'],
                   ].map((r) => (
                     <tr key={r[0]} className="border-t border-[#222228]">
                       <td className="py-3 pr-4">{r[0]}</td>

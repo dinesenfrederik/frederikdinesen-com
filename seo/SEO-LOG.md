@@ -10,6 +10,12 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - **Search Console-data:** Frederik eksporterer rapporter til Google Sheets i Drev (Search Console → Eksportér → Google Sheets).
 - **Arbejdsform:** Direkte på `main`.
 
+## 2026-11-17 – Ny pris på Studio Tracking: 2.699 kr. pr. dag
+
+- Studio Tracking (heldagssession) sænket fra 3.125 kr. til **2.699 kr. pr. dag inkl. moms** (ekskl. moms 2.159,20 kr.; ca. €360).
+- Opdateret overalt: forside DA/EN (priskort, FAQ, JSON-LD Offer + priceRange), handelsbetingelser (Bilag 1), `/indspilning-aarhus` (meta, FAQ, schema, prisexempler), `/remote-mixing`, blogartiklerne om mixpriser (DA/EN) og llms.txt.
+- Nye prisexempler: 1 dag 2.699 kr.; 2 dage + mix af 3 sange 11.983 kr.; 3 dage + mix af EP på 5 sange 19.072 kr.
+
 ## 2026-11-13 – Bing Site Scan: "Title too long" (8 sider)
 
 - Bing Webmaster Tools Site Scan: kun én advarsel, "Title too long" på 8 sider; ingen fejl. Årsag: alle 8 blogartikler havde lange titler + automatisk " | FD Sound Labs" (76-96 tegn).

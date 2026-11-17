@@ -78,7 +78,7 @@ Mixing an EP or an album usually costs the number of songs times the price per s
 * **EP, 5 songs:** €1,475
 * **Album, 10 songs:** €2,950
 
-If you also need to record vocals, guitar or bass in the studio, that comes on top. A full-day session in my studio in Aarhus, Denmark, is around €420. If you've recorded everything yourselves, you only pay for the mix.
+If you also need to record vocals, guitar or bass in the studio, that comes on top. A full-day session in my studio in Aarhus, Denmark, is around €360. If you've recorded everything yourselves, you only pay for the mix.
 
 > **Pro tip:** Plan which songs you're releasing first and get them mixed together. A combined project usually means a lower price per song, and the songs end up sounding like a whole instead of separate singles.
 

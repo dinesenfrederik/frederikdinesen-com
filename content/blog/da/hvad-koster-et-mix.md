@@ -75,7 +75,7 @@ At mixe en EP eller et album koster typisk antallet af sange gange prisen pr. sa
 * **EP, 5 sange:** 10.975 kr.
 * **Album, 10 sange:** 21.950 kr.
 
-Skal I også indspille vokal, guitar eller bas i studiet, kommer det oveni. Hos mig koster en heldagssession i Aarhus 3.125 kr. Har I selv indspillet det hele, betaler I kun for mixet.
+Skal I også indspille vokal, guitar eller bas i studiet, kommer det oveni. Hos mig koster en heldagssession i Aarhus 2.699 kr. Har I selv indspillet det hele, betaler I kun for mixet.
 
 > **Pro tip:** Planlæg, hvilke sange der skal udgives først, og få dem mixet samlet. Et samlet projekt giver typisk en lavere pris pr. sang, og sangene kommer til at lyde som en helhed i stedet for enkeltstående singler.
 

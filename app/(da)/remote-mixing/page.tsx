@@ -66,7 +66,7 @@ const INCLUDED = [
 
 const NOT_INCLUDED = [
   'Mastering. Jeg er mix engineer og anbefaler en dedikeret mastering engineer til den endelige master (et loud master kan leveres efter aftale)',
-  'Indspilning. Har du brug for at indspille vokal, guitar, bas eller synths, kan du booke studio tracking i Aarhus til 3.125 kr. pr. dag',
+  'Indspilning. Har du brug for at indspille vokal, guitar, bas eller synths, kan du booke studio tracking i Aarhus til 2.699 kr. pr. dag',
 ];
 
 const PREP = [

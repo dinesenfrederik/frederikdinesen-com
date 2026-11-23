@@ -48,7 +48,7 @@
     <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog"/>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -57,7 +57,7 @@
     <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog"/>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -126,7 +126,7 @@
     <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/case-the-dimming-effect"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/case-study-the-dimming-effect"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/case-study-the-dimming-effect"/>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -135,7 +135,7 @@
     <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/case-the-dimming-effect"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/case-study-the-dimming-effect"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/case-study-the-dimming-effect"/>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -154,6 +154,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/mastering-loudness-spotify-metal"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/mastering-loudness-spotify-metal"/>
     <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://frederikdinesen.com/blog/optag-di-guitar-til-reamping</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/optag-di-guitar-til-reamping"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/record-guitar-di-for-reamping"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/record-guitar-di-for-reamping"/>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://frederikdinesen.com/en/blog/record-guitar-di-for-reamping</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://frederikdinesen.com/blog/optag-di-guitar-til-reamping"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://frederikdinesen.com/en/blog/record-guitar-di-for-reamping"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://frederikdinesen.com/en/blog/record-guitar-di-for-reamping"/>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

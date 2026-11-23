@@ -1,0 +1,166 @@
+{
+  "topic": {
+    "titleDa": "Optagelse af DI-guitar til Reamping: Den Komplette Guide til Rock & Metal",
+    "titleEn": "How to Record Guitar DIs for Reamping: The Ultimate Metal & Rock Guide",
+    "pillar": "tracking",
+    "primaryKeywordDa": "optagelse di guitar reamping",
+    "primaryKeywordEn": "recording di guitar for reamping",
+    "whyNow": "Prominent across both English and Danish autocomplete signals ('recording di guitar for reamping', 'guitar di recording level', 'reamping di guitar'), and directly prepares bands to send tracks to FD Sound Labs.",
+    "angle": "Demystifies the impedance and digital clipping traps that ruin high-gain tones, giving exact dBFS peak levels (-12 to -6 dBFS) for active vs passive pickups before the signal ever hits an amp sim or reamp box.",
+    "score": 93
+  },
+  "factCheck": {
+    "fixed": [],
+    "toReview": []
+  },
+  "backlinks": [
+    {
+      "lang": "da",
+      "file": "content/blog/da/case-the-dimming-effect.md",
+      "replace": "Ulempen er, at du ikke kan ændre forstærkeren senere, hvis tonen ikke sidder i det færdige mix, medmindre du har [optaget et rent DI-spor til reamping](/blog/optag-di-guitar-til-reamping).",
+      "reason": "Afsnittet handler om ulempen ved ikke at reampe. Linket viser læseren, hvordan man optager et brugbart DI-spor og beholder muligheden for at ændre tonen senere."
+    },
+    {
+      "lang": "en",
+      "file": "content/blog/en/case-study-the-dimming-effect.md",
+      "replace": "The downside is that you can't swap the amp later if the tone doesn't sit in the final mix, unless you've [recorded a clean DI track for reamping](/en/blog/record-guitar-di-for-reamping).",
+      "reason": "This sentence names the main drawback of skipping reamping. Readers who want that safety net on their own recordings get a direct path to the guide on capturing clean DI tracks without fizz or clipping."
+    }
+  ],
+  "sources": [
+    {
+      "title": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=bMZlwzgLEPU"
+    },
+    {
+      "title": "radialeng.com",
+      "url": "https://www.radialeng.com/blog/the-reamping-workflow"
+    },
+    {
+      "title": "thomann.dk",
+      "url": "https://www.thomann.dk/onlineexpert_page_recording_e_guitars_reamping.html"
+    },
+    {
+      "title": "projethomestudio.fr",
+      "url": "https://www.projethomestudio.fr/da/reamping-af-guitar-amplifier-den-komplette-guide/"
+    },
+    {
+      "title": "soundstorexl.dk",
+      "url": "https://www.soundstorexl.dk/products/palmer-river-trave-passive-re-amplification-box"
+    },
+    {
+      "title": "blacksunaudio.com",
+      "url": "https://www.blacksunaudio.com/da/blog/saadan-optager-du-di-guitarer-hjemme/"
+    },
+    {
+      "title": "quora.com",
+      "url": "https://www.quora.com/At-what-levels-should-you-record-guitars-at-for-metal-music"
+    },
+    {
+      "title": "homemusiccreator.com",
+      "url": "https://homemusiccreator.com/guitar-recording-levels-get-them-right/"
+    },
+    {
+      "title": "projethomestudio.fr",
+      "url": "https://www.projethomestudio.fr/en/what-level-should-you-record-at/"
+    },
+    {
+      "title": "nailthemix.com",
+      "url": "https://www.nailthemix.com/how-to-record-a-guitar-di"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/1984s4l/whats_the_difference_between_recording_at_a_lower/"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/Guitar/comments/vdo46s/question_how_to_use_di_box/"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/homerecordingstudio/comments/1rg5dgy/what_does_a_reamping_box_do_that_my_audio/"
+    },
+    {
+      "title": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=OtI8FytzOpo"
+    },
+    {
+      "title": "veryfriendlymusic.com",
+      "url": "https://veryfriendlymusic.com/blogs/news/how-to-reamp-guitar-even-with-no-reamping-box"
+    },
+    {
+      "title": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=b1O_5gaX4-s"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/WeAreTheMusicMakers/comments/15gitq8/can_i_reamp_did_guitar_without_a_reamp_box/"
+    },
+    {
+      "title": "blacksunaudio.com",
+      "url": "https://www.blacksunaudio.com/da/blog/"
+    },
+    {
+      "title": "github.com",
+      "url": "https://github.com/affinedsp/suppressor"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/Guitar/comments/1e5lf41/for_recording_di_at_home_then_reamp_in_a/"
+    },
+    {
+      "title": "musontek.com",
+      "url": "https://musontek.com/how-to-set-up-a-di-box-for-acoustic-guitar-guide/"
+    },
+    {
+      "title": "blacksunaudio.com",
+      "url": "https://www.blacksunaudio.com/da/blog/saadan-forbereder-i-jer-til-indspilning/"
+    },
+    {
+      "title": "premierguitar.com",
+      "url": "https://www.premierguitar.com/diy/recording-dojo/reamp"
+    },
+    {
+      "title": "reddit.com",
+      "url": "https://www.reddit.com/r/audioengineering/comments/8myo9k/reamping_and_setting_levels/"
+    },
+    {
+      "title": "hotmilkstudio.de",
+      "url": "https://www.hotmilkstudio.de/recording-guide"
+    },
+    {
+      "title": "projethomestudio.fr",
+      "url": "https://www.projethomestudio.fr/en/reamping-guitar-amp/"
+    },
+    {
+      "title": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=HD8JwzoUUsA"
+    },
+    {
+      "title": "line6.com",
+      "url": "https://line6.com/support/topic/63975-hx-stomp-di-dry-guitar-level/"
+    },
+    {
+      "title": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=puDUz6jenFo"
+    }
+  ],
+  "videos": [
+    {
+      "title": "Reamping 101: Record Once, Dial In Your Tone Later",
+      "url": "https://www.youtube.com/watch?v=bMZlwzgLEPU",
+      "channel": "Riffs, Beards & Gear"
+    },
+    {
+      "title": "Which DI BOX for your GUITAR or BASS? All the info you need!",
+      "url": "https://www.youtube.com/watch?v=xX0hcv067nI",
+      "channel": "Kohle Audio Kult"
+    },
+    {
+      "title": "How to Prepare your Tracks for Reamping | SpectreSoundStudios TUTORIAL",
+      "url": "https://www.youtube.com/watch?v=ZyVCAK2N8yo",
+      "channel": "SpectreSoundStudios"
+    }
+  ],
+  "warnings": []
+}

@@ -15,6 +15,15 @@
     "pillar": "release",
     "slugDa": "mastering-loudness-spotify",
     "slugEn": "mastering-loudness-spotify-metal",
+    "status": "published"
+  },
+  {
+    "date": "2026-11-23",
+    "titleEn": "How to Record Guitar DIs for Reamping: The Ultimate Metal & Rock Guide",
+    "titleDa": "Optagelse af DI-guitar til Reamping: Den Komplette Guide til Rock & Metal",
+    "pillar": "tracking",
+    "slugDa": "optag-di-guitar-til-reamping",
+    "slugEn": "record-guitar-di-for-reamping",
     "status": "drafted"
   }
 ]

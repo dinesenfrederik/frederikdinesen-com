@@ -73,7 +73,7 @@ In the mix I blended the acoustic drums with samples from various producers, inc
 
 All guitar and bass on the album were recorded in Drop A with amp sims, mainly from Neural DSP, combined with other creative plugin chains. We didn't use re-amping.
 
-That means the tone was chosen during recording, not afterwards. **The advantage is that the musician plays into the sound the song needs**, and fewer decisions are left for the mix. The downside is that you can't swap the amp later if the tone doesn't sit in the final mix.
+That means the tone was chosen during recording, not afterwards. **The advantage is that the musician plays into the sound the song needs**, and fewer decisions are left for the mix. The downside is that you can't swap the amp later if the tone doesn't sit in the final mix, unless you've [recorded a clean DI track for reamping](/en/blog/record-guitar-di-for-reamping).
 
 > **Pro tip:** If you record with amp sims, always save a clean DI track alongside, even if you don't plan to re-amp. It costs nothing and gives you a safety net if the tone needs to change in the mix.
 

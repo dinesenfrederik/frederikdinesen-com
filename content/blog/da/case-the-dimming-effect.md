@@ -73,7 +73,7 @@ I mixet blandede jeg de akustiske trommer med samples fra forskellige producente
 
 Al guitar og bas på albummet er indspillet i Drop A med amp sims, primært fra Neural DSP, suppleret med andre kreative kombinationer af plugins. Vi brugte ingen re-amping.
 
-Det betyder, at tonen blev valgt under indspilningen og ikke bagefter. **Fordelen er, at musikeren spiller ind i den lyd, sangen skal have**, og at der ikke skal træffes lige så mange beslutninger i mixet. Ulempen er, at du ikke kan ændre forstærkeren senere, hvis tonen ikke sidder i det færdige mix.
+Det betyder, at tonen blev valgt under indspilningen og ikke bagefter. **Fordelen er, at musikeren spiller ind i den lyd, sangen skal have**, og at der ikke skal træffes lige så mange beslutninger i mixet. Ulempen er, at du ikke kan ændre forstærkeren senere, hvis tonen ikke sidder i det færdige mix, medmindre du har [optaget et rent DI-spor til reamping](/blog/optag-di-guitar-til-reamping).
 
 > **Pro tip:** Indspiller du med amp sims, så gem altid et rent DI-spor ved siden af, også selvom du ikke regner med at re-ampe. Det koster ingenting og giver dig en sikkerhedsline, hvis tonen skal ændres i mixet.
 

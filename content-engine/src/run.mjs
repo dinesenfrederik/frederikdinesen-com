@@ -354,6 +354,21 @@ async function main() {
   fs.writeFileSync(`${OUT}/pr-title.txt`, title);
   fs.writeFileSync(`${OUT}/branch.txt`, `content/${today()}-${results[0].slugEn}`.slice(0, 100));
   fs.writeFileSync(`${OUT}/pr-body.md`, prBody(results, ranked));
+  // Facts for the "draft ready" e-mail (src/notify.mjs), sent by the workflow once the PR exists.
+  writeJson('.out/notify.json', {
+    drafts: results.map((r) => ({
+      titleDa: r.da.data.title,
+      titleEn: r.en.data.title,
+      pillar: r.pillar.da,
+      keywordDa: r.topic.primaryKeywordDa,
+      whyNow: r.topic.whyNow,
+      words: r.da.wordCount,
+      toReview: r.factCheck.toReview.length,
+      fixed: r.factCheck.fixed.length,
+      factCheckFailed: Boolean(r.factCheck.error),
+      backlinks: r.backlinks.length,
+    })),
+  });
   fs.writeFileSync(`${OUT}/summary.md`, `## ${title}\n\n${results.flatMap((r) => r.files.map((f) => `- \`${f}\``)).join('\n')}\n`);
   log(`Done. Files:\n  ${results.flatMap((r) => r.files).join('\n  ')}`);
 }

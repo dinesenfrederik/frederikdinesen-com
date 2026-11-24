@@ -11,7 +11,7 @@ import { TestMixModalProvider } from '@/components/blog/TestMixModalContext';
 export const metadata: Metadata = {
   title: 'Blog & Audio Guides | Rock & Metal Production',
   description:
-    'Learn how to track, record, and prepare your heavy rock and metal songs for mixing. Professional advice, mic techniques, and studio knowledge from FD Sound Labs.',
+    'Learn how to record and prepare your rock and metal songs for mixing. Professional advice, mic techniques and studio knowledge from FD Sound Labs.',
   alternates: {
     canonical: 'https://frederikdinesen.com/en/blog',
     languages: {

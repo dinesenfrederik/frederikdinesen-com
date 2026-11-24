@@ -16,6 +16,14 @@ Nyeste øverst. Ændringer pushes direkte til `main` (aftalt 2026-11-11).
 - Opdateret overalt: forside DA/EN (priskort, FAQ, JSON-LD Offer + priceRange), handelsbetingelser (Bilag 1), `/indspilning-aarhus` (meta, FAQ, schema, prisexempler), `/remote-mixing`, blogartiklerne om mixpriser (DA/EN) og llms.txt.
 - Nye prisexempler: 1 dag 2.699 kr.; 2 dage + mix af 3 sange 11.983 kr.; 3 dage + mix af EP på 5 sange 19.072 kr.
 
+## 2026-11-24 – Ahrefs/Semrush via Gmail + artikel-schema
+
+- Den månedlige gennemgang læser nu Ahrefs Site Audit- og Semrush-rapporter i Gmail (kun gratis versioner; markedsføring og betalte funktioner ignoreres). Semrush-mails skal hentes som HTML (FULL_CONTENT); de har ingen tekstversion.
+- Ahrefs Site Audit (22/11): Health Score 100 (op fra 90 den 8/11), 0 fejl, 6 advarsler. Nyt: "Structured data has Google rich results validation error" og "Article page missing Article schema" på de 10 artikelsider. Detaljer kræver login i Ahrefs.
+- Rettet (sandsynlig årsag): artikler bruger nu `BlogPosting` i stedet for `TechArticle` (Google understøtter Article/BlogPosting/NewsArticle), og datePublished/dateModified har tid og tidszone (`T00:00:00+01:00`). EN-blogoversigtens meta-beskrivelse forkortet (161 → 146 tegn). Tjek næste crawl; består fejlen, så hent fejltypen fra Ahrefs (kolonnen "validation issue kinds").
+- Semrush Position Tracking (11.–18/11, Danmark): synlighed 21,96 % (+1,96), nr. 2 efter uglebjerg.com (26,48 %). "remote mixing rock" plads 5, "rock lydstudie" plads 20. Trafik endnu 0.
+- Semrush Backlink Audit (8/11): "Toxicity Score: High; 2.003 domæner" for et nyt site er automatiske spam-/scraper-links. Google ignorerer dem; ingen disavow.
+
 ## 2026-11-13 – Bing Site Scan: "Title too long" (8 sider)
 
 - Bing Webmaster Tools Site Scan: kun én advarsel, "Title too long" på 8 sider; ingen fejl. Årsag: alle 8 blogartikler havde lange titler + automatisk " | FD Sound Labs" (76-96 tegn).

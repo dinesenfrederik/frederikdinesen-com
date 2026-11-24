@@ -45,6 +45,11 @@ Claude:
 - Engelsk/EU-indsats (`/en/remote-mixing`, engelske artikler), når Danmark giver resultater
 - Synlighed i danske metal-medier, podcasts og fora (Reddit, Facebook-grupper) gennem nyttige svar, ikke reklame
 
+## Gratis SEO-værktøjer (læses via Gmail i den månedlige gennemgang)
+- **Ahrefs Webmaster Tools (gratis):** Site Audit-mails fra `sa@ahrefs.com` (Health Score, fejl, advarsler).
+- **Semrush Free:** Position Tracking (`position-tracking@semrush.com`), On Page SEO Checker (`seo-ideas@semrush.com`), Backlink Audit (`backlink.audit@semrush.com`).
+- Markedsføring, nyhedsbreve, webinarer og funktioner bag betalingsmur ignoreres. Der anbefales aldrig betalte værktøjer.
+
 ## Måling (månedlig gennemgang)
 | Måling | Kilde | Mål 3 mdr. | Mål 12 mdr. |
 |---|---|---|---|

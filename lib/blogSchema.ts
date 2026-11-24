@@ -2,6 +2,20 @@ import type { BlogPost } from '@/lib/blog';
 
 const BASE = 'https://frederikdinesen.com';
 
+/**
+ * Date-only frontmatter ("2026-11-16") as a full ISO 8601 datetime with the Copenhagen offset
+ * ("2026-11-16T00:00:00+01:00"); Google recommends a time zone on datePublished/dateModified.
+ */
+export function isoDateTime(date: string): string {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
+  const noonUtc = new Date(`${date}T12:00:00Z`);
+  const tz = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Copenhagen', timeZoneName: 'longOffset' })
+    .formatToParts(noonUtc)
+    .find((p) => p.type === 'timeZoneName')?.value; // e.g. "GMT+01:00"
+  const offset = tz && tz !== 'GMT' ? tz.replace('GMT', '') : '+00:00';
+  return `${date}T00:00:00${offset}`;
+}
+
 export function ogImageFor(lang: 'da' | 'en'): string {
   return lang === 'da' ? `${BASE}/assets/og-image.jpg` : `${BASE}/assets/og-image-en.jpg`;
 }
@@ -23,13 +37,13 @@ export function buildArticleGraph(post: BlogPost, lang: 'da' | 'en') {
 
   const graph: Record<string, unknown>[] = [
     {
-      '@type': 'TechArticle',
+      '@type': 'BlogPosting',
       '@id': `${url}#article`,
       headline: post.title,
       description: post.description,
       image: { '@type': 'ImageObject', url: post.coverImage || ogImageFor(lang), width: 1200, height: 630 },
-      datePublished: post.date,
-      dateModified: post.updated || post.date,
+      datePublished: isoDateTime(post.date),
+      dateModified: isoDateTime(post.updated || post.date),
       inLanguage: lang === 'da' ? 'da-DK' : 'en',
       wordCount: post.rawContent.trim().split(/\s+/).length,
       articleSection: post.pillar,

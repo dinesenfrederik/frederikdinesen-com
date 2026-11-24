@@ -1,22 +1,48 @@
 ---
-title: "Optagelse af DI-guitar til Reamping: Rene Spor Uden Fizz og Clipping"
-seoTitle: "Optagelse af DI-guitar til Reamping: Niveauer & Setup"
-description: "Undgå fizz og clipping: optagelse af DI-guitar til reamping med de rigtige dBFS-niveauer, DI-boks-setup og kalibrering. Komplet guide til rock og metal."
-date: "2026-11-23"
-author: "Frederik Dinesen"
-pillar: "DIY Indspilning & Tracking"
-alternateSlug: "record-guitar-di-for-reamping"
+title: 'Optagelse af DI-guitar til Reamping: Rene Spor Uden Fizz og Clipping'
+seoTitle: 'Optagelse af DI-guitar til Reamping: Niveauer & Setup'
+description: >-
+  Undgå fizz og clipping: optagelse af DI-guitar til reamping med de rigtige
+  input-niveauer, DI-boks-setup og kalibrering. Komplet guide til rock og metal.
+date: '2026-11-23'
+author: Frederik Dinesen
+pillar: DIY Indspilning & Tracking
+alternateSlug: record-guitar-di-for-reamping
 faq:
-  - question: "Hvilket dBFS-niveau skal min DI-guitar peake på til metal?"
-    answer: "Optag i 24-bit, og sigt efter peaks mellem -12 og -6 dBFS på de hårdeste palm mutes og powerchords. Gennemsnitsniveauet (RMS) ligger typisk omkring -18 til -14 dBFS. Det giver nok headroom til, at et ekstra hårdt anslag ikke clipper, og signalet ligger stadig et godt stykke over interfacets støjgulv."
-  - question: "Skal jeg bruge en DI-boks, hvis mit lydkort har en Hi-Z-indgang?"
-    answer: "Ikke nødvendigvis. En moderne Hi-Z-indgang med mindst 1 MΩ impedans kan sagtens levere gode DI-spor i et hjemmestudie med korte kabler. En dedikeret DI-boks er nødvendig, når kablet er langt, for eksempel når guitaristen sidder i et andet rum end interfacet, fordi DI-boksen sender et balanceret signal på mikrofonniveau, som afviser brum og støj."
-  - question: "Kan jeg bruge en passiv DI-boks baglæns som reamp box?"
-    answer: "Ja, en passiv DI-boks med transformer kan køres baglæns, men en aktiv DI-boks kan ikke. Kørt baglæns forstærker transformeren signalet med cirka 20 til 30 dB, så du skal skrue tilsvarende ned for sporet i din DAW. Du risikerer samtidig brum fra jordsløjfer, og forstærkeren ser ikke den samme impedans som fra en rigtig pickup."
-  - question: "Skal noise gaten være slået til, når jeg optager DI-guitar?"
-    answer: "Nej. Optag og eksportér DI-sporet helt rent, uden noise gate, kompressor, pitch-korrektion eller amp sim. Du må gerne bruge en gate i dit medhør, mens du spiller, men selve gatingen hører til efter reamping eller i mixet, hvor den kan justeres til den endelige guitarlyd."
-  - question: "Hvorfor lyder min reampede guitar tynd eller fizzy?"
-    answer: "De mest almindelige årsager er digital clipping i DI-sporet, forkert niveau ind i forstærkeren og forkert impedans under optagelsen. Et clippet peak bliver til en hård, summende fizz, når det sendes gennem en high-gain-forstærker, og den kan ikke fjernes med EQ. Kalibrér din reamp box, så forstærkeren får samme niveau som fra guitarens pickupper."
+  - question: Hvilket dBFS-niveau skal min DI-guitar peake på til metal?
+    answer: >-
+      Optag i 24-bit, og sigt efter peaks mellem -12 og -6 dBFS på de hårdeste
+      palm mutes og powerchords. Gennemsnitsniveauet (RMS) ligger typisk omkring
+      -18 til -14 dBFS. Det giver nok headroom til, at et ekstra hårdt anslag
+      ikke clipper, og signalet ligger stadig et godt stykke over interfacets
+      støjgulv.
+  - question: 'Skal jeg bruge en DI-boks, hvis mit lydkort har en Hi-Z-indgang?'
+    answer: >-
+      Ikke nødvendigvis. En moderne Hi-Z-indgang med mindst 1 MΩ impedans kan
+      sagtens levere gode DI-spor i et hjemmestudie med korte kabler. En
+      dedikeret DI-boks er nødvendig, når kablet er langt, for eksempel når
+      guitaristen sidder i et andet rum end interfacet, fordi DI-boksen sender
+      et balanceret signal på mikrofonniveau, som afviser brum og støj.
+  - question: Kan jeg bruge en passiv DI-boks baglæns som reamp box?
+    answer: >-
+      Ja, en passiv DI-boks med transformer kan køres baglæns, men en aktiv
+      DI-boks kan ikke. Kørt baglæns forstærker transformeren signalet med cirka
+      20 til 30 dB, så du skal skrue tilsvarende ned for sporet i din DAW. Du
+      risikerer samtidig brum fra jordsløjfer, og forstærkeren ser ikke den
+      samme impedans som fra en rigtig pickup.
+  - question: 'Skal noise gaten være slået til, når jeg optager DI-guitar?'
+    answer: >-
+      Nej. Optag og eksportér DI-sporet helt rent, uden noise gate, kompressor,
+      pitch-korrektion eller amp sim. Du må gerne bruge en gate i dit medhør,
+      mens du spiller, men selve gatingen hører til efter reamping eller i
+      mixet, hvor den kan justeres til den endelige guitarlyd.
+  - question: Hvorfor lyder min reampede guitar tynd eller fizzy?
+    answer: >-
+      De mest almindelige årsager er digital clipping i DI-sporet, forkert
+      niveau ind i forstærkeren og forkert impedans under optagelsen. Et clippet
+      peak bliver til en hård, summende fizz, når det sendes gennem en
+      high-gain-forstærker, og den kan ikke fjernes med EQ. Kalibrér din reamp
+      box, så forstærkeren får samme niveau som fra guitarens pickupper.
 ---
 
 Du har tracket et riff, der burde lyde som et godstog gennem en 5150. Efter reamping summer det i stedet som hvepse i en dåse, eller også lyder det tyndt og livløst. Problemet sidder næsten aldrig i forstærkeren. Det sidder i DI-sporet (direct input, det rene, uforstærkede signal direkte fra guitaren).

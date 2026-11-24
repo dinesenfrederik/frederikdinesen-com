@@ -82,6 +82,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REVIEWER: ${{ github.repository_owner }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
         run: |
           set -euo pipefail
           test -f .out/branch.txt || { echo "No draft produced"; exit 1; }
@@ -101,3 +104,14 @@ jobs:
           echo "Opened $url" | tee -a "$GITHUB_STEP_SUMMARY"
           # Request a review so GitHub notifies you (best effort).
           gh pr edit "$url" --add-reviewer "$REVIEWER" || true
+          # E-mail Frederik a link straight to the draft in the review dashboard.
+          (cd content-engine && node src/notify.mjs ready --pr "${url##*/}") || true
+
+      - name: E-mail on failure
+        if: ${{ failure() && !inputs.scan_only }}
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node src/notify.mjs failed --run-url "$RUN_URL" || true

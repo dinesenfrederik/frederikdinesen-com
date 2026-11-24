@@ -70,6 +70,20 @@ One-time setup, in Vercel → the project → Settings → Environment Variables
 
 The dashboard code lives in `app/(review)/`. It is `noindex` and blocked in robots.txt, and it doesn't load analytics.
 
+## E-mail when a draft is ready
+
+When the engine has opened a draft, it e-mails you a link straight to that draft in the dashboard. If a run fails, you get an e-mail with a link to the error.
+
+One-time setup: repo → Settings → Secrets and variables → Actions → *New repository secret*:
+
+| Secret | Value |
+|---|---|
+| `SMTP_USER` | your Gmail address (the mail is sent from and to it) |
+| `SMTP_APP_PASSWORD` | a Google **app password**: [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords) (needs 2-step verification on). Name it e.g. "FDSL content engine" and paste the 16 characters without spaces. |
+| `NOTIFY_EMAIL` | optional: send to another address instead |
+
+Without these secrets the engine runs as before, just without e-mail. A mail problem never stops a draft from being created. Preview a mail locally with `node src/notify.mjs ready --pr 1 --dry-run` (after a run) or `node src/notify.mjs failed --dry-run`. Either writes `.out/email-preview.html`.
+
 ## Running it
 
 - **Automatically:** Mondays at 06:17 Danish time (one draft a week) (`.github/workflows/content-engine.yml`).
